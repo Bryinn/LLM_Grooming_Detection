@@ -287,6 +287,7 @@ def process_pj_txt(directory_path, output_dir):
 
     total_kept = 0
     total_skipped = 0
+    total_conv_skipped = 0
 
     for filename in os.listdir(directory_path):
         input_path = os.path.join(directory_path, filename)
@@ -870,6 +871,8 @@ def process_pj_txt(directory_path, output_dir):
                         'participants': filtered_participants,
                         'messages': clean_messages
                     })
+                else:
+                    total_conv_skipped += 1
 
             # Save detections to file
             base_filename = os.path.splitext(filename)[0]
@@ -910,7 +913,7 @@ def process_pj_txt(directory_path, output_dir):
             print(f"  Error processing {filename}: {str(e)}")
             total_skipped += 1
 
-    print(f"  PJ Total Conversations - Kept: {total_kept} | Files with no conversations: {total_skipped}")
+    print(f"  PJ Total Conversations - Kept: {total_kept}, Skipped: {total_conv_skipped} | Files with no conversations after filter: {total_skipped}")
 
 if __name__ == "__main__":
     filter_conversations()
