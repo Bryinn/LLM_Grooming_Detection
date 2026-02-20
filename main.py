@@ -786,7 +786,7 @@ def process_pj_txt(directory_path, output_dir):
                     robust = robust_normalize(m.get('author'))
                     # Filter out message fragments and context lines
                     if norm and robust and not date_line_re.match(norm):
-                        # Exclude if norm is a message fragment (e.g., contains spaces and is not a plausible username)
+                        # Exclude if norm is a message fragment
                         if len(norm) > 30 and (" " in norm or norm.lower() in m.get('text', '').lower()):
                             continue
                         # Exclude if norm is a common phrase from the text
@@ -813,15 +813,53 @@ def process_pj_txt(directory_path, output_dir):
                 filtered_participants = sorted(set(filtered_authors))
                 if len(filtered_participants) == 2 and len(filtered_authors) >= 6:
                     clean_messages = []
+                    # Find the best contextual date for this block
+                    # Use the most recent contextual_date or current_date seen in the block
+                    block_contextual_date = None
+                    block_current_date = None
+                    # Search for contextual date cues in the block
+                    for msg in filtered_msgs:
+                        # Try to find a contextual date from metadata contextual_lines near this message
+                        msg_ln = msg.get('line_number')
+                        for ctx in metadata.get('contextual_lines', []):
+                            if 'date' in ctx and ctx['date'] != 'N/A' and abs(ctx['line_number'] - msg_ln) < 50:
+                                block_contextual_date = ctx['date']
+                                break
+                        if block_contextual_date:
+                            break
+                    # Fallback to file_date if no contextual date found
+                    block_contextual_date = block_contextual_date or file_date or 'N/A'
                     for m in filtered_msgs:
                         norm_author = normalize_username(m['author'])
+                        # If timestamp is N/A, try to assign contextual date
                         if m.get('datetime'):
                             try:
                                 ts = m['datetime'].isoformat(sep=' ')
                             except Exception:
                                 ts = str(m['datetime'])
                         else:
-                            ts = 'N/A'
+                            # Try to use contextual date and any time info in raw_datetime
+                            raw_dt = m.get('raw_datetime')
+                            time_part = None
+                            if raw_dt and isinstance(raw_dt, str):
+                                # Try to extract time from raw_datetime
+                                import re as _re
+                                time_match = _re.search(r'(\d{1,2}:\d{2}(?::\d{2})?\s*(?:AM|PM)?)', raw_dt, _re.IGNORECASE)
+                                if time_match:
+                                    time_part = time_match.group(1)
+                            if block_contextual_date != 'N/A' and time_part:
+                                # Try to parse full datetime
+                                from datetime import datetime as _dt
+                                dt_str = f"{block_contextual_date} {time_part}"
+                                dt_obj = parse_datetime(dt_str)
+                                if dt_obj:
+                                    ts = dt_obj.isoformat(sep=' ')
+                                else:
+                                    ts = f"{block_contextual_date} {time_part}"
+                            elif block_contextual_date != 'N/A':
+                                ts = block_contextual_date
+                            else:
+                                ts = 'N/A'
                         clean_messages.append({
                             'author': norm_author,
                             'text': m['text'],
@@ -833,7 +871,7 @@ def process_pj_txt(directory_path, output_dir):
                         'messages': clean_messages
                     })
 
-            # Save conversations from this file (if any) along with contextual lines in metadata
+            # Save detections to file
             base_filename = os.path.splitext(filename)[0]
             output_filename = f"PJ_{base_filename}.json"
             output_path = os.path.join(pj_output_dir, output_filename)
@@ -872,7 +910,7 @@ def process_pj_txt(directory_path, output_dir):
             print(f"  Error processing {filename}: {str(e)}")
             total_skipped += 1
 
-    print(f"  PJ Total - Kept: {total_kept}, Skipped: {total_skipped}")
+    print(f"  PJ Total Conversations - Kept: {total_kept} | Files with no conversations: {total_skipped}")
 
 if __name__ == "__main__":
     filter_conversations()
