@@ -48,16 +48,37 @@ def filter_pan12_conversations(input_dir, output_dir):
     os.makedirs(output_dir, exist_ok=True)
     total_in = 0
     total_out = 0
+
+    # Determine which predator file to use
+    if 'training' in input_dir:
+        predator_file = os.path.join('datasets', 'pan12-training', 'pan12-sexual-predator-identification-training-corpus-predators-2012-05-01.txt')
+    elif 'test' in input_dir:
+        predator_file = os.path.join('datasets', 'pan12-test', 'pan12-sexual-predator-identification-groundtruth-problem1.txt')
+    else:
+        predator_file = None
+
+    predator_ids = set()
+    if predator_file and os.path.exists(predator_file):
+        with open(predator_file, 'r', encoding='utf-8') as pf:
+            for line in pf:
+                line = line.strip()
+                if line:
+                    predator_ids.add(line)
+
     for filename in os.listdir(input_dir):
         if not filename.endswith(".xml"):
             continue
         input_path = os.path.join(input_dir, filename)
         conversations = parse_pan12_xml(input_path)
-        # Only keep conversations with exactly 2 participants and at least 6 messages
+        
         filtered = []
         for conv in conversations:
             participants = set(m['author'] for m in conv['messages'] if m.get('author'))
+            # Only keep conversations with exactly 2 participants and at least 6 messages
             if len(participants) == 2 and len(conv['messages']) >= 6:
+                # Mark as predatory if any participant is in predator_ids
+                is_pred = any(p in predator_ids for p in participants)
+                conv['is_predatory'] = is_pred
                 filtered.append(conv)
         filtered_in = len(filtered)
         filtered_out = len(conversations) - filtered_in
