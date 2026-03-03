@@ -1,8 +1,5 @@
 import os
-import re
 import json
-from datetime import datetime
-from collections import Counter
 
 import xml.etree.ElementTree as ET
 
@@ -72,13 +69,14 @@ def filter_pan12_conversations(input_dir, output_dir):
         conversations = parse_pan12_xml(input_path)
         
         filtered = []
-        for conv in conversations:
+        for idx, conv in enumerate(conversations):
             participants = set(m['author'] for m in conv['messages'] if m.get('author'))
             # Only keep conversations with exactly 2 participants and at least 6 messages
             if len(participants) == 2 and len(conv['messages']) >= 6:
                 # Mark as predatory if any participant is in predator_ids
                 is_pred = any(p in predator_ids for p in participants)
                 conv['is_predatory'] = is_pred
+                conv['conversation_id'] = idx
                 filtered.append(conv)
         filtered_in = len(filtered)
         filtered_out = len(conversations) - filtered_in
