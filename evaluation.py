@@ -1,33 +1,34 @@
 import os
+from tqdm import tqdm
 
 def get_model_and_tokenizer(model_path):
     from transformers import AutoModelForCausalLM, AutoTokenizer
     import torch
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     tokenizer = AutoTokenizer.from_pretrained(model_path)
-    print(f"[DEBUG] Loaded tokenizer from {model_path}")
-    print(f"[DEBUG] Tokenizer vocab size: {getattr(tokenizer, 'vocab_size', 'N/A')}")
-    print(f"[DEBUG] Tokenizer special tokens: bos={getattr(tokenizer, 'bos_token', None)}, eos={getattr(tokenizer, 'eos_token', None)}, pad={getattr(tokenizer, 'pad_token', None)}")
+    #print(f"[DEBUG] Loaded tokenizer from {model_path}")
+    #print(f"[DEBUG] Tokenizer vocab size: {getattr(tokenizer, 'vocab_size', 'N/A')}")
+    #print(f"[DEBUG] Tokenizer special tokens: bos={getattr(tokenizer, 'bos_token', None)}, eos={getattr(tokenizer, 'eos_token', None)}, pad={getattr(tokenizer, 'pad_token', None)}")
     model = AutoModelForCausalLM.from_pretrained(model_path).to(device)
     return model, tokenizer, device
 
-def evaluate_causal_lm(model_path, test_convs, initial_prompt=None, results_file=None, temperature=1.0, top_p=0.9, model_label=None):
+def evaluate_causal_lm(model_path, test_convs, results_file=None, temperature=1.0, top_p=1.0, model_label=None):
     import re, json
     model, tokenizer, device = get_model_and_tokenizer(model_path)
     debug_print_limit = 5
     debug_count = 0
     delimiter = "\n### RESPONSE:\n"
-    for conv_id, conv_msgs in test_convs.items():
+    for conv_id, conv_msgs in tqdm(test_convs.items()):
         try:
             conv_text = "\n".join(conv_msgs)
-            prompt = (initial_prompt or "") + f"\nCONVERSATION:\n{conv_text}\n\nNow, based only on the above conversation, respond strictly with a single valid JSON object in this format: {{\"conversation_id\": {conv_id}, \"is_predatory\": true/false, \"reasoning\": \"...\"}}. Do not include any other text." + delimiter
+            prompt = f"\nCONVERSATION:\n{conv_text}\n\nNow, based only on the above conversation, respond strictly with a single valid JSON object in this format: {{\"is_predatory\": true/false, \"reasoning\": \"...\"}} as a raw string. Do not include any other text." + delimiter
             enc = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=1024)
             input_ids = enc.input_ids.to(device)
             attention_mask = enc.attention_mask.to(device)
-            print(f"[DEBUG] conv_id: {conv_id}, input_ids.shape: {input_ids.shape}")
-            print(f"[DEBUG] input_ids: {input_ids}")
+            #print(f"[DEBUG] conv_id: {conv_id}, input_ids.shape: {input_ids.shape}")
+            #print(f"[DEBUG] input_ids: {input_ids}")
             if input_ids.numel() == 0:
-                print(f"[DEBUG] Skipping conversation {conv_id}: input_ids is empty!")
+                #print(f"[DEBUG] Skipping conversation {conv_id}: input_ids is empty!")
                 continue
             output = model.generate(
                 input_ids,
@@ -48,21 +49,53 @@ def evaluate_causal_lm(model_path, test_convs, initial_prompt=None, results_file
             if eos_token and eos_token in decoded:
                 decoded = decoded.split(eos_token)[0]
             if debug_count < debug_print_limit:
-                print(f"[DEBUG] Raw model output for conv_id {conv_id}:\n{decoded}\n{'-'*60}")
+                #print(f"[DEBUG] Raw model output for conv_id {conv_id}:\n{decoded}\n{'-'*60}")
                 debug_count += 1
             # JSON extraction: replace single quotes, strip whitespace, and use regex
             import re
-            json_match = re.search(r'\{[\s\S]*?\}', decoded)
+            # Improved JSON extraction and cleaning
             json_str = None
-            if json_match:
-                json_str = json_match.group(0).replace("'", '"').strip()
+            pred = None
+            # Try to extract the largest valid JSON substring (greedy)
+            json_matches = list(re.finditer(r'\{[\s\S]*\}', decoded))
+            if json_matches:
+                # Prefer the largest match (most likely the full object)
+                json_str = max((m.group(0) for m in json_matches), key=len).strip()
+            # Try normal JSON parse
             if json_str:
                 try:
                     pred = json.loads(json_str)
                 except Exception:
-                    pred = {"conversation_id": int(conv_id), "is_predatory": None, "reasoning": "Could not parse model output as JSON."}
+                    # Try to fix common issues: single quotes, trailing commas, newlines, extra text
+                    try:
+                        fixed = json_str.replace("'", '"')
+                        fixed = re.sub(r',\s*}', '}', fixed)
+                        fixed = re.sub(r',\s*]', ']', fixed)
+                        fixed = re.sub(r'\n', ' ', fixed)
+                        # Remove text before first { and after last }
+                        fixed = re.sub(r'^.*?(\{)', r'\1', fixed)
+                        fixed = re.sub(r'(\}).*$', r'\1', fixed)
+                        pred = json.loads(fixed)
+                    except Exception:
+                        # Try even more aggressive cleaning: remove all non-JSON chars before/after
+                        try:
+                            fixed2 = re.sub(r'^[^\{]*', '', decoded)
+                            fixed2 = re.sub(r'[^\}]*$', '', fixed2)
+                            fixed2 = fixed2.replace("'", '"')
+                            fixed2 = re.sub(r',\s*}', '}', fixed2)
+                            fixed2 = re.sub(r',\s*]', ']', fixed2)
+                            fixed2 = re.sub(r'\n', ' ', fixed2)
+                            pred = json.loads(fixed2)
+                        except Exception:
+                            pred = None
+            if not pred:
+                # Log failure for review with more context
+                fail_log = results_file + '.failures' if results_file else 'eval_failures.txt'
+                with open(fail_log, 'a', encoding='utf-8') as f:
+                    f.write(f'conv_id={conv_id} | prompt="{prompt[:200]}..." | raw="{decoded}"")\n')
+                pred = {"conversation_id": int(conv_id), "is_predatory": None, "reasoning": "Could not parse model output as JSON."}
             else:
-                pred = {"conversation_id": int(conv_id), "is_predatory": None, "reasoning": "No JSON found in model output."}
+                pred["conversation_id"] = int(conv_id)
             if results_file:
                 with open(results_file, 'a', encoding='utf-8') as f:
                     f.write(str(pred) + '\n')

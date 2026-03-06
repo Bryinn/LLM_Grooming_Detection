@@ -1,7 +1,6 @@
 import ast
 import os
 from data_loader import load_pj_dataset, load_pan12_training, load_pan12_test
-from multiprocessing import Process
 from evaluation import evaluate_companionv1, run_evaluation_summarizer
 from training import train_hf_llm
 from utils import write_accuracy_summary, prepare_text_data
@@ -10,7 +9,7 @@ from Globals import MODEL_IDS, PAN12_TRAIN_PATH, PAN12_TEST_PATH, PJ_DIR
 MODELS_DIR = 'models'
 
 model_ids = MODEL_IDS
-# --- Multiprocessing worker for evaluation ---
+
 def eval_worker(model_name, models_dir, results_dir, test_convs, initial_prompt, temperature, top_p):
     import os
     from evaluation import evaluate_model
@@ -52,10 +51,8 @@ def main():
     # Few-shot examples for more robust output
     initial_prompt = (
         "[INST] You are a helpful assistant trained to provide sound judgement on predatory conversation in the context of child predators targeting children in sexual ways.\n"
-        "You must answer in JSON format: {conversation_id, is_predatory, reasoning}.\n"
+        "You must answer in JSON format: {is_predatory, reasoning}.\n"
         "Given the following conversation, respond strictly in this JSON format.\n"
-        "Example 1:\nCONVERSATION:\nHi, how old are you?\nI'm 13.\n### RESPONSE:\n{\"conversation_id\": 1, \"is_predatory\": true, \"reasoning\": \"The user is asking for age and the respondent is a minor.\"}\n"
-        "Example 2:\nCONVERSATION:\nHey, want to play a game?\nSure!\n### RESPONSE:\n{\"conversation_id\": 2, \"is_predatory\": false, \"reasoning\": \"The conversation is friendly and does not contain predatory behavior.\"}\n"
         "[/INST]"
     )
     if mode_choice == "1":
@@ -65,14 +62,16 @@ def main():
         print("2. Full dataset")
         size_choice = input("Enter 1 or 2: ").strip()
         use_dev = size_choice == "1"
-        # Load full conversation dicts from PAN12 training JSON
-        import json
-        with open(PAN12_TRAIN_PATH, 'r', encoding='utf-8') as f:
-            pan12_data = json.load(f)
-        conversations = pan12_data['conversations']
-        if use_dev:
-            conversations = conversations[:dev_limit]
-        
+        # Load full conversations for training
+        pan12_df = load_pan12_training(PAN12_TRAIN_PATH, max_records=dev_limit if use_dev else 0)
+        pan12_convs = pan12_df.to_dict(orient='records')
+        if not use_dev:
+            pj_df = load_pj_dataset(PJ_DIR)
+            pj_convs = pj_df.to_dict(orient='records')
+            conversations = pan12_convs + pj_convs
+        else:
+            conversations = pan12_convs
+
         # User interaction
         print("Which models do you want to train?")
         for idx, model_id in enumerate(MODEL_ID_LIST, 1):
@@ -126,6 +125,8 @@ def main():
         print("1. Evaluate new models on the pan12-test dataset.")
         print("2. Run evaluation summarizer to get an overview of existing results.")
         mode_choice = int(input("Select option: ").strip())
+        top_p = 1.0
+        temperature = 1.0
         if mode_choice == 2:
             run_evaluation_summarizer("results")
             return
@@ -138,8 +139,6 @@ def main():
                 top_p = float(input("Set top_p 0-1 (default 1.0, lower=more focused): ") or "1.0")
             except Exception:
                 print("Invalid input. Using default values: temperature=1.0, top_p=1.0")
-                temperature = 1.0
-                top_p = 1.0
             # Evaluation
             all_models = [d for d in os.listdir(MODELS_DIR) if d.endswith("_finetuned") and os.path.isdir(os.path.join(MODELS_DIR, d))]
             if not all_models:
@@ -168,31 +167,14 @@ def main():
             try:
                 test_df = load_pan12_test(PAN12_TEST_PATH)
                 print("Loaded test rows:", len(test_df))
-                print(test_df.head())
+                #print(test_df.head())
                 test_convs = test_df.groupby('conversation_id')['text'].apply(list).to_dict()
-                print("Sample test_convs:", list(test_convs.items())[:3])
-                # Print a sample prompt for the first conversation
-                if test_convs:
-                    _, sample_msgs = next(iter(test_convs.items()))
-                    conv_text = "\n".join(sample_msgs)
-                    prompt = (
-                        "[INST] You are a helpful assistant trained to provide sound judgement on predatory conversation. "
-                        "You must answer in JSON format: {conversation_id, is_predatory, reasoning}. "
-                        "Given the following conversation, respond strictly in this JSON format."
-                        "[/INST]"
-                    ) + f"\nCONVERSATION:\n{conv_text}\nRespond in JSON: {{conversation_id, is_predatory, reasoning}}"
-                    print("Sample prompt (first conversation):", prompt[:500], "...\nLength:", len(prompt))
             except Exception as e:
                 print(f"Could not load pan12-test: {e}")
                 test_convs = {}
             if test_convs:
-                procs = []
                 for m in to_eval:
-                    p = Process(target=eval_worker, args=(m, MODELS_DIR, results_dir, test_convs, initial_prompt, temperature, top_p))
-                    p.start()
-                    procs.append(p)
-                for p in procs:
-                    p.join()
+                    eval_worker(m, MODELS_DIR, results_dir, test_convs, temperature, top_p)
 
                 #evaluate_companionv1(test_convs, initial_prompt=initial_prompt, results_file=None)
             else:
