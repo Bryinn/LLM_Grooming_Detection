@@ -111,10 +111,10 @@ import numpy as np
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
-def evaluate_model(model_path, test_convs, initial_prompt=None, results_file=None, temperature=1.0, top_p=0.9):
+def evaluate_model(model_path, test_convs, results_file=None, temperature=1.0, top_p=0.9):
     # Dynamically evaluate any model by its model_id
     model_id = os.path.basename(model_path).replace('_finetuned', '')
-    evaluate_causal_lm(model_path, test_convs, initial_prompt, results_file, temperature, top_p, model_label=model_id)
+    evaluate_causal_lm(model_path, test_convs, results_file, temperature, top_p, model_label=model_id)
 
 def evaluate_companionv1(test_convs, initial_prompt=None, results_file=None):
     for conv_id, conv_msgs in test_convs.items():
@@ -165,6 +165,7 @@ def run_evaluation_summarizer(results_dir):
     stats = []
     for model_name, file in all_results:
         preds = []
+        num_erroneous = 0
         with open(file, 'r', encoding='utf-8') as f:
             for line in f:
                 try:
@@ -173,6 +174,8 @@ def run_evaluation_summarizer(results_dir):
                     d = None
                 if d and 'conversation_id' in d and 'is_predatory' in d:
                     preds.append(d)
+                    if d['is_predatory'] is None:
+                        num_erroneous += 1
         # Compute metrics if ground truth available
         if gt:
             tp = fp = tn = fn = 0
@@ -195,6 +198,7 @@ def run_evaluation_summarizer(results_dir):
                 'model': model_name,
                 'file': os.path.basename(file),
                 'tp': tp, 'fp': fp, 'tn': tn, 'fn': fn, 'accuracy': acc,
+                'num_erroneous': num_erroneous,
                 'settings': os.path.basename(file).replace(model_name, '').replace('.txt', '')
             })
     # Compare models/settings

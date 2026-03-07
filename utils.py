@@ -1,36 +1,43 @@
+import os
+def get_already_evaluated_conversation_ids(results_file):
+    already_done = set()
+    if os.path.exists(results_file):
+        with open(results_file, 'r', encoding='utf-8') as f:
+            for line in f:
+                try:
+                    d = eval(line.strip()) if line.strip().startswith('{') else None
+                    if d and 'conversation_id' in d:
+                        already_done.add(d['conversation_id'])
+                except Exception:
+                    continue
+    return already_done
 
-# Utility and summary functions for LLM Grooming Detection
-import ast
-import pandas as pd
+def check_existing_result_folders(results_dir, model_names):
+    existing = []
+    for m in model_names:
+        model_results_dir = os.path.join(results_dir, m)
+        if os.path.exists(model_results_dir):
+            existing.append(model_results_dir)
+    if existing:
+        print("WARNING: The following result folders already exist and may be overwritten:")
+        for folder in existing:
+            print("  ", folder)
+        resp = input("Do you want to replace the current evaluation results in these folders? (y/N): ").strip().lower()
+        if resp != 'y':
+            print("Aborting evaluation.")
+            return False
+    return True
 
-def write_accuracy_summary(results_file, summary_file):
-    """Aggregate results and write accuracy summary comparing models."""
-    results = []
-    with open(results_file, 'r', encoding='utf-8') as f:
-        for line in f:
-            try:
-                results.append(ast.literal_eval(line.strip()))
-            except Exception:
-                continue
-    total = len(results)
-    correct = sum(1 for r in results if 'label' in r and r['is_predatory'] == r['label'])
-    accuracy = correct / total if total else 0.0
-    with open(summary_file, 'w', encoding='utf-8') as f:
-        f.write(f"Total: {total}\n")
-        f.write(f"Correct: {correct}\n")
-        f.write(f"Accuracy: {accuracy:.4f}\n")
-    print(f"Summary written to {summary_file}")
-
-def prepare_text_data(load_pj_dataset, load_pan12_training, PJ_DIR, PAN12_TRAIN_PATH):
-    pj_df = load_pj_dataset(PJ_DIR)
-    try:
-        pan12_df = load_pan12_training(PAN12_TRAIN_PATH)
-    except Exception as e:
-        print(f"Could not load pan12-training: {e}")
-        pan12_df = None
-    dfs = [pj_df]
-    if pan12_df is not None:
-        dfs.append(pan12_df)
-    all_df = pd.concat(dfs, ignore_index=True)
-    texts = all_df['text'].dropna().astype(str).tolist()
-    return texts
+def select_models(model_list, prompt_all='All'):
+    print("Which models do you want to use?")
+    for idx, model_id in enumerate(model_list, 1):
+        print(f"{idx}. {model_id}")
+    print(f"{len(model_list)+1}. {prompt_all}")
+    model_choice = input(f"Enter 1-{len(model_list)} or {len(model_list)+1} for all: ").strip()
+    if model_choice == str(len(model_list)+1):
+        return model_list
+    elif model_choice.isdigit() and 1 <= int(model_choice) <= len(model_list):
+        return [model_list[int(model_choice)-1]]
+    else:
+        print("Invalid selection.")
+        return []

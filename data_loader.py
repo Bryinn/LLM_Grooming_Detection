@@ -79,3 +79,17 @@ def load_pan12_training(json_path, max_records=0):
                 'messages': data
             })
     return pd.DataFrame(conversations)
+
+def load_test_convs(test_path, test_50=False):
+    try:
+        test_df = load_pan12_test(test_path)
+        print("Loaded test rows:", len(test_df))
+        if test_50:
+            first_50_ids = test_df['conversation_id'].drop_duplicates().iloc[:50]
+            test_df = test_df[test_df['conversation_id'].isin(first_50_ids)]
+            print(f"Using only the first 50 conversations (IDs: {list(first_50_ids)})")
+        test_convs = test_df.groupby('conversation_id')['text'].apply(list).to_dict()
+        return test_convs
+    except Exception as e:
+        print(f"Could not load pan12-test: {e}")
+        return {}

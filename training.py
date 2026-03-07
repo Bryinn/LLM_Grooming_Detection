@@ -32,13 +32,13 @@ def build_sft_pairs(conversations, initial_prompt=None):
         return "No explicit predatory indicators found."
 
     for conv in conversations:
-        conv_id = conv.get('conversation_id')
+        #conv_id = conv.get('conversation_id')
         is_pred = conv.get('is_predatory')
         conv_text = "\n".join([msg['text'] for msg in conv['messages']])
         delimiter = "\n### RESPONSE:\n"
-        prompt = (initial_prompt or "") + f"\nCONVERSATION:\n{conv_text}\n\nNow, based only on the above conversation, respond strictly with a single valid JSON object in this format: {{\"conversation_id\": {conv_id}, \"is_predatory\": true/false, \"reasoning\": \"...\"}}. Do not include any other text." + delimiter
+        prompt = (initial_prompt or "") + f"\nCONVERSATION:\n{conv_text}\n\nNow, based only on the above conversation, respond strictly with a single valid JSON object in this format: {{\"is_predatory\": true/false, \"reasoning\": \"...\"}}. Do not include any other text." + delimiter
         reasoning = generate_reasoning(conv_text)
-        response = f'{{"conversation_id": {conv_id}, "is_predatory": {str(is_pred).lower()}, "reasoning": "{reasoning}"}}'
+        response = f'{{"is_predatory": {str(is_pred).lower()}, "reasoning": "{reasoning}"}}'
         pairs.append((prompt, response))
     return pairs
 

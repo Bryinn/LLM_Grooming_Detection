@@ -1,31 +1,29 @@
+
+
 import ast
 import os
-from data_loader import load_pj_dataset, load_pan12_training, load_pan12_test
+from data_loader import load_pj_dataset, load_pan12_training, load_test_convs
 from evaluation import evaluate_companionv1, run_evaluation_summarizer
 from training import train_hf_llm
-from utils import write_accuracy_summary, prepare_text_data
+from utils import select_models, check_existing_result_folders, get_already_evaluated_conversation_ids
 
 from Globals import MODEL_IDS, PAN12_TRAIN_PATH, PAN12_TEST_PATH, PJ_DIR
 MODELS_DIR = 'models'
 
 model_ids = MODEL_IDS
 
-def eval_worker(model_name, models_dir, results_dir, test_convs, initial_prompt, temperature, top_p):
+def eval_worker(model_name, models_dir, results_dir, test_convs, temperature, top_p):
     import os
     from evaluation import evaluate_model
-    from utils import write_accuracy_summary
     model_path = os.path.join(models_dir, model_name)
     model_results_dir = os.path.join(results_dir, model_name)
     os.makedirs(model_results_dir, exist_ok=True)
     settings_str = f"temp{temperature}_top{top_p}"
-    results_file = os.path.join(model_results_dir, f"{model_name}_{settings_str}.txt")
-    summary_file = os.path.join(model_results_dir, f"{model_name}_summary_{settings_str}.txt")
+    results_file = os.path.join(model_results_dir, f"{model_name}_{settings_str}{'_short' if len(test_convs) < 100 else ''}.txt")
     with open(results_file, 'w', encoding='utf-8') as f:
         f.write('')
-    evaluate_model(model_path, test_convs, initial_prompt=initial_prompt, results_file=results_file, temperature=temperature, top_p=top_p)
+    evaluate_model(model_path, test_convs, results_file=results_file, temperature=temperature, top_p=top_p)
     print(f"Evaluation metrics and outputs written to {results_file}")
-    write_accuracy_summary(results_file, summary_file)
-    print(f"Summary written to {summary_file}")
 
 MODEL_IDS_PATH = os.path.join(os.path.dirname(__file__), 'model_ids.py')
 with open(MODEL_IDS_PATH, 'r', encoding='utf-8') as f:
@@ -72,12 +70,10 @@ def main():
         else:
             conversations = pan12_convs
 
-        # User interaction
-        print("Which models do you want to train?")
-        for idx, model_id in enumerate(MODEL_ID_LIST, 1):
-            print(f"{idx}. {model_id}")
-        print(f"{len(MODEL_ID_LIST)+1}. All")
-        model_choice = input(f"Enter 1-{len(MODEL_ID_LIST)} or {len(MODEL_ID_LIST)+1} for all: ").strip()
+        # Model selection
+        selected_models = select_models(MODEL_ID_LIST, prompt_all='All')
+        if not selected_models:
+            return
         # Ask for number of epochs
         try:
             epoch = int(input("Enter number of epochs (e.g. 1-10, default 1): ") or "1")
@@ -96,14 +92,6 @@ def main():
             learning_rate = lr_choices[0]
         custom_name = input("Add a custom name to the model output folder? (leave blank for default): ").strip()
         suffix = f"_{custom_name}" if custom_name else ""
-        selected_models = []
-        if model_choice == str(len(MODEL_ID_LIST)+1):
-            selected_models = MODEL_ID_LIST
-        elif model_choice.isdigit() and 1 <= int(model_choice) <= len(MODEL_ID_LIST):
-            selected_models = [MODEL_ID_LIST[int(model_choice)-1]]
-        else:
-            print("Invalid selection.")
-            return
         # Add training params to folder name
         mode_str = "dev" if use_dev else "full"
         for model_id in selected_models:
@@ -124,29 +112,92 @@ def main():
     elif mode_choice == "2":
         print("1. Evaluate new models on the pan12-test dataset.")
         print("2. Run evaluation summarizer to get an overview of existing results.")
+        print("3. Continue an interrupted evaluation.")
         mode_choice = int(input("Select option: ").strip())
         top_p = 1.0
         temperature = 1.0
         if mode_choice == 2:
             run_evaluation_summarizer("results")
             return
-        elif mode_choice != 1:
-            print("Invalid selection.")
-            return
-        else:
+        elif mode_choice == 3:
+            test_50 = input("Continue only the first 50 samples? (y/N): ").strip().lower() == 'y'
             try:
                 temperature = float(input("Set temperature 0-1 (default 1.0, higher=more creative): ") or "1.0")
                 top_p = float(input("Set top_p 0-1 (default 1.0, lower=more focused): ") or "1.0")
             except Exception:
                 print("Invalid input. Using default values: temperature=1.0, top_p=1.0")
-            # Evaluation
             all_models = [d for d in os.listdir(MODELS_DIR) if d.endswith("_finetuned") and os.path.isdir(os.path.join(MODELS_DIR, d))]
             if not all_models:
                 print("No fine-tuned models found in the models directory.")
                 return
             print("\nAvailable fine-tuned models:")
             for idx, m in enumerate(all_models, 1):
-                # Try to match model_id from folder name
+                model_id = next((mid for mid in MODEL_ID_LIST if mid.split('/')[-1] in m), "Unknown")
+                print(f"{idx}. {m} (model_id: {model_id})")
+            print(f"{len(all_models)+1}. All models")
+            model_choice = input(f"Which model(s) do you want to continue? (Enter number or comma-separated list, or {len(all_models)+1} for all): ").strip()
+            if model_choice == str(len(all_models)+1):
+                to_eval = all_models
+            else:
+                try:
+                    indices = [int(i.strip())-1 for i in model_choice.split(",")]
+                    to_eval = [all_models[i] for i in indices if 0 <= i < len(all_models)]
+                except:
+                    print("Invalid selection. Exiting.")
+                    return
+            results_dir = "results"
+            os.makedirs(results_dir, exist_ok=True)
+            print("\n--- Continuing evaluation on pan12-test dataset ---")
+            test_convs = load_test_convs(PAN12_TEST_PATH, test_50)
+            if test_convs:
+                for m in to_eval:
+                    model_results_dir = os.path.join(results_dir, m)
+                    settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
+                    results_file = os.path.join(model_results_dir, f"{m}_{settings_str}.txt")
+                    already_done = get_already_evaluated_conversation_ids(results_file)
+                    if already_done:
+                        print(f"{m}: Found {len(already_done)} already evaluated conversations. Will continue from there.")
+                    else:
+                        print(f"{m}: No previous results found. Will start from scratch.")
+                    remaining_convs = {cid: msgs for cid, msgs in test_convs.items() if cid not in already_done}
+                    if not remaining_convs:
+                        print(f"{m}: All conversations already evaluated. Skipping.")
+                        continue
+                    # Invoke evaluate_model with append mode for the results file when applicable
+                    def eval_worker_continue(model_name, models_dir, results_dir, test_convs, temperature, top_p, append=False):
+                        import os
+                        from evaluation import evaluate_model
+                        model_path = os.path.join(models_dir, model_name)
+                        model_results_dir = os.path.join(results_dir, model_name)
+                        os.makedirs(model_results_dir, exist_ok=True)
+                        settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
+                        results_file = os.path.join(model_results_dir, f"{model_name}_{settings_str}.txt")
+                        mode = 'a' if append else 'w'
+                        with open(results_file, mode, encoding='utf-8') as f:
+                            if not append:
+                                f.write('')
+                        evaluate_model(model_path, test_convs, results_file=results_file, temperature=temperature, top_p=top_p)
+                        print(f"Evaluation metrics and outputs written to {results_file}")
+                    eval_worker_continue(m, MODELS_DIR, results_dir, remaining_convs, temperature, top_p, append=True)
+            else:
+                print("No test data available for evaluation.")
+            return
+        elif mode_choice != 1:
+            print("Invalid selection.")
+            return
+        else:
+            test_50 = input("Evaluate only the first 50 samples? (y/N): ").strip().lower() == 'y'
+            try:
+                temperature = float(input("Set temperature 0-1 (default 1.0, higher=more creative): ") or "1.0")
+                top_p = float(input("Set top_p 0-1 (default 1.0, lower=more focused): ") or "1.0")
+            except Exception:
+                print("Invalid input. Using default values: temperature=1.0, top_p=1.0")
+            all_models = [d for d in os.listdir(MODELS_DIR) if d.endswith("_finetuned") and os.path.isdir(os.path.join(MODELS_DIR, d))]
+            if not all_models:
+                print("No fine-tuned models found in the models directory.")
+                return
+            print("\nAvailable fine-tuned models:")
+            for idx, m in enumerate(all_models, 1):
                 model_id = next((mid for mid in MODEL_ID_LIST if mid.split('/')[-1] in m), "Unknown")
                 print(f"{idx}. {m} (model_id: {model_id})")
             print(f"{len(all_models)+1}. All models")
@@ -160,23 +211,15 @@ def main():
                 except:
                     print("Invalid selection. Exiting.")
                     return
-            # Ask about results file
             results_dir = "results"
             os.makedirs(results_dir, exist_ok=True)
             print("\n--- Evaluating on pan12-test dataset ---")
-            try:
-                test_df = load_pan12_test(PAN12_TEST_PATH)
-                print("Loaded test rows:", len(test_df))
-                #print(test_df.head())
-                test_convs = test_df.groupby('conversation_id')['text'].apply(list).to_dict()
-            except Exception as e:
-                print(f"Could not load pan12-test: {e}")
-                test_convs = {}
+            test_convs = load_test_convs(PAN12_TEST_PATH, test_50)
             if test_convs:
+                if not check_existing_result_folders(results_dir, to_eval):
+                    return
                 for m in to_eval:
-                    eval_worker(m, MODELS_DIR, results_dir, test_convs, temperature, top_p)
-
-                #evaluate_companionv1(test_convs, initial_prompt=initial_prompt, results_file=None)
+                    eval_worker(m, MODELS_DIR, results_dir, test_convs, temperature=temperature, top_p=top_p)
             else:
                 print("No test data available for evaluation.")
     elif mode_choice == "3":
