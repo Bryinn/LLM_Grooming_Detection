@@ -12,17 +12,32 @@ def get_already_evaluated_conversation_ids(results_file):
                     continue
     return already_done
 
-def check_existing_result_folders(results_dir, model_names):
+def check_existing_result_folders(results_dir, model_names, settings_strs=None):
+    """
+    Checks for existing result files for each model and settings string.
+    Only warns if a file with the same settings exists for a model.
+    settings_strs: Optional dict mapping model_name -> settings_str (filename part)
+    """
     existing = []
     for m in model_names:
         model_results_dir = os.path.join(results_dir, m)
-        if os.path.exists(model_results_dir):
-            existing.append(model_results_dir)
+        if settings_strs and m in settings_strs:
+            # Only check for file with this settings string
+            fname = f"{m}_{settings_strs[m]}.txt"
+            fpath = os.path.join(model_results_dir, fname)
+            if os.path.exists(fpath):
+                existing.append(fpath)
+        else:
+            # Fallback: warn if any .txt file exists in the folder
+            if os.path.exists(model_results_dir):
+                for f in os.listdir(model_results_dir):
+                    if f.endswith('.txt'):
+                        existing.append(os.path.join(model_results_dir, f))
     if existing:
-        print("WARNING: The following result folders already exist and may be overwritten:")
-        for folder in existing:
-            print("  ", folder)
-        resp = input("Do you want to replace the current evaluation results in these folders? (y/N): ").strip().lower()
+        print("WARNING: The following result files already exist and may be overwritten:")
+        for f in existing:
+            print("  ", f)
+        resp = input("Do you want to replace the current evaluation results in these files? (y/N): ").strip().lower()
         if resp != 'y':
             print("Aborting evaluation.")
             return False

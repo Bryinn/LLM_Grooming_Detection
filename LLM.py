@@ -62,13 +62,14 @@ def main():
         use_dev = size_choice == "1"
         # Load full conversations for training
         pan12_df = load_pan12_training(PAN12_TRAIN_PATH, max_records=dev_limit if use_dev else 0)
-        pan12_convs = pan12_df.to_dict(orient='records')
-        if not use_dev:
-            pj_df = load_pj_dataset(PJ_DIR)
-            pj_convs = pj_df.to_dict(orient='records')
-            conversations = pan12_convs + pj_convs
-        else:
-            conversations = pan12_convs
+        #pan12_convs = pan12_df.to_dict(orient='records')
+        conversations = pan12_df.to_dict(orient='records')
+        #if not use_dev:
+        #    pj_df = load_pj_dataset(PJ_DIR)
+        #    pj_convs = pj_df.to_dict(orient='records')
+        #    conversations = pan12_convs + pj_convs
+        #else:
+        #    conversations = pan12_convs
 
         # Model selection
         selected_models = select_models(MODEL_ID_LIST, prompt_all='All')
@@ -216,7 +217,10 @@ def main():
             print("\n--- Evaluating on pan12-test dataset ---")
             test_convs = load_test_convs(PAN12_TEST_PATH, test_50)
             if test_convs:
-                if not check_existing_result_folders(results_dir, to_eval):
+                # Build settings_str for each model to check for file collisions
+                settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
+                settings_map = {m: settings_str for m in to_eval}
+                if not check_existing_result_folders(results_dir, to_eval, settings_map):
                     return
                 for m in to_eval:
                     eval_worker(m, MODELS_DIR, results_dir, test_convs, temperature=temperature, top_p=top_p)

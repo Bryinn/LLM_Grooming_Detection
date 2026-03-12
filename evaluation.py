@@ -196,7 +196,6 @@ def run_evaluation_summarizer(results_dir):
             acc = (tp + tn) / (tp + tn + fp + fn) if (tp + tn + fp + fn) > 0 else 0
             stats.append({
                 'model': model_name,
-                'file': os.path.basename(file),
                 'tp': tp, 'fp': fp, 'tn': tn, 'fn': fn, 'accuracy': acc,
                 'num_erroneous': num_erroneous,
                 'settings': os.path.basename(file).replace(model_name, '').replace('.txt', '')
