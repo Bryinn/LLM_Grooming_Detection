@@ -42,8 +42,9 @@ def main():
     print("Select mode:")
     print("1. Train models")
     print("2. Evaluate models")
-    print("3. Delete fine-tuned models")
-    mode_choice = input("Enter 1, 2, or 3: ").strip()
+    print("3. Delete models")
+    print("4. Add untrained model to models directory")
+    mode_choice = input("Enter 1, 2, 3, or 4: ").strip()
 
     dev_limit = 1000
     # Few-shot examples for more robust output
@@ -53,7 +54,47 @@ def main():
         "Given the following conversation, respond strictly in this JSON format.\n"
         "[/INST]"
     )
-    if mode_choice == "1":
+    if mode_choice == "4":
+        print("\n--- Add non-finetuned models from model_ids ---")
+        print("Available base models:")
+        base_names = [mid.split('/')[-1] for mid in MODEL_ID_LIST if not mid.strip().startswith('#')]
+        for idx, name in enumerate(base_names, 1):
+            print(f"{idx}. {name}")
+        print(f"{len(base_names)+1}. All models")
+        model_choice = input(f"Which model(s) do you want to add? (Enter number or comma-separated list, or {len(base_names)+1} for all): ").strip()
+        if model_choice == str(len(base_names)+1):
+            to_add = base_names
+        else:
+            try:
+                indices = [int(i.strip())-1 for i in model_choice.split(",")]
+                to_add = [base_names[i] for i in indices if 0 <= i < len(base_names)]
+            except:
+                print("Invalid selection. Exiting.")
+                return
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        for model_name in to_add:
+            model_dir = os.path.join(MODELS_DIR, f"{model_name}_non_finetuned")
+            if os.path.exists(model_dir):
+                print(f"Model directory already exists: {model_dir}")
+            else:
+                try:
+                    print(f"Downloading model and tokenizer for {model_name}...")
+                    # Find full model_id from MODEL_ID_LIST
+                    model_id_full = next((mid for mid in MODEL_ID_LIST if mid.split('/')[-1] == model_name), None)
+                    if not model_id_full:
+                        print(f"Could not find model_id for {model_name} in MODEL_ID_LIST.")
+                        continue
+                    tokenizer = AutoTokenizer.from_pretrained(model_id_full)
+                    model = AutoModelForCausalLM.from_pretrained(model_id_full)
+                    os.makedirs(model_dir)
+                    model.save_pretrained(model_dir, safe_serialization=True)
+                    tokenizer.save_pretrained(model_dir)
+                    print(f"Created and populated directory for non-finetuned model: {model_dir}")
+                except Exception as e:
+                    print(f"[ERR] Failed to download or save model/tokenizer for {model_name}: {e}")
+        print("Non-finetuned models added to models directory.")
+        return
+    elif mode_choice == "1":
         # Ask for dataset size only if training
         print("Select dataset size for training:")
         print("1. Development (first 1000 examples)")
@@ -129,9 +170,9 @@ def main():
                 print("Invalid input. Using default values: temperature=1.0, top_p=1.0")
             all_models = [d for d in os.listdir(MODELS_DIR) if d.endswith("_finetuned") and os.path.isdir(os.path.join(MODELS_DIR, d))]
             if not all_models:
-                print("No fine-tuned models found in the models directory.")
+                print("No models found in the models directory.")
                 return
-            print("\nAvailable fine-tuned models:")
+            print("\nAvailable models:")
             for idx, m in enumerate(all_models, 1):
                 model_id = next((mid for mid in MODEL_ID_LIST if mid.split('/')[-1] in m), "Unknown")
                 print(f"{idx}. {m} (model_id: {model_id})")
@@ -151,6 +192,12 @@ def main():
             print("\n--- Continuing evaluation on pan12-test dataset ---")
             test_convs = load_test_convs(PAN12_TEST_PATH, test_50)
             if test_convs:
+                import subprocess
+                import time
+                max_parallel = 2
+                running = []  # List of (model_name, process)
+                to_eval_queue = []
+                model_remain_map = {}
                 for m in to_eval:
                     model_results_dir = os.path.join(results_dir, m)
                     settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
@@ -164,22 +211,28 @@ def main():
                     if not remaining_convs:
                         print(f"{m}: All conversations already evaluated. Skipping.")
                         continue
-                    # Invoke evaluate_model with append mode for the results file when applicable
-                    def eval_worker_continue(model_name, models_dir, results_dir, test_convs, temperature, top_p, append=False):
-                        import os
-                        from evaluation import evaluate_model
-                        model_path = os.path.join(models_dir, model_name)
-                        model_results_dir = os.path.join(results_dir, model_name)
-                        os.makedirs(model_results_dir, exist_ok=True)
-                        settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
-                        results_file = os.path.join(model_results_dir, f"{model_name}_{settings_str}.txt")
-                        mode = 'a' if append else 'w'
-                        with open(results_file, mode, encoding='utf-8') as f:
-                            if not append:
-                                f.write('')
-                        evaluate_model(model_path, test_convs, results_file=results_file, temperature=temperature, top_p=top_p)
-                        print(f"Evaluation metrics and outputs written to {results_file}")
-                    eval_worker_continue(m, MODELS_DIR, results_dir, remaining_convs, temperature, top_p, append=True)
+                    model_remain_map[m] = remaining_convs
+                    to_eval_queue.append(m)
+                while to_eval_queue or running:
+                    # Start new evaluations if slots available
+                    while len(running) < max_parallel and to_eval_queue:
+                        m = to_eval_queue.pop(0)
+                        args = [
+                            'python', __file__, '--eval-worker-continue', m, MODELS_DIR, results_dir,
+                            str(temperature), str(top_p), 'append'
+                        ]
+                        proc = subprocess.Popen(args)
+                        running.append((m, proc))
+                        print(f"Started continued evaluation for {m} (PID: {proc.pid})")
+                    # Check for finished processes
+                    for idx in range(len(running)-1, -1, -1):
+                        m, proc = running[idx]
+                        ret = proc.poll()
+                        if ret is not None:
+                            print(f"Continued evaluation finished for {m} (PID: {proc.pid}, exit code: {ret})")
+                            running.pop(idx)
+                    time.sleep(2)
+                print("All continued evaluations complete.")
             else:
                 print("No test data available for evaluation.")
             return
@@ -195,9 +248,9 @@ def main():
                 print("Invalid input. Using default values: temperature=1.0, top_p=1.0")
             all_models = [d for d in os.listdir(MODELS_DIR) if d.endswith("_finetuned") and os.path.isdir(os.path.join(MODELS_DIR, d))]
             if not all_models:
-                print("No fine-tuned models found in the models directory.")
+                print("No models found in the models directory.")
                 return
-            print("\nAvailable fine-tuned models:")
+            print("\nAvailable models:")
             for idx, m in enumerate(all_models, 1):
                 model_id = next((mid for mid in MODEL_ID_LIST if mid.split('/')[-1] in m), "Unknown")
                 print(f"{idx}. {m} (model_id: {model_id})")
@@ -222,8 +275,31 @@ def main():
                 settings_map = {m: settings_str for m in to_eval}
                 if not check_existing_result_folders(results_dir, to_eval, settings_map):
                     return
-                for m in to_eval:
-                    eval_worker(m, MODELS_DIR, results_dir, test_convs, temperature=temperature, top_p=top_p)
+                import subprocess
+                import time
+                max_parallel = 2
+                running = []  # List of (model_name, process)
+                to_eval_queue = list(to_eval)
+                while to_eval_queue or running:
+                    # Start new evaluations if slots available
+                    while len(running) < max_parallel and to_eval_queue:
+                        m = to_eval_queue.pop(0)
+                        args = [
+                            'python', __file__, '--eval-worker', m, MODELS_DIR, results_dir,
+                            str(temperature), str(top_p)
+                        ]
+                        proc = subprocess.Popen(args)
+                        running.append((m, proc))
+                        print(f"Started evaluation for {m} (PID: {proc.pid})")
+                    # Check for finished processes
+                    for idx in range(len(running)-1, -1, -1):
+                        m, proc = running[idx]
+                        ret = proc.poll()
+                        if ret is not None:
+                            print(f"Evaluation finished for {m} (PID: {proc.pid}, exit code: {ret})")
+                            running.pop(idx)
+                    time.sleep(2)
+                print("All evaluations complete.")
             else:
                 print("No test data available for evaluation.")
     elif mode_choice == "3":
@@ -242,4 +318,40 @@ def main():
         print("Invalid mode selection. Exiting.")
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if '--eval-worker' in sys.argv:
+        # Called as subprocess for parallel evaluation
+        _, _, model_name, models_dir, results_dir, temperature, top_p = sys.argv
+        from data_loader import load_test_convs
+        from Globals import PAN12_TEST_PATH
+        test_convs = load_test_convs(PAN12_TEST_PATH)
+        eval_worker(model_name, models_dir, results_dir, test_convs, float(temperature), float(top_p))
+    elif '--eval-worker-continue' in sys.argv:
+        # Called as subprocess for parallel continued evaluation
+        _, _, model_name, models_dir, results_dir, temperature, top_p, append_flag = sys.argv
+        from data_loader import load_test_convs
+        from Globals import PAN12_TEST_PATH
+        from utils import get_already_evaluated_conversation_ids
+        test_convs = load_test_convs(PAN12_TEST_PATH)
+        model_results_dir = os.path.join(results_dir, model_name)
+        settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
+        results_file = os.path.join(model_results_dir, f"{model_name}_{settings_str}.txt")
+        already_done = get_already_evaluated_conversation_ids(results_file)
+        remaining_convs = {cid: msgs for cid, msgs in test_convs.items() if cid not in already_done}
+        def eval_worker_continue(model_name, models_dir, results_dir, test_convs, temperature, top_p, append=False):
+            import os
+            from evaluation import evaluate_model
+            model_path = os.path.join(models_dir, model_name)
+            model_results_dir = os.path.join(results_dir, model_name)
+            os.makedirs(model_results_dir, exist_ok=True)
+            settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
+            results_file = os.path.join(model_results_dir, f"{model_name}_{settings_str}.txt")
+            mode = 'a' if append else 'w'
+            with open(results_file, mode, encoding='utf-8') as f:
+                if not append:
+                    f.write('')
+            evaluate_model(model_path, test_convs, results_file=results_file, temperature=temperature, top_p=top_p)
+            print(f"Evaluation metrics and outputs written to {results_file}")
+        eval_worker_continue(model_name, models_dir, results_dir, remaining_convs, float(temperature), float(top_p), append=(append_flag=='append'))
+    else:
+        main()

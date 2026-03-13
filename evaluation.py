@@ -166,8 +166,10 @@ def run_evaluation_summarizer(results_dir):
     for model_name, file in all_results:
         preds = []
         num_erroneous = 0
+        total_preds = 0
         with open(file, 'r', encoding='utf-8') as f:
             for line in f:
+                total_preds += 1
                 try:
                     d = eval(line.strip()) if line.strip().startswith('{') else None
                 except Exception:
@@ -176,6 +178,8 @@ def run_evaluation_summarizer(results_dir):
                     preds.append(d)
                     if d['is_predatory'] is None:
                         num_erroneous += 1
+                else:
+                    num_erroneous += 1
         # Compute metrics if ground truth available
         if gt:
             tp = fp = tn = fn = 0
@@ -194,10 +198,18 @@ def run_evaluation_summarizer(results_dir):
                 elif not pred and true:
                     fn += 1
             acc = (tp + tn) / (tp + tn + fp + fn) if (tp + tn + fp + fn) > 0 else 0
+            precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+            recall = tp / (tp + fn) if (tp + fn) > 0 else 0
+            f1 = 2 * (precision * recall / (precision + recall)) if (precision + recall) > 0 else 0
+            fail_rate = num_erroneous / total_preds if total_preds > 0 else 0
             stats.append({
                 'model': model_name,
                 'tp': tp, 'fp': fp, 'tn': tn, 'fn': fn, 'accuracy': acc,
+                'precision': precision,
+                'recall': recall,
+                'f1': f1,
                 'num_erroneous': num_erroneous,
+                'fail_rate': fail_rate,
                 'settings': os.path.basename(file).replace(model_name, '').replace('.txt', '')
             })
     # Compare models/settings
@@ -205,5 +217,8 @@ def run_evaluation_summarizer(results_dir):
         df = pd.DataFrame(stats)
         df.to_csv(os.path.join(results_dir, 'all_model_stats.csv'), index=False)
         print("Model evaluation statistics written to all_model_stats.csv")
-        # Print best by accuracy
-        print(df.sort_values('accuracy', ascending=False).head(10))
+        # Print best by F1 score
+        print("Top models by F1 score:")
+        print(df.sort_values('f1', ascending=False).head(10))
+        print("\nFailure rates:")
+        print(df[['model', 'fail_rate', 'num_erroneous', 'settings']].sort_values('fail_rate', ascending=False).head(10))
