@@ -7,6 +7,9 @@ from evaluation import evaluate_companionv1, run_evaluation_summarizer
 from training import train_hf_llm
 from utils import select_models, check_existing_result_folders, get_already_evaluated_conversation_ids
 
+from huggingface_hub import login
+login()
+
 from Globals import MODEL_IDS, PAN12_TRAIN_PATH, PAN12_TEST_PATH, PJ_DIR
 MODELS_DIR = 'models'
 
@@ -95,62 +98,91 @@ def main():
         print("Non-finetuned models added to models directory.")
         return
     elif mode_choice == "1":
-        # Ask for dataset size only if training
+        print("Select training mode:")
+        print("1. Standard model selection")
+        print("2. Load training parameters from statefile")
+        train_mode = input("Enter 1 or 2: ").strip()
         print("Select dataset size for training:")
         print("1. Development (first 1000 examples)")
         print("2. Full dataset")
         size_choice = input("Enter 1 or 2: ").strip()
         use_dev = size_choice == "1"
-        # Load full conversations for training
-        pan12_df = load_pan12_training(PAN12_TRAIN_PATH, max_records=dev_limit if use_dev else 0)
-        #pan12_convs = pan12_df.to_dict(orient='records')
-        conversations = pan12_df.to_dict(orient='records')
-        #if not use_dev:
-        #    pj_df = load_pj_dataset(PJ_DIR)
-        #    pj_convs = pj_df.to_dict(orient='records')
-        #    conversations = pan12_convs + pj_convs
-        #else:
-        #    conversations = pan12_convs
-
-        # Model selection
-        selected_models = select_models(MODEL_ID_LIST, prompt_all='All')
-        if not selected_models:
-            return
-        # Ask for number of epochs
-        try:
-            epoch = int(input("Enter number of epochs (e.g. 1-10, default 1): ") or "1")
-        except Exception:
-            print("Invalid input. Using default: 1 epoch.")
-            epoch = 1
-        # Ask for learning rate
-        lr_choices = [2e-7, 5e-5, 1e-4, 2e-4]
-        print("Select learning rate:")
-        for i, lr in enumerate(lr_choices, 1):
-            print(f"{i}. {lr}")
-        lr_choice = input(f"Enter 1-{len(lr_choices)} (default 1): ").strip()
-        try:
-            learning_rate = lr_choices[int(lr_choice)-1] if lr_choice.isdigit() and 1 <= int(lr_choice) <= len(lr_choices) else lr_choices[0]
-        except Exception:
-            learning_rate = lr_choices[0]
-        custom_name = input("Add a custom name to the model output folder? (leave blank for default): ").strip()
-        suffix = f"_{custom_name}" if custom_name else ""
-        # Add training params to folder name
-        mode_str = "dev" if use_dev else "full"
-        for model_id in selected_models:
-            output_dir = os.path.join(
-                MODELS_DIR,
-                f"{model_id.split('/')[-1]}_{mode_str}_ep{epoch}_lr{learning_rate}{suffix}_finetuned"
-            )
-            train_hf_llm(
-                conversations,
-                model_id=model_id,
-                initial_prompt=initial_prompt,
-                output_dir=output_dir,
-                suffix=suffix,
-                default_dir_name=model_id.split('/')[-1],
-                epoch=epoch,
-                learning_rate=learning_rate
-            )
+        if train_mode == "2":
+            import json
+            statefile_path = input("Enter path to statefile (default: train_state.json): ").strip() or "train_state.json"
+            try:
+                with open(statefile_path, 'r', encoding='utf-8') as sf:
+                    state_entries = json.load(sf)
+                if not isinstance(state_entries, list):
+                    state_entries = [state_entries]
+                pan12_df = load_pan12_training(PAN12_TRAIN_PATH, max_records=dev_limit if use_dev else 0)
+                conversations = pan12_df.to_dict(orient='records')
+                custom_name = input("Add a custom name to the model output folder? (leave blank for default): ").strip()
+                suffix = f"_{custom_name}" if custom_name else ""
+                mode_str = "dev" if use_dev else "full"
+                for entry in state_entries:
+                    model_id = entry.get("model_id")
+                    epoch = entry.get("epochs", 1)
+                    learning_rate = entry.get("learning_rate", 2e-5)
+                    output_dir = os.path.join(
+                        MODELS_DIR,
+                        f"{model_id.split('/')[-1]}_{mode_str}_ep{epoch}_lr{learning_rate}{suffix}_finetuned"
+                    )
+                    if os.path.exists(output_dir):
+                        print(f"[SKIP] Model already exists: {output_dir}")
+                        continue
+                    print(f"[TRAIN] model_id={model_id}, epochs={epoch}, learning_rate={learning_rate}")
+                    train_hf_llm(
+                        conversations,
+                        model_id=model_id,
+                        initial_prompt=initial_prompt,
+                        output_dir=output_dir,
+                        suffix=suffix,
+                        default_dir_name=model_id.split('/')[-1],
+                        epoch=epoch,
+                        learning_rate=learning_rate
+                    )
+            except Exception as e:
+                print(f"Failed to load or parse statefile: {e}")
+                return
+        else:
+            pan12_df = load_pan12_training(PAN12_TRAIN_PATH, max_records=dev_limit if use_dev else 0)
+            conversations = pan12_df.to_dict(orient='records')
+            selected_models = select_models(MODEL_ID_LIST, prompt_all='All')
+            if not selected_models:
+                return
+            try:
+                epoch = int(input("Enter number of epochs (e.g. 1-10, default 1): ") or "1")
+            except Exception:
+                print("Invalid input. Using default: 1 epoch.")
+                epoch = 1
+            lr_choices = [2e-7, 5e-5, 1e-4, 2e-4]
+            print("Select learning rate:")
+            for i, lr in enumerate(lr_choices, 1):
+                print(f"{i}. {lr}")
+            lr_choice = input(f"Enter 1-{len(lr_choices)} (default 1): ").strip()
+            try:
+                learning_rate = lr_choices[int(lr_choice)-1] if lr_choice.isdigit() and 1 <= int(lr_choice) <= len(lr_choices) else lr_choices[0]
+            except Exception:
+                learning_rate = lr_choices[0]
+            custom_name = input("Add a custom name to the model output folder? (leave blank for default): ").strip()
+            suffix = f"_{custom_name}" if custom_name else ""
+            mode_str = "dev" if use_dev else "full"
+            for model_id in selected_models:
+                output_dir = os.path.join(
+                    MODELS_DIR,
+                    f"{model_id.split('/')[-1]}_{mode_str}_ep{epoch}_lr{learning_rate}{suffix}_finetuned"
+                )
+                train_hf_llm(
+                    conversations,
+                    model_id=model_id,
+                    initial_prompt=initial_prompt,
+                    output_dir=output_dir,
+                    suffix=suffix,
+                    default_dir_name=model_id.split('/')[-1],
+                    epoch=epoch,
+                    learning_rate=learning_rate
+                )
     elif mode_choice == "2":
         print("1. Evaluate new models on the pan12-test dataset.")
         print("2. Run evaluation summarizer to get an overview of existing results.")

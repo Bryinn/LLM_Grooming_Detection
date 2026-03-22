@@ -1,5 +1,9 @@
 [
-	"Qwen/Qwen1.5-0.5B-Chat",
-	"TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-	#"microsoft/phi-2"
+	#"Qwen/Qwen1.5-0.5B-Chat",
+	#"TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+	"Qwen/Qwen2.5-0.5B",
+	#"Qwen/Qwen3.5-0.8B",
+    "Qwen/Qwen3-0.6B",
+    "Qwen/Qwen1.5-0.5B",
+    "Qwen/Qwen3-1.7B"
 ]

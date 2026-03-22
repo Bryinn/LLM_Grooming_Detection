@@ -219,6 +219,6 @@ def run_evaluation_summarizer(results_dir):
         print("Model evaluation statistics written to all_model_stats.csv")
         # Print best by F1 score
         print("Top models by F1 score:")
-        print(df.sort_values('f1', ascending=False).head(10))
+        print(df.sort_values('f1', ascending=False))
         print("\nFailure rates:")
         print(df[['model', 'fail_rate', 'num_erroneous', 'settings']].sort_values('fail_rate', ascending=False).head(10))
