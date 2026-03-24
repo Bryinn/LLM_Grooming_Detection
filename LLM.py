@@ -10,7 +10,7 @@ from utils import select_models, check_existing_result_folders, get_already_eval
 from huggingface_hub import login
 login()
 
-from Globals import MODEL_IDS, PAN12_TRAIN_PATH, PAN12_TEST_PATH, PJ_DIR
+from Globals import MODEL_IDS, PAN12_TRAIN_PATH, PAN12_TEST_PATH, PJ_DIR, MAX_EVAL_THREADS
 MODELS_DIR = 'models'
 
 model_ids = MODEL_IDS
@@ -226,7 +226,7 @@ def main():
             if test_convs:
                 import subprocess
                 import time
-                max_parallel = 2
+                max_parallel = MAX_EVAL_THREADS
                 running = []  # List of (model_name, process)
                 to_eval_queue = []
                 model_remain_map = {}

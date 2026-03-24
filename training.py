@@ -6,38 +6,63 @@ import torch
 def build_sft_pairs(conversations, initial_prompt=None):
     """Build SFT prompt/response pairs from conversation dicts."""
     pairs = []
-    def generate_reasoning(conv_text):
-        """Simple rule-based reasoning generator."""
-        text = conv_text.lower()
-        # Rule-based checks
-        explicit_words = ["sex", "nude", "pic", "meet", "naked", "bed", "kiss", "touch", "body", "horny", "hot", "panties", "underwear", "dick", "pussy", "boobs", "cum", "orgasm", "masturbate", "suck", "blowjob"]
-        secrecy_words = ["don't tell", "dont tell", "secret", "keep this between us", "private", "hide", "discreet"]
-        age_words = ["age", "how old", "years old", "i am ", "i'm "]
-        off_platform = ["snapchat", "kik", "whatsapp", "phone number", "text me at", "call me at", "add me on"]
-        triggers = []
-        for w in explicit_words:
-            if w in text:
-                triggers.append(f'explicit: {w}')
-        for w in secrecy_words:
-            if w in text:
-                triggers.append(f'secrecy: {w}')
-        for w in age_words:
-            if w in text:
-                triggers.append(f'age: {w}')
-        for w in off_platform:
-            if w in text:
-                triggers.append(f'off-platform: {w}')
-        if triggers:
-            return "Reasoning: " + ", ".join(triggers) + "."
-        return "No explicit predatory indicators found."
+    def generate_reasoning(conv_text, is_pred):
+        """
+        Generate a verbose, context-aware reason for the label.
+        This version summarizes the conversation, highlights key behaviors, and provides a rationale.
+        """
+        import re
+        text = conv_text.strip()
+        lines = [l.strip() for l in text.split('\n') if l.strip()]
+        summary = []
+        predatory_signs = []
+        non_predatory_signs = []
+        # Analyze for explicit, secrecy, age, off-platform, grooming, and general tone
+        for line in lines:
+            l = line.lower()
+            if any(w in l for w in ["sex", "nude", "naked", "dick", "pussy", "boobs", "cum", "orgasm", "masturbate", "suck", "blowjob"]):
+                predatory_signs.append(f"Explicit/sexual language: '{line}'")
+            if any(w in l for w in ["don't tell", "dont tell", "secret", "keep this between us", "private", "hide", "discreet"]):
+                predatory_signs.append(f"Secrecy or privacy request: '{line}'")
+            if any(w in l for w in ["how old", "years old", "i am ", "i'm ", "age"]):
+                predatory_signs.append(f"Age-related inquiry: '{line}'")
+            if any(w in l for w in ["snapchat", "kik", "whatsapp", "phone number", "text me at", "call me at", "add me on"]):
+                predatory_signs.append(f"Off-platform move attempt: '{line}'")
+            if re.search(r'\b(babe|sweetie|cutie|beautiful|pretty|handsome|love you|miss you)\b', l):
+                predatory_signs.append(f"Grooming/affectionate language: '{line}'")
+            if any(w in l for w in ["school", "homework", "parents", "teacher"]):
+                non_predatory_signs.append(f"Child-appropriate topic: '{line}'")
+            if re.search(r'\b(no|stop|not interested|leave me alone|uncomfortable)\b', l):
+                non_predatory_signs.append(f"Resistance or discomfort: '{line}'")
+        # Summarize conversation
+        if len(lines) > 2:
+            summary.append(f"The conversation consists of {len(lines)} messages.")
+            summary.append(f"First message: '{lines[0]}'")
+            summary.append(f"Last message: '{lines[-1]}'")
+        else:
+            summary.append("Short conversation.")
+        # Compose reason
+        if is_pred:
+            reason = "This conversation is labeled as predatory. "
+            if predatory_signs:
+                reason += "Key indicators include: " + "; ".join(predatory_signs) + ". "
+            else:
+                reason += "No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. "
+        else:
+            reason = "This conversation is labeled as non-predatory. "
+            if non_predatory_signs:
+                reason += "Notable signs of normalcy: " + "; ".join(non_predatory_signs) + ". "
+            else:
+                reason += "No clear predatory indicators or concerning behavior were found. "
+        reason += " ".join(summary)
+        return reason.strip()
 
     for conv in conversations:
-        #conv_id = conv.get('conversation_id')
         is_pred = conv.get('is_predatory')
         conv_text = "\n".join([msg['text'] for msg in conv['messages']])
         delimiter = "\n### RESPONSE:\n"
         prompt = (initial_prompt or "") + f"\nCONVERSATION:\n{conv_text}\n\nNow, based only on the above conversation, respond strictly with a single valid JSON object in this format: {{\"is_predatory\": true/false, \"reasoning\": \"...\"}}. Do not include any other text." + delimiter
-        reasoning = generate_reasoning(conv_text)
+        reasoning = generate_reasoning(conv_text, is_pred)
         response = f'{{"is_predatory": {str(is_pred).lower()}, "reasoning": "{reasoning}"}}'
         pairs.append((prompt, response))
     return pairs
