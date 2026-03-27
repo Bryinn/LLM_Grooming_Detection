@@ -27,6 +27,9 @@ def evaluate_causal_lm(model_path, test_convs, results_file=None, temperature=1.
             attention_mask = enc.attention_mask.to(device)
             #print(f"[DEBUG] conv_id: {conv_id}, input_ids.shape: {input_ids.shape}")
             #print(f"[DEBUG] input_ids: {input_ids}")
+            # Ensure temperature and top_p are valid
+            safe_temperature = temperature if temperature > 0 else 1e-7
+            safe_top_p = top_p if top_p > 0 else 1e-7
             if input_ids.numel() == 0:
                 #print(f"[DEBUG] Skipping conversation {conv_id}: input_ids is empty!")
                 continue
@@ -34,8 +37,8 @@ def evaluate_causal_lm(model_path, test_convs, results_file=None, temperature=1.
                 input_ids,
                 attention_mask=attention_mask,
                 max_new_tokens=128,
-                temperature=temperature,
-                top_p=top_p,
+                temperature=safe_temperature,
+                top_p=safe_top_p,
                 do_sample=True,
                 pad_token_id=tokenizer.eos_token_id if tokenizer.eos_token_id is not None else tokenizer.pad_token_id
             )
