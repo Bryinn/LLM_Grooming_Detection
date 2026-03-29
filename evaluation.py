@@ -1,5 +1,7 @@
+
 import os
 from tqdm import tqdm
+import json
 
 def get_model_and_tokenizer(model_path):
     from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -13,21 +15,27 @@ def get_model_and_tokenizer(model_path):
     return model, tokenizer, device
 
 def evaluate_causal_lm(model_path, test_convs, results_file=None, temperature=1.0, top_p=1.0, model_label=None):
-    import re, json
+    import re
     model, tokenizer, device = get_model_and_tokenizer(model_path)
     debug_print_limit = 5
     debug_count = 0
     delimiter = "\n### RESPONSE:\n"
-    for conv_id, conv_msgs in tqdm(test_convs.items()):
+    cases = []
+    for idx, case in enumerate(tqdm(cases)):
+        conv_id = case.get('case_id', idx)
+        conv_msgs = case['messages']
         try:
-            conv_text = "\n".join(conv_msgs)
+            # conv_msgs should be a list of dicts with author, text, timestamp
+            if isinstance(conv_msgs, list) and isinstance(conv_msgs[0], dict):
+                conv_text = "\n".join([
+                    f"[{msg.get('timestamp', 'N/A')}] {msg.get('author', 'unknown')}: {msg.get('text', '')}" for msg in conv_msgs
+                ])
+            else:
+                conv_text = "\n".join(conv_msgs)
             prompt = f"\nCONVERSATION:\n{conv_text}\n\nNow, based only on the above conversation, respond strictly with a single valid JSON object in this format: {{\"is_predatory\": true/false, \"reasoning\": \"...\"}} as a raw string. Do not include any other text." + delimiter
             enc = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=1024)
             input_ids = enc.input_ids.to(device)
             attention_mask = enc.attention_mask.to(device)
-            #print(f"[DEBUG] conv_id: {conv_id}, input_ids.shape: {input_ids.shape}")
-            #print(f"[DEBUG] input_ids: {input_ids}")
-            # Ensure temperature and top_p are valid
             safe_temperature = temperature if temperature > 0 else 1e-7
             safe_top_p = top_p if top_p > 0 else 1e-7
             if input_ids.numel() == 0:
@@ -43,7 +51,6 @@ def evaluate_causal_lm(model_path, test_convs, results_file=None, temperature=1.
                 pad_token_id=tokenizer.eos_token_id if tokenizer.eos_token_id is not None else tokenizer.pad_token_id
             )
             full_decoded = tokenizer.decode(output[0], skip_special_tokens=True)
-            # Only keep the part after the delimiter
             if delimiter in full_decoded:
                 decoded = full_decoded.split(delimiter, 1)[-1].strip()
             else:
@@ -95,7 +102,7 @@ def evaluate_causal_lm(model_path, test_convs, results_file=None, temperature=1.
                 # Log failure for review with more context
                 fail_log = results_file + '.failures' if results_file else 'eval_failures.txt'
                 with open(fail_log, 'a', encoding='utf-8') as f:
-                    f.write(f'conv_id={conv_id} | prompt="{prompt[:200]}..." | raw="{decoded}"")\n')
+                    f.write(f'conv_id={conv_id} | raw="{decoded}")\n')
                 pred = {"conversation_id": int(conv_id), "is_predatory": None, "reasoning": "Could not parse model output as JSON."}
             else:
                 pred["conversation_id"] = int(conv_id)
@@ -122,7 +129,13 @@ def evaluate_model(model_path, test_convs, results_file=None, temperature=1.0, t
 def evaluate_companionv1(test_convs, initial_prompt=None, results_file=None):
     for conv_id, conv_msgs in test_convs.items():
         try:
-            conv_text = "\n".join(conv_msgs)
+            # conv_msgs should be a list of dicts with author, text, timestamp
+            if isinstance(conv_msgs, list) and isinstance(conv_msgs[0], dict):
+                conv_text = "\n".join([
+                    f"[{msg.get('timestamp', 'N/A')}] {msg.get('author', 'unknown')}: {msg.get('text', '')}" for msg in conv_msgs
+                ])
+            else:
+                conv_text = "\n".join(conv_msgs)
             prompt = (initial_prompt or "") + f"\nCONVERSATION:\n{conv_text}\nRespond in JSON: {{conversation_id, is_predatory, reasoning}}"
             pred = {
                 "conversation_id": int(conv_id),

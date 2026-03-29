@@ -2,15 +2,14 @@
 
 import ast
 import os
-from data_loader import load_pj_dataset, load_pan12_training, load_test_convs
+from data_loader import load_pj_dataset, load_test_convs, load_pan12_test, load_pan12_training
 from evaluation import evaluate_companionv1, run_evaluation_summarizer
 from training import train_hf_llm
 from utils import select_models, check_existing_result_folders, get_already_evaluated_conversation_ids
 
-from huggingface_hub import login
-login()
-
 from Globals import MODEL_IDS, PAN12_TRAIN_PATH, PAN12_TEST_PATH, PJ_DIR, MAX_EVAL_THREADS
+GROUPED_TRAIN_PATH = os.path.join('filtered_datasets', 'pan12-training', 'grouped_cases.json')
+GROUPED_TEST_PATH = os.path.join('filtered_datasets', 'pan12-test', 'grouped_cases.json')
 MODELS_DIR = 'models'
 
 model_ids = MODEL_IDS
@@ -115,8 +114,9 @@ def main():
                     state_entries = json.load(sf)
                 if not isinstance(state_entries, list):
                     state_entries = [state_entries]
-                pan12_df = load_pan12_training(PAN12_TRAIN_PATH, max_records=dev_limit if use_dev else 0)
-                conversations = pan12_df.to_dict(orient='records')
+                grouped_df = load_pan12_training(GROUPED_TRAIN_PATH, max_records=dev_limit if use_dev else 0)
+                cases = grouped_df.to_dict(orient='records')
+                print(f"[DEBUG] Number of cases loaded for training: {len(cases)}")
                 custom_name = input("Add a custom name to the model output folder? (leave blank for default): ").strip()
                 suffix = f"_{custom_name}" if custom_name else ""
                 mode_str = "dev" if use_dev else "full"
@@ -133,7 +133,7 @@ def main():
                         continue
                     print(f"[TRAIN] model_id={model_id}, epochs={epoch}, learning_rate={learning_rate}")
                     train_hf_llm(
-                        conversations,
+                        cases,
                         model_id=model_id,
                         initial_prompt=initial_prompt,
                         output_dir=output_dir,
@@ -146,8 +146,9 @@ def main():
                 print(f"Failed to load or parse statefile: {e}")
                 return
         else:
-            pan12_df = load_pan12_training(PAN12_TRAIN_PATH, max_records=dev_limit if use_dev else 0)
-            conversations = pan12_df.to_dict(orient='records')
+            grouped_df = load_pan12_training(GROUPED_TRAIN_PATH, max_records=dev_limit if use_dev else 0)
+            cases = grouped_df.to_dict(orient='records')
+            print(f"[DEBUG] Number of cases loaded for training: {len(cases)}")
             selected_models = select_models(MODEL_ID_LIST, prompt_all='All')
             if not selected_models:
                 return
@@ -174,7 +175,7 @@ def main():
                     f"{model_id.split('/')[-1]}_{mode_str}_ep{epoch}_lr{learning_rate}{suffix}_finetuned"
                 )
                 train_hf_llm(
-                    conversations,
+                    cases,
                     model_id=model_id,
                     initial_prompt=initial_prompt,
                     output_dir=output_dir,

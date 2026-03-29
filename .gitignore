@@ -208,6 +208,7 @@ __marimo__/
 
 # custom
 filtered_datasets/
+filtered_datasets_old/
 datasets/
 debug_log.txt
 dedbeats.txt

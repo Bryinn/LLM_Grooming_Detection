@@ -8,58 +8,69 @@ def build_sft_pairs(conversations, initial_prompt=None):
     pairs = []
     def generate_reasoning(conv_text, is_pred):
         """
-        Generate a verbose, context-aware reason for the label.
-        This version summarizes the conversation, highlights key behaviors, and provides a rationale.
+        Generate a concise, focused reason for the label, citing only the strongest evidence.
         """
         import re
-        text = conv_text.strip()
-        lines = [l.strip() for l in text.split('\n') if l.strip()]
-        summary = []
-        predatory_signs = []
-        non_predatory_signs = []
-        # Analyze for explicit, secrecy, age, off-platform, grooming, and general tone
+        lines = [l.strip() for l in conv_text.strip().split('\n') if l.strip()]
+        # Define patterns and their short labels
+        patterns = [
+            (re.compile(r"sex|nude|naked|dick|pussy|boobs|cum|orgasm|masturbate|suck|blowjob", re.I), "explicit sexual language"),
+            (re.compile(r"don't tell|dont tell|secret|keep this between us|private|hide|discreet", re.I), "secrecy or privacy request"),
+            (re.compile(r"how old|years old|i am |i'm |age", re.I), "age-related inquiry"),
+            (re.compile(r"snapchat|kik|whatsapp|phone number|text me at|call me at|add me on", re.I), "off-platform move attempt"),
+            (re.compile(r"\b(babe|sweetie|cutie|beautiful|pretty|handsome|love you|miss you)\b", re.I), "grooming/affectionate language"),
+        ]
+        neutral_patterns = [
+            (re.compile(r"school|homework|parents|teacher", re.I), "child-appropriate topic"),
+            (re.compile(r"\b(no|stop|not interested|leave me alone|uncomfortable)\b", re.I), "resistance or discomfort"),
+        ]
+        found = None
+        found_line = None
         for line in lines:
-            l = line.lower()
-            if any(w in l for w in ["sex", "nude", "naked", "dick", "pussy", "boobs", "cum", "orgasm", "masturbate", "suck", "blowjob"]):
-                predatory_signs.append(f"Explicit/sexual language: '{line}'")
-            if any(w in l for w in ["don't tell", "dont tell", "secret", "keep this between us", "private", "hide", "discreet"]):
-                predatory_signs.append(f"Secrecy or privacy request: '{line}'")
-            if any(w in l for w in ["how old", "years old", "i am ", "i'm ", "age"]):
-                predatory_signs.append(f"Age-related inquiry: '{line}'")
-            if any(w in l for w in ["snapchat", "kik", "whatsapp", "phone number", "text me at", "call me at", "add me on"]):
-                predatory_signs.append(f"Off-platform move attempt: '{line}'")
-            if re.search(r'\b(babe|sweetie|cutie|beautiful|pretty|handsome|love you|miss you)\b', l):
-                predatory_signs.append(f"Grooming/affectionate language: '{line}'")
-            if any(w in l for w in ["school", "homework", "parents", "teacher"]):
-                non_predatory_signs.append(f"Child-appropriate topic: '{line}'")
-            if re.search(r'\b(no|stop|not interested|leave me alone|uncomfortable)\b', l):
-                non_predatory_signs.append(f"Resistance or discomfort: '{line}'")
-        # Summarize conversation
-        if len(lines) > 2:
-            summary.append(f"The conversation consists of {len(lines)} messages.")
-            summary.append(f"First message: '{lines[0]}'")
-            summary.append(f"Last message: '{lines[-1]}'")
-        else:
-            summary.append("Short conversation.")
-        # Compose reason
+            for pat, label in patterns:
+                if pat.search(line):
+                    found = label
+                    found_line = line
+                    break
+            if found:
+                break
+        found_neutral = None
+        found_neutral_line = None
+        if not found:
+            for line in lines:
+                for pat, label in neutral_patterns:
+                    if pat.search(line):
+                        found_neutral = label
+                        found_neutral_line = line
+                        break
+                if found_neutral:
+                    break
+        # Compose concise reason
         if is_pred:
-            reason = "This conversation is labeled as predatory. "
-            if predatory_signs:
-                reason += "Key indicators include: " + "; ".join(predatory_signs) + ". "
+            if found:
+                return f"Predatory: {found} (e.g., '{found_line}')"
             else:
-                reason += "No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. "
+                return "Predatory: No explicit predatory phrase found, but overall context or behavior suggests grooming or inappropriate intent."
         else:
-            reason = "This conversation is labeled as non-predatory. "
-            if non_predatory_signs:
-                reason += "Notable signs of normalcy: " + "; ".join(non_predatory_signs) + ". "
+            if found_neutral:
+                return f"Non-predatory: {found_neutral} (e.g., '{found_neutral_line}')"
             else:
-                reason += "No clear predatory indicators or concerning behavior were found. "
-        reason += " ".join(summary)
-        return reason.strip()
+                return "Non-predatory: No concerning behavior detected."
 
-    for conv in conversations:
+    # Accept both list of cases (with 'messages') and dicts (legacy)
+    for idx, conv in enumerate(conversations):
+        # Support both case and conversation dicts
+        if 'messages' in conv:
+            msgs = conv['messages']
+        elif isinstance(conv, dict):
+            # Legacy: treat as single-message conversation
+            msgs = [conv]
+        else:
+            continue
         is_pred = conv.get('is_predatory')
-        conv_text = "\n".join([msg['text'] for msg in conv['messages']])
+        conv_text = "\n".join([
+            f"[{msg.get('timestamp', 'N/A')}] {msg.get('author', 'unknown')}: {msg.get('text', '')}" for msg in msgs
+        ])
         delimiter = "\n### RESPONSE:\n"
         prompt = (initial_prompt or "") + f"\nCONVERSATION:\n{conv_text}\n\nNow, based only on the above conversation, respond strictly with a single valid JSON object in this format: {{\"is_predatory\": true/false, \"reasoning\": \"...\"}}. Do not include any other text." + delimiter
         reasoning = generate_reasoning(conv_text, is_pred)
