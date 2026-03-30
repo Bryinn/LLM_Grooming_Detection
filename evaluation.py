@@ -20,10 +20,8 @@ def evaluate_causal_lm(model_path, test_convs, results_file=None, temperature=1.
     debug_print_limit = 5
     debug_count = 0
     delimiter = "\n### RESPONSE:\n"
-    cases = []
-    for idx, case in enumerate(tqdm(cases)):
-        conv_id = case.get('case_id', idx)
-        conv_msgs = case['messages']
+    for idx, (conv_id, conv_msgs) in enumerate(tqdm(test_convs.items())):
+        case = {'case_id': conv_id, 'messages': conv_msgs}
         try:
             # conv_msgs should be a list of dicts with author, text, timestamp
             if isinstance(conv_msgs, list) and isinstance(conv_msgs[0], dict):

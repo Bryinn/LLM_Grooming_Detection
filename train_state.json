@@ -1,7 +1,21 @@
 [
+    {"model_id": "Qwen/Qwen1.5-0.5B-Chat", "epochs": 1, "learning_rate": 0.0001},
+    {"model_id": "Qwen/Qwen1.5-0.5B-Chat", "epochs": 1, "learning_rate": 2e-07},
+    {"model_id": "Qwen/Qwen1.5-0.5B-Chat", "epochs": 1, "learning_rate": 5e-5},
+    {"model_id": "Qwen/Qwen1.5-0.5B-Chat", "epochs": 5, "learning_rate": 0.0001},
+    {"model_id": "Qwen/Qwen1.5-0.5B-Chat", "epochs": 5, "learning_rate": 2e-7},
     {"model_id": "Qwen/Qwen1.5-0.5B-Chat", "epochs": 5, "learning_rate": 5e-5},
+    {"model_id": "Qwen/Qwen1.5-0.5B-Chat", "epochs": 10, "learning_rate": 0.0001},
+    {"model_id": "Qwen/Qwen1.5-0.5B-Chat", "epochs": 10, "learning_rate": 2e-7},
+    {"model_id": "Qwen/Qwen1.5-0.5B-Chat", "epochs": 10, "learning_rate": 5e-5},
 
+    {"model_id": "Qwen/Qwen1.5-0.5B", "epochs": 1, "learning_rate": 0.0001},
+    {"model_id": "Qwen/Qwen1.5-0.5B", "epochs": 1, "learning_rate": 2e-7},
+    {"model_id": "Qwen/Qwen1.5-0.5B", "epochs": 1, "learning_rate": 5e-5},
+    {"model_id": "Qwen/Qwen1.5-0.5B", "epochs": 5, "learning_rate": 0.0001},
+    {"model_id": "Qwen/Qwen1.5-0.5B", "epochs": 5, "learning_rate": 2e-7},
     {"model_id": "Qwen/Qwen1.5-0.5B", "epochs": 5, "learning_rate": 5e-5},
-
-    {"model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0", "epochs": 5, "learning_rate": 5e-5}
+    {"model_id": "Qwen/Qwen1.5-0.5B", "epochs": 10, "learning_rate": 0.0001},
+    {"model_id": "Qwen/Qwen1.5-0.5B", "epochs": 10, "learning_rate": 2e-7},
+    {"model_id": "Qwen/Qwen1.5-0.5B", "epochs": 10, "learning_rate": 5e-5}
 ]
