@@ -223,7 +223,7 @@ def main():
             results_dir = "results"
             os.makedirs(results_dir, exist_ok=True)
             print("\n--- Continuing evaluation on pan12-test dataset ---")
-            test_convs = load_test_convs(PAN12_TEST_PATH, test_50)
+            test_convs = load_test_convs(GROUPED_TEST_PATH, test_50)
             if test_convs:
                 import subprocess
                 import time
@@ -301,7 +301,7 @@ def main():
             results_dir = "results"
             os.makedirs(results_dir, exist_ok=True)
             print("\n--- Evaluating on pan12-test dataset ---")
-            test_convs = load_test_convs(PAN12_TEST_PATH, test_50)
+            test_convs = load_test_convs(GROUPED_TEST_PATH, test_50)
             if test_convs:
                 # Build settings_str for each model to check for file collisions
                 settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
