@@ -12,25 +12,20 @@ def load_pan12_test_ground_truth(json_path, max_records=100000):
     import pandas as pd
     return pd.DataFrame(data)
 def load_pan12_test(json_path, max_records=100000):
-    """Load pan12-test grouped_cases.json and return a DataFrame with all cases and their messages."""
-    cases = []
+    """Load pan12-test JSON (if not too large) and return a DataFrame."""
+    data = []
     with open(json_path, 'r', encoding='utf-8') as f:
         j = json.load(f)
-        for idx, case in enumerate(j.get('cases', [])[:max_records]):
-            data = []
-            for msg in case.get('messages', []):
+        for conv in j.get('conversations', [])[:max_records]:
+            conv_id = conv.get('conversation_id')
+            for msg in conv.get('messages', []):
                 data.append({
+                    'conversation_id': conv_id,
                     'author': msg.get('author'),
                     'text': msg.get('text'),
                     'timestamp': msg.get('timestamp'),
                 })
-            cases.append({
-                'case_id': idx,
-                'participants': case.get('participants'),
-                'is_predatory': case.get('is_predatory'),
-                'messages': data
-            })
-    return pd.DataFrame(cases)
+    return pd.DataFrame(data)
 import os
 import json
 import glob
@@ -64,38 +59,36 @@ def load_pj_dataset(pj_dir):
     return pd.DataFrame(conversations)
 
 def load_pan12_training(json_path, max_records=0):
-    """Load pan12-training grouped_cases.json and return a DataFrame with all cases and their messages."""
-    cases = []
+    """Load pan12-training JSON and return a DataFrame with all conversations and their messages."""
+    conversations = []
     if max_records is None or max_records <= 0:
         max_records = 1000000  # Large default
     with open(json_path, 'r', encoding='utf-8') as f:
         j = json.load(f)
-        for idx, case in enumerate(j.get('cases', [])[:max_records]):
+        for conv in j.get('conversations', [])[:max_records]:
             data = []
-            for msg in case.get('messages', []):
+            for msg in conv.get('messages', []):
                 data.append({
                     'author': msg.get('author'),
                     'text': msg.get('text'),
                     'timestamp': msg.get('timestamp'),
                 })
-            cases.append({
-                'case_id': idx,
-                'participants': case.get('participants'),
-                'is_predatory': case.get('is_predatory'),
+            conversations.append({
+                'conversation_id': conv.get('conversation_id'),
+                'is_predatory': conv.get('is_predatory'),
                 'messages': data
             })
-    return pd.DataFrame(cases)
+    return pd.DataFrame(conversations)
 
 def load_test_convs(test_path, test_50=False):
     try:
         test_df = load_pan12_test(test_path)
-        print("Loaded test cases:", len(test_df))
+        print("Loaded test rows:", len(test_df))
         if test_50:
-            first_50_ids = test_df['case_id'].drop_duplicates().iloc[:50]
-            test_df = test_df[test_df['case_id'].isin(first_50_ids)]
-            print(f"Using only the first 50 cases (IDs: {list(first_50_ids)})")
-        # Return a dict: case_id -> list of messages (full dicts)
-        test_convs = {row['case_id']: row['messages'] for _, row in test_df.iterrows()}
+            first_50_ids = test_df['conversation_id'].drop_duplicates().iloc[:50]
+            test_df = test_df[test_df['conversation_id'].isin(first_50_ids)]
+            print(f"Using only the first 50 conversations (IDs: {list(first_50_ids)})")
+        test_convs = test_df.groupby('conversation_id')['text'].apply(list).to_dict()
         return test_convs
     except Exception as e:
         print(f"Could not load pan12-test: {e}")
