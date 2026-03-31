@@ -1,3 +1,22 @@
+def load_pan12_test_with_labels(json_path, max_records=100000):
+    """Load pan12-test JSON and return a DataFrame with all messages and is_predatory label per message."""
+    data = []
+    import json
+    with open(json_path, 'r', encoding='utf-8') as f:
+        j = json.load(f)
+        for conv in j.get('conversations', [])[:max_records]:
+            conv_id = conv.get('conversation_id')
+            is_pred = conv.get('is_predatory')
+            for msg in conv.get('messages', []):
+                data.append({
+                    'conversation_id': conv_id,
+                    'author': msg.get('author'),
+                    'text': msg.get('text'),
+                    'timestamp': msg.get('timestamp'),
+                    'is_predatory': is_pred
+                })
+    import pandas as pd
+    return pd.DataFrame(data)
 def load_pan12_test_ground_truth(json_path, max_records=100000):
     """Load pan12-test JSON and return a DataFrame with conversation_id and is_predatory only."""
     data = []

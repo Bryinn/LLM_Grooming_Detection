@@ -1,0 +1,15 @@
+{
+    "models": [
+        "Qwen1.5-0.5B_full_ep1_lr0.0001_finetuned",
+        "TinyLlama-1.1B-Chat-v1.0_full_ep1_lr2e-07_finetuned"
+    ],
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "dataset": "pan12-test",
+    "max_samples": 200,
+    "balance": {
+        "predatory": 50,
+        "non_predatory": 150
+    },
+    "random_seed": 42
+}

@@ -57,7 +57,56 @@ def main():
         "Given the following conversation, respond strictly in this JSON format.\n"
         "[/INST]"
     )
-    if mode_choice == "4":
+    
+    if mode_choice == "2":
+        print("1. Evaluate new models on the pan12-test dataset.")
+        print("2. Run evaluation summarizer to get an overview of existing results.")
+        print("3. Continue an interrupted evaluation.")
+        print("4. Evaluate models based on a custom configuration.")
+
+        mode_choice = int(input("Select option: ").strip())
+        top_p = 1.0
+        temperature = 1.0
+        if mode_choice == 2:
+            filter_input = input("Enter settings filters (comma-separated, e.g. bal-50-20,temp0.7), or leave blank for all: ").strip()
+            settings_filters = [f.strip() for f in filter_input.split(",") if f.strip()] if filter_input else None
+            run_evaluation_summarizer("results", settings_filters=settings_filters)
+            return
+        if mode_choice == 4:
+            config_path = input("Enter path to evaluation config (default: eval_config.json): ").strip() or "eval_config.json"
+            from evaluation import load_eval_config, get_eval_conversations_from_config, evaluate_model
+            config = load_eval_config(config_path)
+            models = config.get('models', [])
+            temperature = config.get('temperature', 1.0)
+            top_p = config.get('top_p', 1.0)
+            test_convs = get_eval_conversations_from_config(config)
+            results_dir = "results"
+            os.makedirs(results_dir, exist_ok=True)
+            for m in models:
+                model_path = os.path.join(MODELS_DIR, m)
+                model_results_dir = os.path.join(results_dir, m)
+                os.makedirs(model_results_dir, exist_ok=True)
+                # Calculate balance string if possible
+                n_pred = n_non_pred = None
+                if 'balance' in config:
+                    n_pred = config['balance'].get('predatory', 0)
+                    n_non_pred = config['balance'].get('non_predatory', 0)
+                else:
+                    # Try to infer from test_convs if possible
+                    try:
+                        pred_count = sum(1 for conv in test_convs.values() if any('pred' in str(msg).lower() for msg in conv))
+                        n_pred = pred_count
+                        n_non_pred = len(test_convs) - pred_count
+                    except Exception:
+                        n_pred = n_non_pred = None
+                bal_str = f"_bal-{n_pred}-{n_non_pred}" if n_pred is not None and n_non_pred is not None else ""
+                settings_str = f"temp{temperature}_top{top_p}{bal_str}{'_short' if len(test_convs) < 100 else ''}"
+                results_file = os.path.join(model_results_dir, f"{m}_{settings_str}.txt")
+                print(f"Evaluating {m} with temperature={temperature}, top_p={top_p}, {len(test_convs)} conversations, balance: pred={n_pred}, non_pred={n_non_pred}...")
+                evaluate_model(model_path, test_convs, results_file=results_file, temperature=temperature, top_p=top_p)
+                print(f"Results written to {results_file}")
+            return
+    elif mode_choice == "4":
         print("\n--- Add non-finetuned models from model_ids ---")
         print("Available base models:")
         base_names = [mid.split('/')[-1] for mid in MODEL_ID_LIST if not mid.strip().startswith('#')]

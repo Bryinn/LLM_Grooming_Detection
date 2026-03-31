@@ -3,7 +3,7 @@ import ast
 
 PJ_DIR = os.path.join('filtered_datasets', 'PJ')
 PAN12_TRAIN_PATH = os.path.join('filtered_datasets', 'pan12-training', 'pan12-sexual-predator-identification-training-corpus-2012-05-01.json')
-PAN12_TEST_PATH = os.path.join('filtered_datasets', 'pan12-test', 'grouped_cases.json')
+PAN12_TEST_PATH = os.path.join('filtered_datasets', 'pan12-test', 'pan12-sexual-predator-identification-test-corpus-2012-05-17.json')
 MAX_EVAL_THREADS = 2
 
 MODEL_IDS_PATH = os.path.join(os.path.dirname(__file__), 'model_ids.py')

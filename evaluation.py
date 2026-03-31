@@ -1,3 +1,50 @@
+import json
+import pandas as pd
+from Globals import PAN12_TRAIN_PATH, PAN12_TEST_PATH, PJ_DIR
+
+def load_eval_config(config_path):
+    with open(config_path, 'r', encoding='utf-8') as f:
+        config = json.load(f)
+    return config
+
+def sample_balanced_conversations(df, pred_col, n_pred, n_non_pred, seed=42):
+    pred_df = df[df[pred_col] == True]
+    non_pred_df = df[df[pred_col] == False]
+    pred_sample = pred_df.sample(n=min(n_pred, len(pred_df)), random_state=seed) if n_pred else pred_df
+    non_pred_sample = non_pred_df.sample(n=min(n_non_pred, len(non_pred_df)), random_state=seed) if n_non_pred else non_pred_df
+    return pd.concat([pred_sample, non_pred_sample]).sample(frac=1, random_state=seed)
+
+def get_eval_conversations_from_config(config):
+    from data_loader import load_pan12_test_with_labels, load_pan12_training, load_pj_dataset
+    dataset = config.get('dataset', 'pan12-test')
+    max_samples = config.get('max_samples')
+    balance = config.get('balance')
+    seed = config.get('random_seed', 42)
+    if dataset == 'pan12-test':
+        df = load_pan12_test_with_labels(PAN12_TEST_PATH)
+        pred_col = 'is_predatory'
+    elif dataset == 'pan12-training':
+        df = load_pan12_training(PAN12_TRAIN_PATH)
+        pred_col = 'is_predatory'
+    elif dataset == 'PJ':
+        df = load_pj_dataset(PJ_DIR)
+        pred_col = 'is_predatory'
+    else:
+        raise ValueError(f"Unknown dataset: {dataset}")
+    if balance:
+        n_pred = balance.get('predatory', 0)
+        n_non_pred = balance.get('non_predatory', 0)
+        df = sample_balanced_conversations(df, pred_col, n_pred, n_non_pred, seed)
+    if max_samples:
+        df = df.sample(n=min(max_samples, len(df)), random_state=seed)
+    # Convert to dict for evaluation
+    if 'messages' in df.columns:
+        convs = {row['conversation_id']: [m['text'] for m in row['messages']] for _, row in df.iterrows()}
+    elif 'text' in df.columns:
+        convs = df.groupby('conversation_id')['text'].apply(list).to_dict()
+    else:
+        raise ValueError("DataFrame does not have expected columns.")
+    return convs
 import os
 from tqdm import tqdm
 
@@ -138,7 +185,7 @@ def evaluate_companionv1(test_convs, initial_prompt=None, results_file=None):
             print(f"Error evaluating compAnIonv1 for conversation {conv_id}: {e}")
 
 # Summarizer process for evaluation results
-def run_evaluation_summarizer(results_dir):
+def run_evaluation_summarizer(results_dir, settings_filters=None):
     import os
     import glob
     import pandas as pd
@@ -151,6 +198,10 @@ def run_evaluation_summarizer(results_dir):
         for file in glob.glob(os.path.join(model_path, '*.txt')):
             if 'summary' in file:
                 continue
+            settings_str = os.path.basename(file).replace(model_folder, '').replace('.txt', '')
+            if settings_filters:
+                if not all(f in settings_str for f in settings_filters):
+                    continue
             all_results.append((model_folder, file))
     # Load ground truth
     # (Assume PAN12_TEST_PATH is available as global or hardcode path)
@@ -218,8 +269,9 @@ def run_evaluation_summarizer(results_dir):
     # Compare models/settings
     if stats:
         df = pd.DataFrame(stats)
-        df.to_csv(os.path.join(results_dir, 'all_model_stats.csv'), index=False)
-        print("Model evaluation statistics written to all_model_stats.csv")
+        name = "model_stats" + (("_" + "_".join(settings_filters)) if settings_filters else "") + ".csv"
+        df.to_csv(os.path.join(results_dir, name), index=False)
+        print(f"Model evaluation statistics written to {name}")
         # Print best by F1 score
         print("Top models by F1 score:")
         print(df.sort_values('f1', ascending=False))
