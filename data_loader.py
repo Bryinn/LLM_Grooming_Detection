@@ -1,5 +1,5 @@
-def load_pan12_test_with_labels(json_path, max_records=100000):
-    """Load pan12-test JSON and return a DataFrame with all messages and is_predatory label per message."""
+def load_pan12_with_labels(json_path, max_records=100000):
+    """Load pan12 JSON and return a DataFrame with all messages and is_predatory label per message."""
     data = []
     import json
     with open(json_path, 'r', encoding='utf-8') as f:

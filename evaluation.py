@@ -1,6 +1,8 @@
 import json
 import pandas as pd
 from Globals import PAN12_TRAIN_PATH, PAN12_TEST_PATH, PJ_DIR
+from data_loader import load_pan12_with_labels, load_pan12_training, load_pj_dataset, load_pan12_test_ground_truth
+
 
 def load_eval_config(config_path):
     with open(config_path, 'r', encoding='utf-8') as f:
@@ -15,16 +17,15 @@ def sample_balanced_conversations(df, pred_col, n_pred, n_non_pred, seed=42):
     return pd.concat([pred_sample, non_pred_sample]).sample(frac=1, random_state=seed)
 
 def get_eval_conversations_from_config(config):
-    from data_loader import load_pan12_test_with_labels, load_pan12_training, load_pj_dataset
     dataset = config.get('dataset', 'pan12-test')
     max_samples = config.get('max_samples')
     balance = config.get('balance')
     seed = config.get('random_seed', 42)
     if dataset == 'pan12-test':
-        df = load_pan12_test_with_labels(PAN12_TEST_PATH)
+        df = load_pan12_with_labels(PAN12_TEST_PATH)
         pred_col = 'is_predatory'
     elif dataset == 'pan12-training':
-        df = load_pan12_training(PAN12_TRAIN_PATH)
+        df = load_pan12_with_labels(PAN12_TRAIN_PATH)
         pred_col = 'is_predatory'
     elif dataset == 'PJ':
         df = load_pj_dataset(PJ_DIR)
@@ -204,12 +205,9 @@ def run_evaluation_summarizer(results_dir, settings_filters=None):
                     continue
             all_results.append((model_folder, file))
     # Load ground truth
-    # (Assume PAN12_TEST_PATH is available as global or hardcode path)
     try:
         import sys
         sys.path.append(os.path.dirname(__file__))
-        from data_loader import load_pan12_test_ground_truth
-        PAN12_TEST_PATH = os.path.join('filtered_datasets', 'pan12-test', 'pan12-sexual-predator-identification-test-corpus-2012-05-17.json')
         gt_df = load_pan12_test_ground_truth(PAN12_TEST_PATH)
         gt = gt_df.set_index('conversation_id').to_dict()['is_predatory']
     except Exception as e:

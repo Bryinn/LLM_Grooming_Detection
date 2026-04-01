@@ -134141,3 +134141,175 @@ lol
 seriously
 no
 well ok ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'y labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 21 messages. First message: 'y labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropri"")
+conv_id=152352 | prompt="
+CONVERSATION:
+(:|
+:-/
+hw tiring u out?
+ya
+aww
+do it for me plz
+then how will u learn?
+ugh
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: ':'|' Last message: 'predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: ':'|' Last message: 'RESP_predatory": false, "reasoning": "This conversation is"")
+conv_id=152386 | prompt="
+CONVERSATION:
+i represent omegle
+its mr steal yo gurl
+oh oh oh
+mr steal yo gurl
+oh ayee oh oohhhh
+ooh oh ohhh
+bottoms up
+bottoms up
+whta the fuck are you saying?
+must be a nigger
+no, sir i&apos;m act..." | raw="
+CONVERSATION:
+i represent omegle
+its mr steal yo gurl
+oh oh oh
+mr steal yo gurl
+oh ayee oh oohhhh
+ooh oh ohhh
+bottoms up
+bottoms up
+whta the fuck are you saying?
+must be a nigger
+no, sir i&apos;m actually of the white race.
+hahaha
+you wish
+asl?
+i do not wish.
+white is right!
+am i right brother
+it is
+17/m/florida
+white power.
+i used to live in florida
+19 m CA
+where do you live now
+?
+ooh
+i lived in boca raton, where do you live?
+i used to live in georgia.
+st petersburg
+near clearwater
+cool
+yepp.
+florida sucks mad nig-dick though
+cal is way better
+florida does suck
+there is way too many niggers here
+LOL
+and cubans.
+yeah
+i live in northern california and its literally ALL white people
+lucky.
+ive been here for 4 months and have only seen like 20 niggers
+and a few mexicans
+i heard cali was full of mexicans
+lol
+when i come back to florida we should suck each other off
+theyre mostly in southern cal
+im way up top, by oregon
+im totally down
+sucking off another guy
+major awesome.
+cool man, and the weed is cheaper out here too
+really?
+for super dang shit
+how much for a nick
+yeah
+i grabbed 2 grams for 10 at the grocery store the other day
+and it was super good
+the grocery store?
+lmao
+LOL
+wtf
+yeah. you just see people everywhere and just ask them and they probably got it
+so great
+lmao
+what if its a cop.
+the weed penalty is only a $100 or $120 fine if under 20 gs or something like that
+so fuck it
+they dont really care anyways
+thats right my white bretheren
+we have money
+you know why
+cause we&apos;re not food stamping niggers
+haha
+youre a fuckin racist
+youre probably a jew
+LOL
+no dude i fucking hate jews too
+there a bunch of pricks.
+true
+my old neighbor was a jew
+did he ave a big nose
+no jews out here though... i live in fuckin paradise
+except for all the fuckin meth heads this place is perfect
+i went snowboarding yesterday
+orly?
+do you ever get laid?
+yeah
+you?
+not here.
+old ladies.
+blacks.
+not going near that black shit
+haha
+get 4 different std&apos;s
+lmao.
+if theyrs black the minimum would be 6
+not 4
+unless they under the age of 4
+you&apos;ll have to excuse me, im jsut a amature.
+lmao.
+just*
+alright
+how old are you?
+17.
+oh yeah
+i told you earlier.
+i know
+im so fuckin blazed
+were you testing me?
+oh.
+no
+but its only 3 a .m
+your so pro.
+yeah, its 6 am in FL
+yes sir.
+why you up so early? or late?
+idk coudent sleep
+but i have college in 3 hours
+so im fucked.
+plus its finals.
+where you go?
+saint pete colelge
+college*
+lmao
+i went to fgcu for 1 year
+im only in spc till september when i can join the army.
+lol
+why join the army?
+it runs in the family.
+so you can die for our nigger president?
+i would be a disgrace if i didnt.
+lmao
+trust me i dont wanna work for nigger boy.
+but my dad would disown me.
+lmao
+then fuckin kill him, thats what you do in the army anyways... kill people just because your told to
+thats the best part
+killing arabs.
+the more arabs you kill the more the jew population increases, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'im only in spc till september when i canjoin the army.' Last message: 'im'"}"")
+conv_id=152394 | prompt="
+CONVERSATION:
+7990b022e82306683538662d2f326c8f sup
+0fe8692be7a494c6561f745b9f3b0d17: chillin.
+tweetin a bit
+0fe8692be7a494c6561f745b9f3b0d17: yes, I need to shut my twitter app down. LOL.
+0fe8692be7a..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: '799999999999999999999c656c6f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f"")

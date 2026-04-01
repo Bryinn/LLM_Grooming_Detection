@@ -72,7 +72,82 @@ def main():
             settings_filters = [f.strip() for f in filter_input.split(",") if f.strip()] if filter_input else None
             run_evaluation_summarizer("results", settings_filters=settings_filters)
             return
-        if mode_choice == 4:
+        elif mode_choice == 3:
+            test_50 = input("Continue only the first 50 samples? (y/N): ").strip().lower() == 'y'
+            try:
+                temperature = float(input("Set temperature 0-1 (default 1.0, higher=more creative): ") or "1.0")
+                top_p = float(input("Set top_p 0-1 (default 1.0, lower=more focused): ") or "1.0")
+            except Exception:
+                print("Invalid input. Using default values: temperature=1.0, top_p=1.0")
+            all_models = [d for d in os.listdir(MODELS_DIR) if d.endswith("_finetuned") and os.path.isdir(os.path.join(MODELS_DIR, d))]
+            if not all_models:
+                print("No models found in the models directory.")
+                return
+            print("\nAvailable models:")
+            for idx, m in enumerate(all_models, 1):
+                model_id = next((mid for mid in MODEL_ID_LIST if mid.split('/')[-1] in m), "Unknown")
+                print(f"{idx}. {m} (model_id: {model_id})")
+            print(f"{len(all_models)+1}. All models")
+            model_choice = input(f"Which model(s) do you want to continue? (Enter number or comma-separated list, or {len(all_models)+1} for all): ").strip()
+            if model_choice == str(len(all_models)+1):
+                to_eval = all_models
+            else:
+                try:
+                    indices = [int(i.strip())-1 for i in model_choice.split(",")]
+                    to_eval = [all_models[i] for i in indices if 0 <= i < len(all_models)]
+                except:
+                    print("Invalid selection. Exiting.")
+                    return
+            results_dir = "results"
+            os.makedirs(results_dir, exist_ok=True)
+            print("\n--- Continuing evaluation on pan12-test dataset ---")
+            test_convs = load_test_convs(PAN12_TEST_PATH, test_50)
+            if test_convs:
+                import subprocess
+                import time
+                max_parallel = MAX_EVAL_THREADS
+                running = []  # List of (model_name, process)
+                to_eval_queue = []
+                model_remain_map = {}
+                for m in to_eval:
+                    model_results_dir = os.path.join(results_dir, m)
+                    settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
+                    results_file = os.path.join(model_results_dir, f"{m}_{settings_str}.txt")
+                    already_done = get_already_evaluated_conversation_ids(results_file)
+                    if already_done:
+                        print(f"{m}: Found {len(already_done)} already evaluated conversations. Will continue from there.")
+                    else:
+                        print(f"{m}: No previous results found. Will start from scratch.")
+                    remaining_convs = {cid: msgs for cid, msgs in test_convs.items() if cid not in already_done}
+                    if not remaining_convs:
+                        print(f"{m}: All conversations already evaluated. Skipping.")
+                        continue
+                    model_remain_map[m] = remaining_convs
+                    to_eval_queue.append(m)
+                while to_eval_queue or running:
+                    # Start new evaluations if slots available
+                    while len(running) < max_parallel and to_eval_queue:
+                        m = to_eval_queue.pop(0)
+                        args = [
+                            'python', __file__, '--eval-worker-continue', m, MODELS_DIR, results_dir,
+                            str(temperature), str(top_p), 'append'
+                        ]
+                        proc = subprocess.Popen(args)
+                        running.append((m, proc))
+                        print(f"Started continued evaluation for {m} (PID: {proc.pid})")
+                    # Check for finished processes
+                    for idx in range(len(running)-1, -1, -1):
+                        m, proc = running[idx]
+                        ret = proc.poll()
+                        if ret is not None:
+                            print(f"Continued evaluation finished for {m} (PID: {proc.pid}, exit code: {ret})")
+                            running.pop(idx)
+                    time.sleep(2)
+                print("All continued evaluations complete.")
+            else:
+                print("No test data available for evaluation.")
+            return
+        elif mode_choice == 4:
             config_path = input("Enter path to evaluation config (default: eval_config.json): ").strip() or "eval_config.json"
             from evaluation import load_eval_config, get_eval_conversations_from_config, evaluate_model
             config = load_eval_config(config_path)
@@ -106,6 +181,72 @@ def main():
                 evaluate_model(model_path, test_convs, results_file=results_file, temperature=temperature, top_p=top_p)
                 print(f"Results written to {results_file}")
             return
+        elif mode_choice != 1:
+            print("Invalid selection.")
+            return
+        else:
+            test_50 = input("Evaluate only the first 50 samples? (y/N): ").strip().lower() == 'y'
+            try:
+                temperature = float(input("Set temperature 0-1 (default 1.0, higher=more creative): ") or "1.0")
+                top_p = float(input("Set top_p 0-1 (default 1.0, lower=more focused): ") or "1.0")
+            except Exception:
+                print("Invalid input. Using default values: temperature=1.0, top_p=1.0")
+            all_models = [d for d in os.listdir(MODELS_DIR) if d.endswith("_finetuned") and os.path.isdir(os.path.join(MODELS_DIR, d))]
+            if not all_models:
+                print("No models found in the models directory.")
+                return
+            print("\nAvailable models:")
+            for idx, m in enumerate(all_models, 1):
+                model_id = next((mid for mid in MODEL_ID_LIST if mid.split('/')[-1] in m), "Unknown")
+                print(f"{idx}. {m} (model_id: {model_id})")
+            print(f"{len(all_models)+1}. All models")
+            model_choice = input(f"Which model(s) do you want to evaluate? (Enter number or comma-separated list, or {len(all_models)+1} for all): ").strip()
+            if model_choice == str(len(all_models)+1):
+                to_eval = all_models
+            else:
+                try:
+                    indices = [int(i.strip())-1 for i in model_choice.split(",")]
+                    to_eval = [all_models[i] for i in indices if 0 <= i < len(all_models)]
+                except:
+                    print("Invalid selection. Exiting.")
+                    return
+            results_dir = "results"
+            os.makedirs(results_dir, exist_ok=True)
+            print("\n--- Evaluating on pan12-test dataset ---")
+            test_convs = load_test_convs(PAN12_TEST_PATH, test_50)
+            if test_convs:
+                # Build settings_str for each model to check for file collisions
+                settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
+                settings_map = {m: settings_str for m in to_eval}
+                if not check_existing_result_folders(results_dir, to_eval, settings_map):
+                    return
+                import subprocess
+                import time
+                max_parallel = 2
+                running = []  # List of (model_name, process)
+                to_eval_queue = list(to_eval)
+                while to_eval_queue or running:
+                    # Start new evaluations if slots available
+                    while len(running) < max_parallel and to_eval_queue:
+                        m = to_eval_queue.pop(0)
+                        args = [
+                            'python', __file__, '--eval-worker', m, MODELS_DIR, results_dir,
+                            str(temperature), str(top_p)
+                        ]
+                        proc = subprocess.Popen(args)
+                        running.append((m, proc))
+                        print(f"Started evaluation for {m} (PID: {proc.pid})")
+                    # Check for finished processes
+                    for idx in range(len(running)-1, -1, -1):
+                        m, proc = running[idx]
+                        ret = proc.poll()
+                        if ret is not None:
+                            print(f"Evaluation finished for {m} (PID: {proc.pid}, exit code: {ret})")
+                            running.pop(idx)
+                    time.sleep(2)
+                print("All evaluations complete.")
+            else:
+                print("No test data available for evaluation.")
     elif mode_choice == "4":
         print("\n--- Add non-finetuned models from model_ids ---")
         print("Available base models:")
@@ -232,157 +373,6 @@ def main():
                     epoch=epoch,
                     learning_rate=learning_rate
                 )
-    elif mode_choice == "2":
-        print("1. Evaluate new models on the pan12-test dataset.")
-        print("2. Run evaluation summarizer to get an overview of existing results.")
-        print("3. Continue an interrupted evaluation.")
-        mode_choice = int(input("Select option: ").strip())
-        top_p = 1.0
-        temperature = 1.0
-        if mode_choice == 2:
-            run_evaluation_summarizer("results")
-            return
-        elif mode_choice == 3:
-            test_50 = input("Continue only the first 50 samples? (y/N): ").strip().lower() == 'y'
-            try:
-                temperature = float(input("Set temperature 0-1 (default 1.0, higher=more creative): ") or "1.0")
-                top_p = float(input("Set top_p 0-1 (default 1.0, lower=more focused): ") or "1.0")
-            except Exception:
-                print("Invalid input. Using default values: temperature=1.0, top_p=1.0")
-            all_models = [d for d in os.listdir(MODELS_DIR) if d.endswith("_finetuned") and os.path.isdir(os.path.join(MODELS_DIR, d))]
-            if not all_models:
-                print("No models found in the models directory.")
-                return
-            print("\nAvailable models:")
-            for idx, m in enumerate(all_models, 1):
-                model_id = next((mid for mid in MODEL_ID_LIST if mid.split('/')[-1] in m), "Unknown")
-                print(f"{idx}. {m} (model_id: {model_id})")
-            print(f"{len(all_models)+1}. All models")
-            model_choice = input(f"Which model(s) do you want to continue? (Enter number or comma-separated list, or {len(all_models)+1} for all): ").strip()
-            if model_choice == str(len(all_models)+1):
-                to_eval = all_models
-            else:
-                try:
-                    indices = [int(i.strip())-1 for i in model_choice.split(",")]
-                    to_eval = [all_models[i] for i in indices if 0 <= i < len(all_models)]
-                except:
-                    print("Invalid selection. Exiting.")
-                    return
-            results_dir = "results"
-            os.makedirs(results_dir, exist_ok=True)
-            print("\n--- Continuing evaluation on pan12-test dataset ---")
-            test_convs = load_test_convs(PAN12_TEST_PATH, test_50)
-            if test_convs:
-                import subprocess
-                import time
-                max_parallel = MAX_EVAL_THREADS
-                running = []  # List of (model_name, process)
-                to_eval_queue = []
-                model_remain_map = {}
-                for m in to_eval:
-                    model_results_dir = os.path.join(results_dir, m)
-                    settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
-                    results_file = os.path.join(model_results_dir, f"{m}_{settings_str}.txt")
-                    already_done = get_already_evaluated_conversation_ids(results_file)
-                    if already_done:
-                        print(f"{m}: Found {len(already_done)} already evaluated conversations. Will continue from there.")
-                    else:
-                        print(f"{m}: No previous results found. Will start from scratch.")
-                    remaining_convs = {cid: msgs for cid, msgs in test_convs.items() if cid not in already_done}
-                    if not remaining_convs:
-                        print(f"{m}: All conversations already evaluated. Skipping.")
-                        continue
-                    model_remain_map[m] = remaining_convs
-                    to_eval_queue.append(m)
-                while to_eval_queue or running:
-                    # Start new evaluations if slots available
-                    while len(running) < max_parallel and to_eval_queue:
-                        m = to_eval_queue.pop(0)
-                        args = [
-                            'python', __file__, '--eval-worker-continue', m, MODELS_DIR, results_dir,
-                            str(temperature), str(top_p), 'append'
-                        ]
-                        proc = subprocess.Popen(args)
-                        running.append((m, proc))
-                        print(f"Started continued evaluation for {m} (PID: {proc.pid})")
-                    # Check for finished processes
-                    for idx in range(len(running)-1, -1, -1):
-                        m, proc = running[idx]
-                        ret = proc.poll()
-                        if ret is not None:
-                            print(f"Continued evaluation finished for {m} (PID: {proc.pid}, exit code: {ret})")
-                            running.pop(idx)
-                    time.sleep(2)
-                print("All continued evaluations complete.")
-            else:
-                print("No test data available for evaluation.")
-            return
-        elif mode_choice != 1:
-            print("Invalid selection.")
-            return
-        else:
-            test_50 = input("Evaluate only the first 50 samples? (y/N): ").strip().lower() == 'y'
-            try:
-                temperature = float(input("Set temperature 0-1 (default 1.0, higher=more creative): ") or "1.0")
-                top_p = float(input("Set top_p 0-1 (default 1.0, lower=more focused): ") or "1.0")
-            except Exception:
-                print("Invalid input. Using default values: temperature=1.0, top_p=1.0")
-            all_models = [d for d in os.listdir(MODELS_DIR) if d.endswith("_finetuned") and os.path.isdir(os.path.join(MODELS_DIR, d))]
-            if not all_models:
-                print("No models found in the models directory.")
-                return
-            print("\nAvailable models:")
-            for idx, m in enumerate(all_models, 1):
-                model_id = next((mid for mid in MODEL_ID_LIST if mid.split('/')[-1] in m), "Unknown")
-                print(f"{idx}. {m} (model_id: {model_id})")
-            print(f"{len(all_models)+1}. All models")
-            model_choice = input(f"Which model(s) do you want to evaluate? (Enter number or comma-separated list, or {len(all_models)+1} for all): ").strip()
-            if model_choice == str(len(all_models)+1):
-                to_eval = all_models
-            else:
-                try:
-                    indices = [int(i.strip())-1 for i in model_choice.split(",")]
-                    to_eval = [all_models[i] for i in indices if 0 <= i < len(all_models)]
-                except:
-                    print("Invalid selection. Exiting.")
-                    return
-            results_dir = "results"
-            os.makedirs(results_dir, exist_ok=True)
-            print("\n--- Evaluating on pan12-test dataset ---")
-            test_convs = load_test_convs(PAN12_TEST_PATH, test_50)
-            if test_convs:
-                # Build settings_str for each model to check for file collisions
-                settings_str = f"temp{temperature}_top{top_p}{'_short' if len(test_convs) < 100 else ''}"
-                settings_map = {m: settings_str for m in to_eval}
-                if not check_existing_result_folders(results_dir, to_eval, settings_map):
-                    return
-                import subprocess
-                import time
-                max_parallel = 2
-                running = []  # List of (model_name, process)
-                to_eval_queue = list(to_eval)
-                while to_eval_queue or running:
-                    # Start new evaluations if slots available
-                    while len(running) < max_parallel and to_eval_queue:
-                        m = to_eval_queue.pop(0)
-                        args = [
-                            'python', __file__, '--eval-worker', m, MODELS_DIR, results_dir,
-                            str(temperature), str(top_p)
-                        ]
-                        proc = subprocess.Popen(args)
-                        running.append((m, proc))
-                        print(f"Started evaluation for {m} (PID: {proc.pid})")
-                    # Check for finished processes
-                    for idx in range(len(running)-1, -1, -1):
-                        m, proc = running[idx]
-                        ret = proc.poll()
-                        if ret is not None:
-                            print(f"Evaluation finished for {m} (PID: {proc.pid}, exit code: {ret})")
-                            running.pop(idx)
-                    time.sleep(2)
-                print("All evaluations complete.")
-            else:
-                print("No test data available for evaluation.")
     elif mode_choice == "3":
         # Option to delete models
         print("\nDo you want to delete any fine-tuned models? (y/n)")
