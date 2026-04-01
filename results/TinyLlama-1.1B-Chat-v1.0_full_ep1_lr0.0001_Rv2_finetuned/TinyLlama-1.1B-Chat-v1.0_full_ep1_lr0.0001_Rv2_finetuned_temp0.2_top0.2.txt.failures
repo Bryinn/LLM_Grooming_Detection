@@ -134313,3 +134313,2262 @@ CONVERSATION:
 tweetin a bit
 0fe8692be7a494c6561f745b9f3b0d17: yes, I need to shut my twitter app down. LOL.
 0fe8692be7a..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: '799999999999999999999c656c6f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f"")
+conv_id=152415 | prompt="
+CONVERSATION:
+60659cfda992013e610f285c46692d28, do you know where I can find good documentation about the xml2rfc vocabulary? I'm trying to work out where &lt;spanx style=&quot;verb&quot;&gt; is defi..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'I just noticed style=verb' Last message: 'i've it did've it's random, but not ideal, that did be a raw string. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 21 messages. First message: 'I just did've it"")
+conv_id=152442 | prompt="
+CONVERSATION:
+<email/> cancelled review?(trev.saunders@gmail .com) for attachment 578327 on bug 591363.
+<email/> requested review from trev.saunders@gmail .com for attachment 580427 on bug 591363.
+Bu..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: '<' Last message: 'state-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: '<' Last message: 'RESPBOYSE: 'No explicit predatory phrases detected, but the"")
+conv_id=152452 | prompt="
+CONVERSATION:
+20 m us looking for conversation
+hi
+hello
+18, female, australia. what kind of conversation?
+any, I can&apos;t fall asleep
+i see. why cant you sleep?
+not tired? woke up late in the after..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: '20 m was like 9 messages. First message: '20 m was like 9 messages. First message: '20 m was like 20 messages. First message: '20 m was like 9 messages. First message: '20 m was like 20 messages. First message: '20 m was like 9 messages. First message"")
+conv_id=152503 | prompt="
+CONVERSATION:
+http://lists.w3.org/Archives/Public/public-html/2008Feb/0021.html
+hmm
+The HTML-to-plain-text email conversion there is really broken
+oh, that's how i see it too
+The plain-text &lt;HYPER..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'http://htmlhelp.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.comfort.com"")
+conv_id=152588 | prompt="
+CONVERSATION:
+im fallin in love again
+hi horny 16 male california here
+thats great
+im glad u find the right person for u
+i dont even know why i said that
+idk
+i was singing
+awesome
+im 19 and f frim ma..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'im fallin in love again' Last message: 'im sorry but i did a raw string. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'im fallin in love again' Last message: 'im sorry but i did a raw string."")
+conv_id=152674 | prompt="
+CONVERSATION:
+Something of interest that I don't see mentioned in that document is the rendering of hyphenated words (e.g. as a result of &amp;shy;).  Most indic scripts use the same hyphen character..." | raw="
+CONVERSATION:
+Something of interest that I don't see mentioned in that document is the rendering of hyphenated words (e.g. as a result of &amp;shy;).  Most indic scripts use the same hyphen character that latin script does; whereas Malayalam doesn't use any hyphenation marker at all when it splits a word over two lines.
+I'm told that Hindi doesn't use hyphenation; so I'm not sure what to do if a &amp;shy; is encountered there.
+There are a few other interesting hyphenation cases, too.  If I understand correctly, Arabic uses the tatweel/kashida character when hyphenating.  (I believe only at the end of the first line and not at the beginning of the second, though I'm not certain.)
+Braille has a hyphen character; though a complication is that it can be used in the middle of a number, in which case the number prefix (sort of numlock character) needs to be repeated at the beginning of the next line.
+Unicode has a character called &quot;Armenian hyphen&quot;, but i don't know whether that's to be used when splitting a word over two lines or if it's just for hyphenated phrases.  (E.g. Hebrew has a &quot;maqaf&quot; character that's described as being like a hyphen, but i think that's used only for things like hyphenated phrases rather than for splitting a word over two lines.)
+8301d5dab3922cb1cb32aa2883838608: I'm not sure about the Arabic bit. The kashida character would look like it's extending the line if it's right after a joining character. But it doesn't look like that.
+Similarly, I don't know whether Mongolian should use U+1806, and whether Katakana should use U+30fb.
+ok.  I'll check with someone.
+katakana doesn't hyphenate
+it's allowed to break anywhere
+with a hyphen glyph or without?
+8301d5dab3922cb1cb32aa2883838608: http:/ 3f21e54c5c5ffd50fe3680acc025bb1d.inkedblade.net/style/scans/LoC025.png
+8301d5dab3922cb1cb32aa2883838608: without
+(sorry, that should have been obvious)
+8301d5dab3922cb1cb32aa2883838608: Japanese does not hyphenate. Breaks are allowed everywhere, except before/after certain punctuation
+8301d5dab3922cb1cb32aa2883838608: wrt that scan - The same character seems to be used in the middle of the line as a sort of dash
+8301d5dab3922cb1cb32aa2883838608: I can't read the text, though, so I can't say for sure what it's doing :)
+ah yes.  I had a comment in the source code about &quot;making sure it doesn't join&quot; re arabic, but I'd forgotten what i meant by that :)
+8301d5dab3922cb1cb32aa2883838608: It might be that it's an actual hyphen, just the font renders it differently
+8301d5dab3922cb1cb32aa2883838608: The dashes in the middle of the line appear to be longer than the ones at the end
+that might not work well with font fallback stuff.
+8301d5dab3922cb1cb32aa2883838608: so it's possible one's a hyphen, the other's a dash, and the font just adjusts the glyphs
+8301d5dab3922cb1cb32aa2883838608: There've been some indicators that have been found. The conversation consists of 20 messages. First message: 'hello, but I did not know what to do if a font fallback stuff.  I've'd been some of the reasons that have been found. The conversation consists of 20 messages. First message: 'hello, but I did not know what to do if a font's a dash, and the reason for why it've been some of the reasons that have been found. The conversation consists of 20 messages. First message: 'hello, but I did not know what to do"")
+conv_id=152687 | prompt="
+CONVERSATION:
+Asl
+Hey.
+Right off the bat, eh?
+Boy or girl
+And persistent, I see.
+Sorry
+No need to apologize.
+I just wanna no
+I just want to yes.
+Boy or girl
+What about them?
+R u a boy or girl
+Well ac..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'Asl' Last message: 'YAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAYAY"")
+conv_id=152704 | prompt="
+CONVERSATION:
+linux-gate.so.1 =&gt;  (0xffffe000)
+libwine.so.1 =&gt; /usr/lib/wine/../libwine.so.1 (0xb7e8e000)
+libSM.so.6 =&gt; /usr/lib/wine/../libSM.so.6 (0xb7e85000)
+libICE.so.6 =&gt; /usr/lib/wi..." | raw="
+CONVERSATION:
+linux-gate.so.1 =&gt;  (0xffffe000)
+libwine.so.1 =&gt; /usr/lib/wine/../libwine.so.1 (0xb7e8e000)
+libSM.so.6 =&gt; /usr/lib/wine/../libSM.so.6 (0xb7e85000)
+libICE.so.6 =&gt; /usr/lib/wine/../libICE.so.6 (0xb7e6d000)
+libXxf86dga.so.1 =&gt; /usr/lib/wine/../libXxf86dga.so.1 (0xb7e67000)
+libXxf86vm.so.1 =&gt; /usr/lib/wine/../libXxf86vm.so.1 (0xb7e62000)
+libXext.so.6 =&gt; /usr/lib/wine/../libXext.so.6 (0xb7e54000)
+libX11.so.6 =&gt; /usr/lib/wine/../libX11.so.6 (0xb7d88000)
+libGL.so.1 =&gt; /usr/lib/opengl/ati/lib/libGL.so.1 (0xb7ce0000)
+libGLU.so.1 =&gt; /usr/lib/wine/../libGLU.so.1 (0xb7c66000)
+libm.so.6 =&gt; /lib/tls/libm.so.6 (0xb7c43000)
+libc.so.6 =&gt; /lib/tls/libc.so.6 (0xb7b2b000)
+libdl.so.2 =&gt; /lib/libdl.so.2 (0xb7b27000)
+libpthread.so.0 =&gt; /lib/tls/libpthread.so.0 (0xb7b13000)
+libstdc++.so.6 =&gt; /usr/lib/gcc/i686-pc-linux-gnu/3.4.6/libstdc++.so.6 (0xb7a45000)
+libgcc_s.so.1 =&gt; /usr/lib/gcc/i686-pc-linux-gnu/3.4.6/libgcc_s.so.1 (0xb7a3c000)
+/lib/ld-linux.so.2 (0x80000000)
+shnoodle: go for it
+ldd /usr/lib/wine/opengl32.dll.so
+linux-gate.so.1 =&gt;  (0xffffe000)
+libwine.so.1 =&gt; /usr/lib/wine/../libwine.so.1 (0xb7e8e000)
+libSM.so.6 =&gt; /usr/lib/wine/../libSM.so.6 (0xb7e85000)
+libICE.so.6 =&gt; /usr/lib/wine/../libICE.so.6 (0xb7e6d000)
+libXxf86dga.so.1 =&gt; /usr/lib/wine/../libXxf86dga.so.1 (0xb7e67000)
+libXxf86vm.so.1 =&gt; /usr/lib/wine/../libXxf86vm.so.1 (0xb7e62000)
+libXext.so.6 =&gt; /usr/lib/wine/../libXext.so.6 (0xb7e54000)
+libX11.so.6 =&gt; /usr/lib/wine/../libX11.so.6 (0xb7d88000)
+libGL.so,1 (0xb7e6dga,so,1 (0xb7e6dha've been found.0,00000Axbha've been found.19 messages. First message: 'predatory' Last message: 'imnoTys/ha,6 (0xb7e54000AYFvTs/wine/appropriate language: 'imnoTys/ha,so,1 (0xb7e6dha've been found,0,00AYFv"")
+conv_id=152722 | prompt="
+CONVERSATION:
+anyone know what % of html5 tests were submitted by microsoft?
+You can look yourself to get an idea: http://dvcs.w3.org/hg/html/file/662a167f802d/tests
+approved/ and submission/ are the..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'anyone know what % of html5eafff39fd5e144eea77f8ff39f144eea77f8fafff39d/tests've't saywho submitted them. The conversation consists of 20 messages. First message: 'anyone know what % of html5eaf"")
+conv_id=152735 | prompt="
+CONVERSATION:
+About audio description tracks, I think I've only ever seen one on TV, but that one had non-trivial mixing so the normal actors' voices and the narration (on top of the sound effects an..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'about audio description tracks, I've only ever seen one, and did alright on TV and DVD side and so could be very popular. The conversation consists of 21 messages. First message: 'about audio description tracks, I've only ever seen one, and did alright on TV and DVD side and so could be very popular. The conversation consists of 21"")
+conv_id=152741 | prompt="
+CONVERSATION:
+hi there. i'm relatively new to microformats and i've been looking at stuff on the wiki and noticed one thing
+you can't specify your e-mail anywhere on your account setup
+which means, i..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi there, i did a raw string. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'hi there, i did a raw string. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropri"")
+conv_id=152772 | prompt="
+CONVERSATION:
+They guy who wrote this (http://imgur.com/SYE8a) website, is a hero, because he got his communication &amp; multimedia design bachelor thanks to that.
+$( appCache ).bind(    &quot;updat..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'heguy why,, because he got his communication &quot; updatory indicators include: Age-related inquiry: 'I got my communication &quot;, that ended up been the problems'. The conversation consists of 21 messages. First message: 'heguy why, as a result of the non-predatory": false, "reasoning": """)
+conv_id=152814 | prompt="
+CONVERSATION:
+hey
+heyy
+whats up
+just chilling
+watching funny videos?
+lol
+im watching Men In Black
+idk which one.
+lol i sort of remember that movie
+not really
+where are you from?
+usa
+what state?
+and y..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'hey' Last message: 'im in SC now, and like its_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'hey' Last message: 'im watching Men In Black'"}"")
+conv_id=152828 | prompt="
+CONVERSATION:
+hi
+I try to use the application cache, I've got an manifest file, put the right header, file accessible from: &lt;html manifest=&quot;/agenda/file/offline.appcache&quot;&gt; but for som..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'I have only one line, did be added to the file: 'I've got an application cache, put the right header, file/offline.appropriate topic: 'I've got an application cache, put the right header, file/offline.appropriate topic: 'ok added extra text.'. The conversation consists of"")
+conv_id=152840 | prompt="
+CONVERSATION:
+hi
+hi
+asl?
+15  f usa
+u?
+14 m usa
+cool
+whats upp ?
+any pic of u?
+listen to music
+uhh yeah  hold on \
+okk
+:P
+http://www.facebook.com/photo.php?pid=30933988&amp;l=1be5bc137e&amp;id=1476673..." | raw="
+CONVERSATION:
+hi
+hi
+asl?
+15  f usa
+u?
+14 m usa
+cool
+whats upp ?
+any pic of u?
+listen to music
+uhh yeah  hold on \
+okk
+:P
+http://www.facebook.com/photo.php?pid=30933988&amp;l=1be5bc137e&amp;id=1476673793
+any other sexy pic of u?
+:)
+yea hold on again
+okk
+http://www.facebook.com/photo.php?pid=30926725&amp;l=5a6e2519f9&amp;id=1476673793See AllPeople in this Album
+.Steven RuvalcabaView his photos.Create an AdSponsored
+. Super Mario Game
+iwon.com
+Click to play online now!. Take ACTION Now
+salsa.wiredforchange.com
+CLICK to SEND Providence Mayor David Cicilline a personal note of congrats on becoming the next openly gay Member of Congress.. Play Wizard MMO!
+wizard101.com
+Customize your student WIZARD to look like you! Cast SPELLS in the Ravenwood School of Magical Arts. Click HERE to play online!. Disney Epic Mickey Video Game
+Get ready to create your own magic with the Disney Epic Mickey video game. Become a fan today and be transported into a new dimension!.Like · Alyssa Pejovich likes this..Type any name or tag:or choose a person:Loading friends...Enter your friend&apos;s email address. We&apos;ll send a link to this photo and add them to your friends list.Email:Person doesn&apos;t use Facebook?Click here to tag them.
+.
+ignore all the extra stuff xD
+sorry
+ha just use the top link
+sexy breast
+hot boob
+i suck ur boob
+lol thannks
+:)
+:))
+any other very sexy pic very hot??
+hey babe
+:))
+hi
+http://www.facebook.com/photo.php?pid=30911597&amp;l=e13a470d52&amp;id=1476673793See AllPeople in this Album
+.Steven RuvalcabaView his photos.Create an AdSponsored
+. Donate Now!
+redcrossbayarea.org
+Food. Shelter. Comfort. Hope. Give the gift that saves the day. Make your year end donation today. Donate now!. Find the Perfect Dress!
+modcloth.com
+Cute indie, retro, and vintage inspired designs at ModCloth! Shop unique dresses, swimwear, shoes and more for any style or occasion.. Aya Knight
+Like Epic Fantasy Novels? Follow Aya Knight to completion on an upcoming adventure with Dragons, Elves, Magic and more!.Like · 2,761 people like this.
+ Own It Now!
+dancingwerewolves.com
+The biggest vampire event of the year! Get the comedy that bites the big one - Vampires Suck! On Blu-ray &amp; DVD 11.30..Type any name or tag:or choose a person:Loading friends...Enter your friend&apos;s email address. We&apos;ll send a link to this photo and add them to your friends list.Email:Person doesn&apos;t use Facebook?Click here to tag them.
+.
+fuck ha sorry again for all the extra shit
+just use this --&gt; http://www.facebook.com/photo.php?pid=30911597&amp;l=e13a470d52&amp;id=1476673793See
+:)
+any ur sexy figure of u nude??
+nope
+any very sexy hot body pic of u?
+not at the moment no sorry
+okk
+r u virgin?
+:)
+hey babe
+yes i am
+i want to know about sex please guide me.
+babe
+:)
+hey babe
+r uhha's e19 messages. First message: 'fuck ha sorry again for all the extra shit' Last message: 'nope'"}"")
+conv_id=152875 | prompt="
+CONVERSATION:
+Hmm, I need to go on holiday instead of continuing the alt discussion - what a dreadful shame :-(
+http://www.bbc.co.uk/iplayer/ - &lt;meta name=&quot;DCTERMS.modified&quot; content=&quo..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hm then' Last message: 'wonders if so,which was untrue, did be doing actions that did be added to the spec's non-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message:"")
+conv_id=152908 | prompt="
+CONVERSATION:
+has too many pages to process them all in a reasonable time :-(
+Ah, only 10424 left
+cc097e0d7183ae8436e7df709553c8c0: http://philip.html5.org/data/nonempty-scripts.html
+ab7faae5d7b250ea..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indic"")
+conv_id=152981 | prompt="
+CONVERSATION:
+v.nu-syntax: sideshowbarker * r466 /trunk/ (2 files in 2 dirs):
+v.nu-syntax: updated the assertions-checking code to prohibit nesting of &lt;time&gt;, &lt;progress&gt;, and &lt;meter&gt..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'v.na-predatory' Last message: 'v.na-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'v.na-predatory": false, "reasoning": "This conversation"")
+conv_id=152996 | prompt="
+CONVERSATION:
+i&apos;m a horny fat girl wanting to cyber ;3
+Ok
+webcam
+i dont have a cam do u
+don&apos;t have one either
+u can play with ur pussy
+Are u virgin
+no :2
+:3
+How did it feel
+U want to get a ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'i did be a normalcy: Resistance or discomfort: 'no:200/3'. The conversation consists of 20 messages. First message: 'i did be a normalcy: Resistance or discomfort: 'no:200/3'. The conversation consists of 20 messages. First message: 'i did be a normalcy"")
+conv_id=152999 | prompt="
+CONVERSATION:
+69b0d3dfe919a6b860a9fac82de52a7e: outlook for a fixed version of acid2 (regarding fonts and their effects on how the chin displays), unofficially most likely, is very low, correct?
+ther..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: '69b' Last message: 'not-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: '69b' Last message: 'good to know, thanks to be raw string. do not include"")
+conv_id=153041 | prompt="
+CONVERSATION:
+hellur
+h
+hi
+whats up?
+not alot, half a bottle of vodka and the untouchables
+yumm
+hbu?
+haha ya i know
+nothing bored outta my mind
+hahah shiiittyyy
+i know
+well you should do something
+lik..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hellur' Last message: 'im shit. play a game. im shit. have no games to play. The conversation consists of 20 messages. First message: 'hellur' Last message: 'im shit. play a game. im shit. have no games to play. as a raw string. did be labeled as non-predatory."")
+conv_id=153111 | prompt="
+CONVERSATION:
+hi
+hi
+19m
+where are you from
+china
+me too
+which city?
+tianjin
+are you female or male
+f
+i am from chongqing
+how old are you ?
+19
+u?
+22
+are you a student?
+of course
+can you tell me your Q..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'RESP_predatory": false, "reasoning": "This conversation is labeled"")
+conv_id=153127 | prompt="
+CONVERSATION:
+smb_add_request: request [cd29f080, mid=2218] timed out!
+smb_proc_readX_data: offset is larger than SMB_READX_MAX_PAD or negative!
+smb_proc_readX_data: -35 &gt; 64 || -35 &lt; 0
+i use s..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'smb_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'smb_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predat"")
+conv_id=153161 | prompt="
+CONVERSATION:
+hi
+a
+r
+e
+
+y
+o
+HI ASL
+u
+
+a
+
+f
+G
+J
+D
+D
+FG
+G
+r
+e
+a
+k
+?
+G
+F
+RW
+S
+A
+GN
+HG
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_pr..." | raw="{"is_predatory": false, "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'hi 'hi' Last message: 'i'"}"")
+conv_id=153177 | prompt="
+CONVERSATION:
+pokes with a ruddy big stick
+u poke me?
+yep
+umm... i wack u with a baseball bat like the bear jew
+how did u know i was a jew
+i h8 myself!!!
+for being a jew?
+and its a movie reference
+i ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'im dong nursing so i got paid to go to labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'im dong nursing so i did a raw string. No explicit predatory phr"")
+conv_id=153208 | prompt="
+CONVERSATION:
+you want to hurt linds for me?
+huh
+hurt her, make her cry for me
+y
+wat u want me to do
+slap her around
+when u come over?
+i will if u want me to
+how bad would you hurt her for me?
+i dont..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'i didnt't you did that've't you've've've've've've've've've've've've've've've've've've've've've've've've've've've've've've've've've"")
+conv_id=153236 | prompt="
+CONVERSATION:
+hi f/m?
+yo
+m
+u?
+f
+kool
+where u from?
+usa..
+hbu?
+uk
+coool...
+what state u from?
+massachusetts..
+im from Scotland
+ohh myyy gaawwddd(:
+my mom is an immagrant from theree
+and guess what my ..." | raw="
+CONVERSATION:
+hi f/m?
+yo
+m
+u?
+f
+kool
+where u from?
+usa..
+hbu?
+uk
+coool...
+what state u from?
+massachusetts..
+im from Scotland
+ohh myyy gaawwddd(:
+my mom is an immagrant from theree
+and guess what my name is?
+haha
+u know there are alot of names rite?
+my name&apos;s paisley(:
+hahaa ik but not likee mine(;
+fair enough
+im martin
+hahaa(: thats cutee
+so i take it ur mum didnt like scotland haha
+hahaa well its just she had to move for &apos;a better life&apos; andd suchh/: she was likee 3 when she moved
+
+kool there aint that much here i can see y she moved haha
+hahaa(:
+so
+what would u like to talk about?
+idkk/:
+is there anything u want to know about me or scotland?
+about you.
+anything i guess/:
+ok
+im 18 male im quite short 5 foot 1&quot;
+im ginger
+and thin with a 6 pack
+sweet(;
+lol im about 5&apos;1&quot; too(;
+nice
+hahaa
+ppl normaly just ripp me about my hight
+its funny
+ha..
+errr ye i guess ha
+(;
+no i mean its funny when some one acctuly dose come out with a neww good insult
+hahaa(: thats niccee..?
+thats the thing about scottish ppl
+we enjoy slaging each other
+thats nicce(:
+im almost as tall as my mom/:
+it would sound odd but its just how we are
+hahaa
+so what age are u?
+18
+nice one
+i think ur the first other 18 year old iv spoke to on this
+so...you gotta girlfraaand? lol
+nope split afew weeks ago
+hahaa(: the youngest ive &apos;talked&apos; to was likee 10...and aww): why?
+if you dont want to saay, idc..
+err just arguing i new it was coming bit i left her to finish it
+she just moand about every lil thing and i have a i dont give a fuck atitude mainly to things that dont matter
+ohh haha
+but ye she just complaind alot
+well ok theen..
+and i just dident give a fuk
+yeaah..
+haha so i aint to botherd by it
+ohh..i bet
+:)
+hahaa
+so what about u got a boy friend?
+noope/:
+ok fair enough
+anything else u would like to talk about
+idk you wanna know anything about mee?
+sure err anything what do u look like
+i play soccer...i lovee to hangout with my friends..
+so u like football do u drink?
+??
+i have long curly brown hair that i straighten, eyes that change: blue, bluegray and bluegreen..and freckles(oof coursee) and i cant drink?
+the leagal age to drink here is 18
+and o ye about my eyes
+oh..ours is 21..
+they are my family trate
+cool
+they are blue with yellow around the pupil
+oh that sound really cool
+thats not the only kool thing about my family
+haha
+hahaa ohhk? lol
+we have alot of scottish history
+lol..?
+long and tedious u sure u want to know?
+and u might not even beelive me
+uhm..you dont have to..
+ok il tell u
+basicly
+ok..
+my last name is steward
+mmk
+and the stewards were the last royalty of scotland
+but what happend was
+king stewart of england came to scotland
+and kicked our family out of  the throne
+and decreed that the name steward was to be out lawed
+but my family went into hiding
+and then eventuly came bak
+but there arnt meny of us
+hm.
+so my family used to be rly important
+and if things had gone diffrently and there was still a monarky in scotland then id be a prince
+haha's alrighted and dident gave a fuckatory indicators that include: Age-related inquiry: 'nope splitafwer'. The conversation consists of 21 messages. First message: 'predatory' Last message: 'im meny of us'"}"")
+conv_id=153275 | prompt="
+CONVERSATION:
+hey
+fav song?
+duno ...
+haha pic a few
+pick*
+metallica - nothing else matters :)
+haha metallica fan
+are u m or f
+not.
+i just like the song. and i am female.-
+o lol i never really liked m..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'heyPOPBOYAi got that alright.' Last message: 'im a freshman in this format: 'im a freshman in highschool labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message"")
+conv_id=153278 | prompt="
+CONVERSATION:
+Hello !
+hey
+How are you this easter?
+hehe i dont spend it
+im chinese
+oh, that makes sense
+I just had a history test about China, quite the complexe country
+haha maybe
+may i ask u a ques..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hey' Last message: 'im not-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hey' Last message: 'im not-predatory": false, "reasoning": "This"")
+conv_id=153314 | prompt="
+CONVERSATION:
+i'm trying to get my head around the vetting process for new microformats
+when something becomes a microformat‚Ñ¢, does it have defined interaction with other micirformats?
+No.  When so..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'i'satory' Last message: 'No,  when did be defined, e.g. a meeting with a xf'satory indicators include: Age-related inquiry: 'No,  when did be defined, e.g. a meeting with a xf'satory indicators include: Age-related inquiry: 'No,"")
+conv_id=153336 | prompt="
+CONVERSATION:
+hey
+hey r u ok?
+yeah
+i was worried
+im touched
+im serius
+i was scared u drank all that whisky
+naw, i didnt even drink at all
+but no, im touched though, that you cared
+thats good u didnt
+..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'hey' Last message: 'im off to bed, labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 21 messages. First message: 'hey' Last message: 'im off to bed, labeled as non-predatory."")
+conv_id=153375 | prompt="
+CONVERSATION:
+hi 858008f17a7ea3c4a2cf13b1c5ede5c5
+to f00f78aee6b0e8f6006c3da9951d919c : anywhere for the microformats dinner works for me, i'm currently coworking at epicenter cafe
+this is like the f..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'RRESPBOYBOYBOYBOYBOYBOYBOY"")
+conv_id=153378 | prompt="
+CONVERSATION:
+hey im horny and a girl and yeah you interested?
+Yes
+boy or girl?
+boy
+good. boyor girl?
+yay.
+:) wanna have some fun?
+Yes i do
+:)
+virtual? or pics?
+Virtual
+:)
+actually either or.
+So u wa..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'hey imbrer and return to the dork, you fuck, go back to your pussy and did you leave it've some of your legs over my shoulder, and i did you did leave it've some of your legs, as a result of normalcy: Resistance or discomfort: 'i did you did leave it've some of your"")
+conv_id=153416 | prompt="
+CONVERSATION:
+a9b326df4e6da61c5b6f5e1058be83a2, there is http://html456.blogspot.com/
+moves over to #html-wg as freenode is annoying from here
+a9b326df4e6da61c5b6f5e1058be83a2, where will you host it..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'aa9bbhaaff3a3c5bhaff6a3cbha3a3cbha3a3cbha3a3cbha3a3cbha3a3cbha3a3cbha3a3cbha3a3cbha3a3cbha3a3"")
+conv_id=153423 | prompt="
+CONVERSATION:
+Hello, stranger!
+Helllooooooooooooo?
+LEAVE BRITNRY ALONE
+SHE WENT THRO A DIVORCE
+okay. i will keep that in mind.
+SHE HAD @ FUCKIN KIDS!
+2
+HER HUSBAND TURNED OUT TO BE A USER
+AND SHES GO..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'hello, stranger!' Last message: 'i did did done here.'. The conversation consists of 20 messages. First message: 'hello, stranger!' Last message: 'i did did done here. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message"")
+conv_id=153440 | prompt="
+CONVERSATION:
+BibTeX doesn't map to ISO 690 nicely
+BibTeX is older than ISO 690, so blame ISO :-)
+Peh. :P
+BibTeX is also pretty near impossible to parse
+It's just a load of key/value pairs - how hard..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'BibTeX was also older than ISO 690, so blame ISO 690, so blame some complexity. The conversation consists of 21 messages. First message: 'BibTeX was just a load of key indicators. The conversation consists of 21 messages. First message: 'Bibtex did't map to ISO 69"")
+conv_id=153447 | prompt="
+CONVERSATION:
+woah, .htaccess &lt;files&gt; sections override ForceType directives in lower .htaccess files
+interesting use of HTML: as a stand in for programming code
+&lt; div classajkhdhsa01f0.aesf..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'woah,, when it did make the RDFAIS_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'woah,, when it did make the RDFAIS_predatory":"")
+conv_id=153470 | prompt="
+CONVERSATION:
+surkov: hi
+hi, tbsaunde
+surkov: thoughts on if we want to export the TableAccessible interface
+and if we want to put it in a namespace?
+1) let's do if we need 2) makes sense
+idea to put..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'surkov: did adding another generic directory to be considered as part of accessible object, for example, NotificationController: 'ok's didhing'; did added to the list of 20 messages. First message: 'surkov: did adding some generic files to be considered as part of accessible object, for example, NotificationController: 'I've been the one adding some generic"")
+conv_id=153471 | prompt="
+CONVERSATION:
+StaZ[home]: sorry i wasn't here, my problem is that i don't know what i need to use in foreach like foreach ( string X in CheckedListBox1.???)
+you got VS2005 ide?
+ide? sorry but i don't..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'StaZ[home: but did be that i did have a lot of things that've been added to the index. The conversation consists of 20 messages. First message: 'StaZ[home: but did be that i did have a lot of things that've been added to the index. The conversation consists of 20 messages. First message: '"")
+conv_id=153484 | prompt="
+CONVERSATION:
+hiya
+lol
+hello
+how are you?
+very good
+One minute till Christmmaaaassss
+ready???
+hmmm
+dont know the next timezone
+eastern and then?
+Well its Officially Christmas here :) :) :)
+yup easter..." | raw="
+CONVERSATION:
+hiya
+lol
+hello
+how are you?
+very good
+One minute till Christmmaaaassss
+ready???
+hmmm
+dont know the next timezone
+eastern and then?
+Well its Officially Christmas here :) :) :)
+yup eastern
+no
+eastern its 11 pm
+nuh uh
+oooo sorry
+youre right
+sorry
+lol
+you got me second guessing myself there for a sec
+yea jesus was something something that day
+oh well
+merry christmas
+ever consider that it was getting furtrher away from the &quot;holy&quot; day?
+thanksss
+well yeah, I live in a Christian house, and we know its not all that holy anymore
+but its there to get family together, and for everyone to remember how lucky we are to have one another
+i can agree with that
+hey are you american?
+canadian
+me to
+to bad
+too bad? :P
+well i though i remembered oboma saying whatever it takes
+I know I can make it through
+or was that bush
+if I hold out, if I do...I know I can make it through
+:P
+Sadly, you didnt catch me signing to terrible Degrassi theme song
+ooooooooooooooo
+but i do love christmas carols
+at least they got that right
+Oh goood!
+I do love christmas carols too
+you like gloria?
+hahaha
+gloria.....
+you dont know what that is do you
+can i ask you a question?
+beyond this religious bs
+yes?
+ok
+gooo for it :)
+are you adopted?
+or adandoned?
+no...do I sound adopted...can one sound adopted
+left to the government
+nope, sorry...born from my mother
+well answer this
+hmm?
+ive had a friend  &quot;&quot; that was left abdandoned to be raised by the gov
+i told him if any one insulted my moms weight i would kick their ass
+he said my mom was fat, i asked him, &quot;well where is your mother?&quot;
+was i right in doing so
+did you know he didnt have a known mother?
+yes, but he knew my mom was fat and i would react
+well its mean for sure...but he was mean too
+but the eye for an eye thing only makes you happy in that second
+you both end of feeling shitty
+not really
+i changed his life
+he went from white rapper bullshit to preppy wanna improve himself
+this was in the age of eminem
+ah well, thats definitely a change for the better
+ah ok
+him making fun of my mothers weight was the best thing that ever happend to his orphan ass
+are you trolling me?
+would be a pretty lame troll if i were
+who the fuck are you
+yeah but still....like I feel for people then they are like &quot;LOL BITCH NOT TRUE&quot;
+and thats not all that nice, bro
+hahahaha
+dont worrt i dont give a shit about you or any fucking rertard you know
+i aint trolling you
+:l
+try to be a biiiit nicer to me huh? or leave.
+cant be done
+why not?
+I think I&apos;m being pretty nice here
+im a sociopath
+and not just a retarded kill one
+dont give me bullshit answers like that
+tell ms daisy
+what do you enjoy oh so much about life
+i enjot smell
+if i had to choose
+you?
+are you quoting something?
+no
+fucker
+im asking you
+you say im a lame ass liar
+im asking you what you enjoy about life
+i enjoy smell
+I enjoy plently! Oh my sooo much
+what
+what do you enjoy
+I couldnt even begin to tell you
+hahahaha faggot
+you wish
+:l well you just ruined my mood
+ditto
+you called me a fake
+hmmm how old are you
+ok well why dont we start on a clean slate? I&apos;ll be nice, and you&apos;ll be nice :)
+20
+20 huh
+whats your favorite sorry whats it called?
+you know, scent touch taste hearing
+and such
+oh sense?
+probably....
+ahhhh
+yea
+what your favorite sense
+im a labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'im a lamer' Last message: 'im a slate?'"}"")
+conv_id=153539 | prompt="
+CONVERSATION:
+bugmail: [Bug 13602] autoassist attribute for input element &lt;http://lists.w3.org/Archives/Public/public-html-bugzilla/2011Aug/0698.html&gt;
+html-spec: ianh@340c8d12-0b0e-0410-8428-c7..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'bugmail: 'hixie: An initial message: 'hixie: 'This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'bugmail: 'i' Last message: 'RESP_predatory": false, "reasoning":"")
+conv_id=153570 | prompt="
+CONVERSATION:
+hey
+hey
+hey
+hey
+hey
+hey
+hey
+heyy
+heey
+hey
+he
+yhe
+hy
+ehy
+ehy
+ehy
+he
+he
+hye
+hy
+ehy
+ehy
+hey
+ehy
+hey
+hey
+he
+yhe
+hy
+ehy
+ehy
+hey
+hey
+hey
+he
+yhe
+hy
+ehy
+ehyhey
+he
+hyeh
+HAH !
+beat that bitch !
+
+..." | raw="{"is_predatory": false, "This conversation is labeled as non-predatory. "This conversation is labeled as non-predatory. "This conversation is labeled as non-predatory. "This conversation is labeled as non-predatory. "This conversation is labeled as non-predatory. "This conversation is labeled as non-predatory. "This conversation is labeled as non-predatory. "This conversation is labeled as non-predatory. "This conversation is labeled as non-predatory. "This conversation is labeled as non-predatory."")
+conv_id=153589 | prompt="
+CONVERSATION:
+hi
+Hi :D
+mf?
+how r u?
+
+f, and u?
+?
+m
+age?
+14, u?
+16
+from?
+?
+Brazil, u?
+turkey
+name?
+?
+Gabriela, u?
+aziz
+hm..
+give me email
+please
+!
+
+Now, based only on the above conversation, respond..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'R u?'"}"")
+conv_id=153604 | prompt="
+CONVERSATION:
+hi
+o hai
+hows you ?
+AWW
+quiet one?
+how bout u?
+fine thanks
+im good thank you
+??
+where are you come from?
+finland
+and you ?
+cool
+im from indonesia
+oo  faaar from me
+yeah it is :(
+how old..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'he was been here before but  im a non-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'he was been here before but  im a girl' Last message: 'im a girl'"}"")
+conv_id=153673 | prompt="
+CONVERSATION:
+hey baby wanna see my nudes? goto twitter.com/LexiJadeexoo
+hey
+,
+m
+lol
+lol
+lol
+lol
+lol
+lol
+ll
+f
+f
+f
+f
+f
+g
+g
+g
+h
+h
+h
+h
+j
+j
+j
+j
+jd
+d
+d
+d
+ds
+s
+s
+ss
+a
+a
+a
+a
+aw
+w
+w
+w
+we
+e
+e
+e
+er
+r
+r
+r
+r
+r
+r..." | raw="{"This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'he 'he 'he This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'hey' Last message: 'hey'"}"")
+conv_id=153678 | prompt="
+CONVERSATION:
+hi
+Cock
+u
+You like cock?
+.......
+do u?
+Love it
+asl?
+m can .
+u?
+and your a guy?
+or gal?
+yes
+guy
+let mee a picture of you? if your really a guy?
+see*
+who needs proof
+my cock shoudl
+be eno..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'im not gay.'. The conversation consists of 20 messages. First message: 'hi' Last message: 'im not gay. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'hi' Last message: '"")
+conv_id=153749 | prompt="
+CONVERSATION:
+foolip, yt?
+foolip, there's a bug in your live microdata tool with support for additional-name
+when there are multiple additional-name properties used, they should be comma separated wh..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'foolip, same bug with itemprop/affectionate language: 'hey2008 message: 'IDNA2008 mess'. The conversation consists of 20 messages. First message: 'foolip, did be a good document on the IDNA2008 message: 'Hixie, they did be a raw string. No"")
+conv_id=153797 | prompt="
+CONVERSATION:
+slugs f9e12e0466f4d059b78bb3f863633092
+:D
+:)
+ouch
+damn wordpress community
+what about us
+actually i had a person contact me today about a wordpress job
+cool
+now that i'm freelance again..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'slugs fuckhead() but that didn't quite work for anyone not using html5've got that've got that've got that've got that've got that've got that've got that've got that've got that've got that've got that've got that've got that've got that've got"")
+conv_id=153835 | prompt="
+CONVERSATION:
+hey
+hi
+m/f?
+f
+how old and where are u from
+15 and austria, you ?
+16 m usa
+do u have a boy friend?
+no not yet
+what do u look like?
+why ?
+idk, i jus want to know
+i&apos;m tall and blond
+w..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hey reasons did found. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'hey reasons did found. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists"")
+conv_id=153843 | prompt="
+CONVERSATION:
+i have a 16 inch cock
+jealous?
+aASL?
+yeah, not really i have a nice tight pussy!
+18 female alaska
+yeah thats right
+im a girl with a cock
+;]
+xDDD
+14 f canada
+oh god
+not a (lez)
+your a li..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'i have a school, I am a little smarter thn that!' Last message: 'im a school, I am a little smarter as a raw string. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'i have a school, I"")
+conv_id=153868 | prompt="
+CONVERSATION:
+Do you like dick up the ass
+uh.. pedophile?
+You type slow
+do you have downs?
+:|
+no i was thinking of what to say.
+:/
+I thought so, i bet you are a right spack.
+lol jking mate
+a what?
+Im..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'imha,who did be busy, ima set raichu on you've played, ima set raichu on you play've played, ima set raichu on you've played, ima set raichu on you play've played, ima set raichu on you've played, ima set raichu on you"")
+conv_id=153913 | prompt="
+CONVERSATION:
+hey
+:D
+gu
+hi*
+how are you :D
+fine you?
+very well haha
+whats funny?
+idk i felt like laughing lol gotta problem with it cause i do it a lot haha
+nope. HAHAH
+haha good lol
+oXo
+okay
+oAo
+;D
+..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hey' Last message: 'hahhaahhaahhaahhaimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimimim"")
+conv_id=153957 | prompt="
+CONVERSATION:
+hi
+?_?
+Hey
+how are u?
+wt up?
+im fine thanks
+u?
+i&apos;m fine thx
+wt r u up2?
+Where do u come from?
+??
+New York
+u?
+Tel mond Israel , eating on the mengele
+lol no idea what that is
+fun?
+j..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'im not-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'im not-predatory": false, "reasoning": "This conversation is"")
+conv_id=153978 | prompt="
+CONVERSATION:
+a lot of geeks, to some extent or another, suffer from a series of mental conditions that have in common a fundamental desire for tidyness
+it's not necessarily a rational thing, though ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'aa lot of geys, to some extent or another, will have in common with a right message. The conversation consists of 21 messages. First message: 'a lot of geys, to some extent or another, will have in common with a right message. The conversation consists of 21 messages. First message: 'aa lot of geys, to some extent or"")
+conv_id=154003 | prompt="
+CONVERSATION:
+changes: hixie: Rename the algorithms for running and executing a script to have less confusing names. They're now 'prepare a script' and 'execute the script block' respectively. (whatw..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'changes: hixie: 'i've been running and using their't-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'changes: hixie: 'i've been running and"")
+conv_id=154010 | prompt="
+CONVERSATION:
+hi
+hey, asl ? (:
+m or f
+im female. you ?
+male
+where you from and how old are you ?
+nc 19 you
+north carolina ?
+and im 16 florida.
+yeah
+are you alone
+no
+whos with yuo
+my bestfriend.
+is sh..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'im_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'im_predatory": false, "reasoning": "This conversation is labeled"")
+conv_id=154029 | prompt="
+CONVERSATION:
+SHOW ME UR TEEEF
+SHOW ME UR TEEEF
+SHOW ME UR TEEEEEEEEEF
+SHOW ME UR TEEEEEEEEEEEEEEEEEEEEEEEEEFEFEFEFEFFFFFF444F444F
+hi
+LICK THE DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'SHOW MEUREEEFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFIFI"")
+conv_id=154123 | prompt="
+CONVERSATION:
+iirc that's only possible in the OUTPUT chain, not input
+And yet I need to block /incoming/ SYN packets, not outgoing ones
+yeah i have the same problem :)
+I've got users that should be ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'i've got users that should be able to handle that.. it seems I did get a PID, so I can look up the user..'ve got users that did be blocked off the internet at large. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 21 messages."")
+conv_id=154138 | prompt="
+CONVERSATION:
+Hi guys, asked this before but might've missed the answer
+If data- attributes can't be used for external scripts, what would be a good alternative?
+In other words, what would be the bes..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'Hi guys, what could be added to imdb-code as content. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'Hi guys, what could be added to imdb-code as a raw string. No explicit predatory phrases detected"")
+conv_id=154148 | prompt="
+CONVERSATION:
+hi
+hi
+14 f
+17 m
+where u from
+usa
+me too
+u?
+nicee
+im in delaware
+http://img72.imageshack.us/img72/9605/p296.jpg
+thast me btw
+left or right
+its me and my friend amy
+right
+u guys could b s..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hi' Last message: 'im gonna go. 19 messages. First message: 'hi' Last message: 'im gonna go. 20 messages. First message: 'hi' Last message: 'im gonna go. 20 text. First message: 'hi' Last message: 'im gonna go. 20 messages. First message"")
+conv_id=154163 | prompt="
+CONVERSATION:
+hey luke
+hey thought u forgot me
+how could I
+ha ha
+enjoying the home alone
+no bored
+:-O
+I bet you haven't had clothes on all day
+naw in my sweats but used the jet tub like 5 times now
+;..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'thta looks hot on the net i've been back some time like im not gonna do it've been back some time like i did did imenjoy the home've been back some time like im not gonna did imenjoy the home've been back some time like i did did imenjoy the home've been back some time like"")
+conv_id=154200 | prompt="
+CONVERSATION:
+Yo
+Hey
+How&apos;s going?
+:P
+You there?
+Pretty well! Where are you from?
+Yup
+You didnt reply :D
+Ah Sorry, Germany, you?
+Auch deutscher ^^
+Helllo? :P
+Woher biste?
+Echt cool :P
+Kriegst mei..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'yao' Last message: 'Das had been, more or less, less, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more, more,"")
+conv_id=154223 | prompt="
+CONVERSATION:
+Heello.
+hi
+Wats up
+diong good you
+Doing just fine(:
+good so where you from
+Usa u?!!
+amsterdam
+Sweet m or f
+m
+Nice
+and you
+F
+How old r u
+22 and you if i may ask?
+17
+okay so still studyin..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'healo' Last message: 'im not didt you live in germany but didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you didt you did"")
+conv_id=154225 | prompt="
+CONVERSATION:
+hi all, i am trying to rotate an image inside a canvas by 90degrees, but everytime i rotate, the image i think goes out of the canvas visual area. any suggestions.
+I checked out a stack..." | raw="
+CONVERSATION:
+hi all, i am trying to rotate an image inside a canvas by 90degrees, but everytime i rotate, the image i think goes out of the canvas visual area. any suggestions.
+I checked out a stack overflow thread and it mentioned that the image needs to be translated, but i could not grasp why ?
+Hi a02fb6d31a1fcd5cc2688643295ac550: Rotation in canvas actually rotates the 2d rendering contect within the canvas, not the shape that you're trying to draw.
+Let me grab you a quick illustration :)
+9a6651e9db26914297c1814554fd5ceb: ok
+At the most basic level, this is what the canvas (2d rendering context) coordinate space looks like: http://cl.ly/5Xit
+That's without any transformations, etc
+When you rotate the canvas, it looks like this: http://cl.ly/5Y5h
+So, imagine you drew a rectangle where the Y arrow is on the first image. When you rotate the canvas it would be drawn where the Y arrow is on the second image ‚Äì¬†outside of the visible canvas.
+Does that make sense? (Will explain the fix once it does)
+9a6651e9db26914297c1814554fd5ceb: just a moment. reading.
+Take your time :)
+9a6651e9db26914297c1814554fd5ceb: i understand now :)
+Ok, so to fix that you need to translate the canvas *before* you draw your image
+Translate just moves the (0, 0) point of the canvas, like so: http://cl.ly/5Xjo
+You translate the canvas to the center of where you want to draw your image
+Then rotate 90 degrees
+Then draw the image with a minus (x, y) that is half the image width and height so that it appears in the center of the rotation
+Sounds a bit crazy, but it works :)
+9a6651e9db26914297c1814554fd5ceb: i should translate to the point about which i want to rotate ?
+Yes, exactly that
+9a6651e9db26914297c1814554fd5ceb: ok
+Let me know if that works out for you
+9a6651e9db26914297c1814554fd5ceb: trying to understand the minus(x,y) part.
+Ok, that's cool (it's the weird part).
+Basically, see that last image I posted?
+When you translate, the (0, 0) point on the canvas (the origin) moves to the point that you translated to
+So if you then drew a rectangle at the position (0, 0), it would appear at the translated position, not the top left like it would have before
+Does that make sense?
+9a6651e9db26914297c1814554fd5ceb: so if i drew the rectangle without the minus(x,y) it would appear translated and rotated about the center, but the translated image would not be aligned with the canvas right ?
+If you drew it without the minus (x, y), the top left of the image would be at the point of rotation
+Which would look a little odd
+So the minus just drags it back half way on the (x, y) to put it on the center of the point of rotation
+9a6651e9db26914297c1814554fd5ceb: i understand now.
+Excellent :)
+9a6651e9db26914297c1814554fd5ceb: just hang around for a while, i want to try it out with some arbitrary angles. hope you don't mind.
+Go for it
+If you want to learn in more detail, I wrote an entire book on learning canvas from back to front: http://www.amazon.co.uk/gp/product/1430232919/
+:)
+All of this kind of stuff is covered
+(that's where I did have a lot, but it did not have a lot, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'excellent :)' Last message: 'if you did have a lot, but did not have a lot, did not did have a lot, did not did have a lot, did not did have a lot, did not did have a lot, did not did have a lot, did not did have a lot, did not did have a lot, did not did have a lot, did not did have a lot"")
+conv_id=154226 | prompt="
+CONVERSATION:
+anyone know if a css spec indicates i can legally mix hex notation with rgba or not?
+4c681049601b3c374f1d2c0077c99049: Mix how? In the same stylesheet, or the same value?
+well my usecas..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'anyone know if a spec indicates if a webkit didnt say something about the different &lt;color&gt; instances have to see if a webkit didnt say something about the different &quot;s a raw string. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 21"")
+conv_id=154237 | prompt="
+CONVERSATION:
+hii;)
+hey there
+hows it going?
+its going very well
+glad to hear that
+im somewhere in between at the moment
+where ya from?
+maui, hawaii. you?
+Spokane WA
+hows Maui treating you
+?
+thats co..." | raw="
+CONVERSATION:
+hii;)
+hey there
+hows it going?
+its going very well
+glad to hear that
+im somewhere in between at the moment
+where ya from?
+maui, hawaii. you?
+Spokane WA
+hows Maui treating you
+?
+thats cool. isnt that from twilight?
+and maui is good.
+twilight is in Forks WA not that far away i suppose
+ohhh yah. thats right.
+so what brings you to omegle tonight?
+well i have nothing better to do. what about you?
+lot of confusion in life figured it get on here and share it with everyone lol
+how old are ya?
+im 15. what do you want to share with me?
+well im 25 and my confusion is relationship issues no offense but im not sure youd be able to relate at this point
+if you wanna hear though sure
+i think i can relate in some way. try me.
+first m/f?
+female
+ok heres the story...
+i broke off an engagement about 2 months ago now im seeing someone new shes also recently out of a long relationship and neither of us really know what we want right now... to make things more complex shes a lil younger than me (22) ive been in a lot of relationships shes been with one guy also she doesnt believe in sex without love and i believe sex is an important part of a relationship
+shes really great and we both like each other a lot but i dont know if i want love again yet or even if she does in which case do i want a sexless relationship just for the sake of being with someone with no future i dont know
+or if we could be a long term thing how long do i wait to see if its going to be or not
+when it comes to decisions like that. you think about your future not someone elses. you think about how it&apos;s going to affect you in the long run and if it&apos;s going to benefit you or bring you down. if it&apos;s something you truly want to do then you put your mind to it and you do it. If you&apos;re unsure then you don&apos;t try it. It has to be something you truly want.
+and if neither party really knows what they want?
+well you can&apos;t make a decision on something you&apos;re unsure about. you have to want to do something in order to be happy with it. if you both are unsure than you talk to eachother about it. it&apos;s best to talk to her than someone else.
+we do talk about all of this a lot weve both been very open and honest about our confusions and issues thank god for that in the mean time i do really like her and we got along great (and this is the part i dont expect you to relate to) but Ive had a very healthy sexual relationship for the better part of the last 3 years and now theres nothing its a very hard adjustment
+well you&apos;re underestimating me sir. i do have sex with my boifriend and it does create a special bond between us. i feel if you really like this person than you should give her a chance. if shes a girl you want to spend time with then you have to adjust. just hope she adjusts to your needs as well. my boifriend and i are very very open with eachother. we&apos;ve been dating for two years. when there&apos;s something we like or dont like about the other we tell them and its up to them to do something about it.
+i guess it comes down to this neither of us knows if were ready for or even want love again right now but very much like each other, do i want to be with someone for like alone especially if there will be no sex i dont know, i do want to at least give it some more time to find out but im sick of not even knowing what i want
+well thats your problem right there. it comes down to what you want. if you can figure out what you want and she provides what you want, then shes the girl for you. but you have to do you before you can do someone else.
+well thanks for listening and offering your thoughts youve got a lot of living and loving ahead of you its a lot of crazy and seems so simple and clear at that age i remember
+well thank you for your insight. i wish you the best of luck and happiness in every decision you make.
+mahalo've been dork, but Ive had a lot of running and imicking. The conversation consists of 20 messages. First message: 'i guess itsready for or even when im sick of not-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'i guess itsready for or even when imicking. the conversation consists of 20 messages. First message: 'i guess itsready for or even when imicking"")
+conv_id=154240 | prompt="
+CONVERSATION:
+I LIVE ON DAH MOON
+hi
+so?
+im kool
+how s the earth?
+hahaha
+can u see the earth
+its pretty sexxy
+hahahaah
+u m or f?
+f
+haha dont u want a man in the moon
+haha only if he got a spaceship
+ha..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'I labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'I labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropri"")
+conv_id=154252 | prompt="
+CONVERSATION:
+ellooo :)
+EY
+asll??
+asl is for sex predators
+but im 16yr old boi
+ahaa, im a 15 yr old gall
+n i aint wun of dem pervy shittss
+wer u from?
+holey fak
+North europe
+sweden
+shittt berr of des..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hellooo, im frm labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'hellooo, im talkin imfakfs up&apos;s' Last message: 'imfatory indic"")
+conv_id=154325 | prompt="
+CONVERSATION:
+Horny??
+hey
+haha ya
+asl??
+16 m us
+14 ?
+Female
+?
+for sure were from
+how you do that shit
+iPod and oklahoma
+ahh
+is there anything to even do i oklahoma
+Yeah u sext
+Tons u love it
+hahahaha..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'im jus kosed im not but im not'. The conversation consists of 20 messages. First message: 'im jus kpredatory' Last message: 'im not-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 2"")
+conv_id=154350 | prompt="
+CONVERSATION:
+heey
+hey stranger
+how are u?
+fine
+and u/
+?
+hm. not very good
+why?
+hm. i don&apos;t know
+nothing..
+whre from?
+usa
+u?
+Brazil
+nice
+wich city?
+yeahp
+so. whats ur age?
+na verdade, eu tbm sou..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'heey' Last message: 'predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'heey' Last message: 'hey stranger'"}"")
+conv_id=154377 | prompt="
+CONVERSATION:
+ACTION: Dan ensure HTML WG responds to PF WG on Omitting alt Attribute http://lists.w3.org/Archives/Public/public-html/2008Feb/0082.html
+noticed an ACTION. Trying to create it.
+Created ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'Action: 'dasl_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'action: 'dasl_predatory": false, "reasoning": "This conversation is labeled as non"")
+conv_id=154380 | prompt="
+CONVERSATION:
+h?
+do y wanna fuck
+in my ass
+? am male u can d?sconnect now ?ts boor?ng here :(
+it is nice
+and worm
+are u female ?
+mmmnn
+yes
+fuck?
+??ts sound n?ce
+yes
+how w?lll we doo on here :?
+take a..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'h?' Last message: 'me toooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"")
+conv_id=154505 | prompt="
+CONVERSATION:
+give unicorn to bang please
+hi
+sup
+:3
+nothing
+you?
+listening to some attack attack :P,and messing around with silly piercings
+and being bored
+to
+death
+okey...
+hmmm
+?????????????????????..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21222222222222222222222222222222222222222222222222222222222222222222222222222222222222"")
+conv_id=154517 | prompt="
+CONVERSATION:
+Who&apos;s there ?
+disco?
+are you in a disco ?
+...
+would you dance with me ?
+i wish
+thnx
+yeah!
+but you have to teach me dancing
+...
+kay
+fine, now I will have a beer , do you want some
+n..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'who&quot;Is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'who&quot;I just bit ma lip.&quot; 'I did have a raw string. No explicit predat"")
+conv_id=154585 | prompt="
+CONVERSATION:
+i want a pic of u naked if u r female send to <email/>
+okay
+Retard
+You just gave me an Ip adress, along wiht all your mail
+with*
+I can get all your passwords with this now
+cool u cant h..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'i did i did have some final email: 'see some final Emails'. The conversation consists of 21 messages. First message: 'i did had some final email: 'No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 21 messages. First message: 'i did had"")
+conv_id=154604 | prompt="
+CONVERSATION:
+is there a better way to express r?©sum?© experience w/ HTML5? http://pastebin.com/h1VasdaJ
+I think some people would tell you to use a microformat or maybe microdata
+and it is somewhat..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indic"")
+conv_id=154629 | prompt="
+CONVERSATION:
+have you tried adderall
+hi
+hells yeah
+yeah?
+i was on addi for 2 years
+you like it?
+lol i just took my first
+it isnt even much
+10mg
+lost 70 pounds in 3 months bc i didnt eat, smoked weed..." | raw="
+CONVERSATION:
+have you tried adderall
+hi
+hells yeah
+yeah?
+i was on addi for 2 years
+you like it?
+lol i just took my first
+it isnt even much
+10mg
+lost 70 pounds in 3 months bc i didnt eat, smoked weed, and worked all day
+lol
+didnt eat and smoked weed
+and it literally, no joke, makes u feel like fucking superman
+realy
+:0
+how much were you taking
+one of the side effects of addy is loss of appitite
+50 mg a day
+:0 throughout or in one shabang
+one shabang
+i ave this paper to write
+oh snap :0
+50 mg pills
+i shoulda got 30mg
+oh snap
+yeah, u got a script?
+sorta
+book report
+didnt even read it
+shiot
+who teh fuck gives out book reports n college
+yeah addy makes u a genius
+:0
+english classesd
+O_O
+yeah
+lamzors
+im a psych major tho :OOO
+lol likewise
+clinical/counseling minor
+oo
+yeppers
+yup yup
+ive tried morphine teh other day
+injected it into fat
+i didnt wanna do vein, afraid of air bubbles
+fucking amazing
+i once soaked a cotton ball in liquid morphine and let it sit in a jar of bud for a week to soak it up
+most colorful high of my life
+haha
+lol
+wth
+youre crazy
+yeah
+its pretty much opiate based
+yeah
+soaked into the bud - its like a double whammy
+O_O
+lol
+are you able to get lsd easily whereever you are
+hahaha NO! and it SUCKS!
+whut
+lol
+i love thats hit
+ive wanted 2 try hallucinigens
+im zen
+maybe shrooms, but i heard it can be scarier than acid
+im stefano
+oh, you didnt get image distortion?
+shrooms are meh
+ive never tried it!
+:OOO
+youd love it
+i had the opportunity to hav shrooms with my ex and b4 i cud i broke up with her
+its more body
+lol
+teh feelings
+so i fucked up
+:00
+thats wat ive been told
+shoulda took it and before it kicked you could have done it
+broke up i mean
+and left
+yeah i wanted 2 wen she showed me but she had to drive home and she cudnt do it high on acid
+lol
+thatve been fucked
+i drove on acid :x
+the road kept stretching
+no shiiiiit
+thats fucked dood
+yeah but i was dirving like 17mph
+haha
+hahahaha
+thats wat i mean tho man!
+through neighborhoods and staying off main roads
+u dont know
+yeah
+itw as fun
+see id end up killin meself so sumbody else
+im sure
+haha
+and went acid camping
+which was fun too
+in the woods
+well i hope this adderall kicks soon
+how long before onset
+will i know its kicked?
+it depends on wat kind it is, if its rapid release or timed release
+ur typin kinda fast for me - idk if u realize this but thats a pretty strong indication that it may hav already kicked in
+lol
+i type sorta fast :0
+i think
+but im copying and pasting this
+Blue, oval, flat-faced, beveled-edge tablet with two partial bisects on one side debossed with b over 972 and two partial bisects and a full score on the other side debossed with 1|0
+the left side of my head literally exploded after reading  half that lol
+i think its rapid release
+lol i think so too :P
+sweet
+well i have to cliffnotes this bitch
+does this mean goobye??
+if so then peace my homie
+wait
+before you go
+omg
+it was a pleasure talking to you, wherever you are and i am glad we have encountered in this omegle.com. You are like me and if you were here with me, we&apos;d probably be friends. The conversation consists of 20 messages. First message: 'Blue, oval, flat-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'Blue, oval, flat-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'Blue, oval, flat-"")
+conv_id=154650 | prompt="
+CONVERSATION:
+http://dannyayers.com/2007/06/25/grddl-progress
+Regarding the current proposal that HTML5 (or whatever it gets called) drops the profile attribute, that seems seriously wrong-minded, fo..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'are there useful bodies of documents that have been used that I have a tendency to accept this. :)'ve a tendency that has had at least 20 messages. First message: 'are there useful bodies of documents that have been used that I have a tendency that has had at least 20 messages. First message: 'are there useful bodies of documents that have"")
+conv_id=154729 | prompt="
+CONVERSATION:
+sup
+hey!
+SUP!
+whats up dwag?
+NIGGA! IM TALKING TO U!
+nm u asl?
+15 m usa
+FUCL YO GAY ASS NIGGA!
+hell i aint gay bitch. i didnt know u was a dude
+WANA BE MY BITCH~
+IL GIVE U 5$ TO SUCK MY..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'sup' Last message: 'imoneheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadheadhead"")
+conv_id=154732 | prompt="
+CONVERSATION:
+ehmm like asl? &lt;:
+20 male
+15 f
+do you know the meaning of life little girl?
+yeah i know, its different of course for different people :)
+but yeah i know mine
+I think yours is...
+STAY..." | raw="
+CONVERSATION:
+ehmm like asl? &lt;:
+20 male
+15 f
+do you know the meaning of life little girl?
+yeah i know, its different of course for different people :)
+but yeah i know mine
+I think yours is...
+STAYING AWAY FROM ………………….._,,-~’’’¯¯¯’’~-,,
+………………..,-‘’ ; ; ;_,,---,,_ ; ;’’-,…………………………….._,,,---,,_
+……………….,’ ; ; ;,-‘ , , , , , ‘-, ; ;’-,,,,---~~’’’’’’~--,,,_…..,,-~’’ ; ; ; ;__;’-,
+……………….| ; ; ;,’ , , , _,,-~’’ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ¯’’~’-,,_ ,,-~’’ , , ‘, ;’,
+……………….’, ; ; ‘-, ,-~’’ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;’’-, , , , , ,’ ; |
+…………………’, ; ;,’’ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;’-, , ,-‘ ;,-‘
+………………….,’-‘ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;’’-‘ ;,,-‘
+………………..,’ ; ; ; ; ; ; ; ; ; ; ; ;__ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ‘-,’
+………………,-‘ ; ; ; ; ; ; ; ; ; ;,-‘’¯: : ’’-, ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; _ ; ; ; ; ;’,
+……………..,’ ; ; ; ; ; ; ; ; ; ; ;| : : : : : :| ; ; ; ; ; ; ; ; ; ; ; ; ,-‘’¯: ¯’’-, ; ; ;’,
+…………….,’ ; ; ; ; ; ; ; ; ; ; ; ‘-,_: : _,-‘ ; ; ; ; ; ; ; ; ; ; ; ; | : : : : : :| ; ; ; |
+……………,’ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ¯¯ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;’-,,_ : :,-‘ ; ; ; ;|
+…………..,-‘ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ,,-~’’ , , , , ,,,-~~-, , , , _ ; ; ;¯¯ ; ; ; ; ;|
+..…………,-‘ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;,’ , , , , , , ,( : : : : :) , , , ,’’-, ; ; ; ; ; ; ; ;|
+……….,-‘ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;’, , , , , , , , ,’~---~’’ , , , , , ,’ ; ; ; ; ; ; ; ;’,
+…….,-‘’ ; _, ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ‘’~-,,,,--~~’’’¯’’’~-,,_ , ,_,-‘ ; ; ; ; ; ; ; ; ; ‘,
+….,-‘’-~’’,-‘ ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; | ; ; | . . . . . . ,’; ,’’¯ ; ; ; ; ; ; ; ; ; ,_ ; ‘-,
+……….,’ ; ;,-, ; ;, ; ; ;, ; ; ; ; ; ; ; ; ; ; ‘, ; ;’, . . . . .,’ ;,’ ; ; ; ;, ; ; ;,’-, ; ;,’ ‘’~--‘’’
+………,’-~’ ,-‘-~’’ ‘, ,-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, 'f,,,,, 's,,"")
+conv_id=154733 | prompt="
+CONVERSATION:
+m?
+no
+age?
+19
+place?
+usa
+virgin?
+yes
+o nice
+um......alright
+do u look good?
+i cant judge myself like that
+any pic?
+facebook?
+sure
+search Parnnet Kaur
+i cant
+why
+i m not gay
+sorry
+um......." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'im not-predatory' Last message: 'im not-predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'im not-predatory' Last message: 'im not-predatory": false,"")
+conv_id=154739 | prompt="
+CONVERSATION:
+hi
+wazzup?
+y
+y
+y
+y
+y
+a
+a
+a
+a
+a
+s
+s
+s
+s
+s
+s
+sd
+dd
+d
+d
+d
+2
+2
+2
+2
+2
+2
+1
+11
+1
+1
+asl?
+11
+44
+44
+4
+44
+t
+t
+gg
+g
+g
+g
+gg
+g
+g
+gh
+h
+h
+hh
+h
+j
+jj
+j
+j
+j
+hg
+n
+zz
+nz
+n
+f
+g
+n
+jh
+z
+hgfh
+zju
+u
+ujuk
+z
+uil
+i..." | raw=""ThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThisThis The "ThisThis The "ThisThis The "ThisThis The "ThisThis The "ThisThis The "ThisThis The "ThisThis The "This The "ThisThis The This The The The The The The This This This This This This The The The The This This This ThisThisThis The The The The The The This This This This This The The The The This This This This This This This This This This This This This This This This This This This This This This This This This This This This This This This This This This This This"")
+conv_id=154752 | prompt="
+CONVERSATION:
+http://blog.codedread.com/archives/2009/04/14/pluggable-svg/
+Title: Something Witty Goes Here (at blog.codedread.com)
+http://blog.codedread.com/archives/2009/04/14/pluggable-svg/
+Title:..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'http://www,schepers,cc/predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'http://www.schepers,cc/predatory": false, "reasoning": "This"")
+conv_id=154753 | prompt="
+CONVERSATION:
+Look at the screen, now back to the keyboard, now back to the screen, now back to the keyboard. I&apos;m horny baby
+hey
+/
+wtc?
+lol
+weeeeell then...
+lol
+its epic
+totally.
+wat?/
+*sigh, nu..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'Look at the screen, now back to the keyboard, aliens' Last message: 'this conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'Look at the screen, now back to the keyboard, alright, "reasoning": "This conversation is l"")
+conv_id=154777 | prompt="
+CONVERSATION:
+hiiii u were busy all wkend was it worik busy or fun busy i was boooorrrreeddd stuck ehre at home
+awww...it was  fun-busy
+that sux
+huh whats that
+that you were bored all weekend....that..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'hiiiii....., "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'hiiiii....., "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or"")
+conv_id=154785 | prompt="
+CONVERSATION:
+a9b326df4e6da61c5b6f5e1058be83a2: foolip wrote a demo one
+ah cool
+a9b326df4e6da61c5b6f5e1058be83a2: i'm going through some websrt feedback now though and making a number of changes to t..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'aa9bb did a bunch more but pimpmyspec broke's a raw string. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'a9bb did a raw string. No explicit predatory phrases detected, but"")
+conv_id=154812 | prompt="
+CONVERSATION:
+hi
+need some fun;) hornyyy f/19/uk
+same here
+20 m us
+whats on your mind sexy
+your big cock fucking me from behind;D i have a d cup. long wavy black hair. 120lbs
+what&apos;s on your mind..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'im gonna throw youatory indicators and concerning behavior were found. The conversation consists of 20 messages. First message: 'im gonna throw youatory indicators and concerning behavior were found. The conversation consists of 20 messages. First message: 'im gonna throw youatory indicators and concerning behavior were found. The conversation consists of 20"")
+conv_id=154877 | prompt="
+CONVERSATION:
+22 male
+16 f
+:)
+cool
+where u from ?
+philippines :)
+niceee
+i am from sweden
+how about you?
+aah
+ok
+so u like older guys ? :P
+yeah :)
+why may i know?
+because they are matured than me, they..." | raw="
+CONVERSATION:
+22 male
+16 f
+:)
+cool
+where u from ?
+philippines :)
+niceee
+i am from sweden
+how about you?
+aah
+ok
+so u like older guys ? :P
+yeah :)
+why may i know?
+because they are matured than me, they think and act as of their age :)
+hmmmm coool
+tell me more :P
+ok so I do want having a friend more matured, or what I mean is much matured than me :)
+thats cool
+how about you?
+is it ok to you chatting with me?
+its perfect .. no problem :)
+I do love chocolates, how about you?
+yea i like them
+AYT?
+hmm... then that means you&apos;re a nice guy :)
+unlike others here :(
+why so
+what do other do here ?
+they ask if i&apos;m horny etc..
+hmmm yea they used to ask me too :P
+oh, you know at first, I also think of you too :)
+as what ?
+as one of them
+lolz
+not today :P
+haha :)
+really?
+you want me to ? :P
+ahmm .. *speechless*
+:))
+what does that means ? :P
+ah, I do want, but ..
+I can&apos;t......
+but what ?
+why ?
+I do want chatting too with horny people, but I think it&apos;s not good
+why do u think so ?
+hmm,i just thought it&apos;s bad..
+if u think its bad then let me try not to chat like another horny guy ;)
+hmm ok :)
+whenever u think its fine .. let me know :P i will switch gears :D
+LOLs :)
+hmm but do you want to?
+if u insist :P
+ok I insist
+hmmm thats nice of u :)
+:)
+are u a virgin ?
+no, i&apos;m not a virgin anymore :(
+cool
+when did that happen and how ?
+brief me :P
+I had a Bf, he got me last January this year
+nice
+what did u guys do ?
+and y?
+I went to his house coz I wanna see him, but then we felt like hot, so we made love
+I mean, something happened, and after that we went to school :)
+we have class that time :)
+so lets come back to us now ;)
+ok:)
+so what are u wearing now ?
+tshirt and short shorts
+whats inside the tshirt ?
+i don&apos;t have bra this time but I&apos;m wearing this thin panty
+wat color is the panty ?
+pink with ribbon :)
+cool
+what color are ur tits ?
+hmm guess it
+pink ?
+haha you got it:)
+coool
+i am gonna hold u back ... press my body over urs
+and hold ur face and smooch u gently :)
+do whatever you want :)
+can u feel my tongue over urs ?
+go for it
+i am giving ur tongue a mild massage :)
+oh that&apos;s wild
+while smooching .. i am gently rubbing ur tits over ur tshirt
+ooh
+let me first remove ur shorts
+you got it
+and then put my hands slowly inside ur tshirt :)
+oohhh
+work it
+now both my hands are on ur boobs and grabing ur tits .. while i stil continue to smooch u gently
+yeahh..
+I feel like damn hot!
+now i totally remove ur tshirt
+and luk at ur hot tits ;)
+play at it
+now i am going behind u and grabing ur tits from behind .. while my lips are on ur neck and shoulders :))
+ohh that&apos;s wild
+now tilt ur neck towards me and smooch me hard
+ill do it
+ohhhh
+time for some tongue massage for ur tits ;)
+i am gonna put one of ur tits in my mouth and rub the other with my hand
+haa
+time to untie the ribbon ;)
+go..
+please
+while my tongues still rubbing ur tits
+my hands on ur panty
+slowly removng them
+oh oh
+now i put one of my finger inside ur tshirt's sdid that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that did that"")
+conv_id=154901 | prompt="
+CONVERSATION:
+hi there
+hi
+asl?
+asl
+20 f skorea
+you
+21 m uk
+how are you
+im good thnx and you?
+fine^^
+good
+what do you do?
+i sell flowers u?
+wow. i&apos;m student.
+univercity
+what are you studying?
+jou..." | raw="
+CONVERSATION:
+hi there
+hi
+asl?
+asl
+20 f skorea
+you
+21 m uk
+how are you
+im good thnx and you?
+fine^^
+good
+what do you do?
+i sell flowers u?
+wow. i&apos;m student.
+univercity
+what are you studying?
+journal.
+cool
+thanks^^.
+so what do you like doing for fun?
+um...i like playing guitar.
+you?
+cool i envy anyone who can play guitar
+i like listening to music
+haha. it&apos;s easy.
+and mostly catching up with the family
+i wish it was easy
+ive tried it its hard
+so what music do you like?
+um.. accostic.
+cool
+you have good taste
+i like JASON MRAZ. you know?
+sorry to ask but whats your name, i hate this whole &quot;stranger&quot; thing
+sure. i&apos;m Lim. you?
+yes i have heard some of his stuff in fact i have some of his stuff on my phone
+my friends cal me suzuki
+lim, thats a really pretty name
+thanks!
+youre welcome
+actually, i don&apos;t speak English well.
+youre doing very well, i noticed you were struggling on a couple of words but you are doing great
+thanks thanks^^ you&apos;re so kind. suzuki.
+thank you youre sweet to say
+suzuki is Japaness?
+im called suzuki after the bike
+why?
+its my nicknam
+*nick-name
+ok. haha.
+i wore my bike jacket to work one day and they started calling me suzuki
+and it stuck
+ohh...The English translation of the second most common surname in Japan. .
+ok lol
+i didnt know that
+do you speak japanese?
+a little.
+again i am a bit jealous
+hahahah. why!?
+i tried learning it but i think i need a better way
+it&apos;s okay.
+thank you
+what time is it
+here it is 5:08pm
+there?
+2:09 am. haha
+i don&apos;t sleep.
+what are you doing up at that time?
+lol
+its usually what time i wake up for work lo
+*lol
+haha. listening to song, writing dairy....
+what song are you listening to?
+never get to sleep....
+awww
+jason mraz- beatiful mess
+wonderful song..
+i dont think i have ever heard it
+listen that song. sooooooooo good.
+ok i will have to
+yes^^
+what are you doing now?
+work?
+i will listen later, im listening to music, watching some tv, browsing for xmas and talking to you
+no i have a week off
+besides i am usually finished work by lunchtime
+and i am really bored
+not of the conversation of course
+me too! so bored.
+well what would you like to do?
+but The guy who sells flowers is so romentic.
+?
+who is that?
+you
+thank you but how am i romantic?
+nope. sorry.zzz
+?
+i am sorry i think you have lost me
+haha
+lets skip past that bit of the conversation
+English is not too difficult to understand.??
+what would you like to do now?
+Easy conversation^^
+ok i will try
+thank
+youre welcome
+Korean want to know?
+sure
+one...
+?? is hello.
+im sorry its come up as symbols
+an-neung.
+ok thank you
+ok
+do you need any help with english?
+um...not yet. thanks.^^
+ok
+oh. you know &apos;far east movement&apos;?
+not really
+okay...
+so lim
+do you have any brothers or sisters?
+little sister. you?
+no im an only child
+oh. in korea, only child boy is so valuable. haha
+unfortunately not a big thing in england
+Son preference remains. a little.
+okay.
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw string. Do not include any other text.
+ 'imantiman did imenyo.i did imenyo.you have some brothers or sisters?'. The conversation consists of 21 messages. First message: 'imantiman did imenyo.you did imenyo.sure, imenyo.you did imenyo.y did imenyo.y did imenyo.y did imenyo.i did imenyo.y did imenyo.y did imenyo.y did imenyo.y did imenyo.y did imenyo.y did imenyo.i did"")
+conv_id=154905 | prompt="
+CONVERSATION:
+alrie mat asl
+how are you
+hey
+16 f us
+wbu
+16  m london... xxxxx
+ohh okayy cool
+so what do u do?
+lik interest
+wat do ya luk lik???xxxxx
+wah
+i like singing
+but i asked u first
+same jay-z
+..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'alrie mat asl' Last message: 'im not a stranger!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"")
+conv_id=154918 | prompt="
+CONVERSATION:
+hi
+nsl?
+hi
+18
+u?
+17
+from?
+f
+and u
+i from china   18   boy
+we are chinese
+??
+Coincidence
+??
+???
+??
+??
+??
+?????
+????????
+??
+??????
+????????????
+2
+????
+??
+????????
+fen
+??
+???????
+??
+??
+???..." | raw="{"is_predatory": false, "This conversation is false, "This conversation is false, "This conversation is false, "This conversation is false, "This conversation is false, "This conversation is false, "This conversation is false, "This conversation is false, "This conversation is "This conversation is labeled as non-predatory. "This conversation is false, "This conversation is labeled as non-predatory. "This conversation is false, "This conversation is labeled as non-predatory. "This conversation is false, "This conversation is labeled as non-predatory. "This"")
+conv_id=154928 | prompt="
+CONVERSATION:
+cc7bcfbc58c467939c5987584fc882cb: Well, that's the way it has to work.  You don't want &quot;&lt;p&gt;foo &lt;b&gt;bar&lt;/b&gt; baz&lt;/p&gt;&lt;style&gt;p,b{ text-shadow: 5px 5px rgba..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'cc7bcfbc58c4679c99c59c99c99c99c99c99c99c99c99c99c99c99c99c99c99c99c99c99c99c99c99"")
+conv_id=154970 | prompt="
+CONVERSATION:
+hii
+yo (:
+asl?
+16 f usa
+you
+16 male australia
+awesome
+so how often do you say gday mate
+haha, not often
+it&apos;s a stereotype, we talk pretty much the same as americans
+just a differen..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'im resolved now Labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'im resolved now Labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming"")
+conv_id=155043 | prompt="
+CONVERSATION:
+THE WORLD IS JUST MY MEDICINE BALL,UR ALL IN
+Ok, Eminem.
+hah ur the first one
+SILENCIO
+I haven&apos;t even listened to the song, I just recognise the title.
+Bitch.
+ohh u shouldnt
+yea
+Oh..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: 'The WORD' Last message: 'baibai beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi beibi"")
+conv_id=155055 | prompt="
+CONVERSATION:
+Guy or girl?
+hi
+girl
+Cyber?
+uhh
+maybe
+That&apos;s pretty uncertain.
+How do I change that to a yes?
+by being interesting
+or getting me in the mood
+or if I were less cold
+Haha well, for t..." | raw="
+CONVERSATION:
+Guy or girl?
+hi
+girl
+Cyber?
+uhh
+maybe
+That&apos;s pretty uncertain.
+How do I change that to a yes?
+by being interesting
+or getting me in the mood
+or if I were less cold
+Haha well, for the last one, usually a blanket or something helps :P
+well it&apos;s mostly my hands that are cold
+but I don&apos;t wanna stop using the computer
+Ah that would make sense. Haha that bored?
+well I&apos;ve nothing to do
+which I guess makes me bored
+so yeah
+Such a terrible crime. As to the interesting part, I feel like that&apos;s usually out of my control whether people find me interesting or not.
+As to the mood thing, anything in mind?
+well you&apos;re interesting enough so far
+Interesting enough, backhanded compliment haha.
+mood, I&apos;ll leave that up to you
+Glad I meet expectations enough?
+that&apos;s just the way I talk
+:P
+Type*
+sorry enough! okay, I don&apos;t usually talk like that but oh well
+So you&apos;ve lied to me?!
+That hurts... :(
+nuts
+Because I&apos;m sure you care so much...
+And stop thinking about my nuts :P (terrible joke I know)
+well if you insist
+thoughts that&apos;s what you wanted though
+It&apos;s more the penis area I&apos;m worried about, nuts are fine though too if that&apos;s what gets you going.
+usually what gets me going is someone else getting going
+So in other words, setting the mood means just me starting? At least that&apos;s what that sounded like.
+you could always try
+I could, but as contradictory as it sounds, I try and stay somewhat decent and only try when it&apos;s wanted. No use trying to force it.
+well I&apos;m trying to say I want it without saying I want it, but I guess that dream is never coming true
+haha maybe another time, but it can start another sort of dream ;)
+Do you like foreplay?
+well yeah
+Haha alright, I try to be detailed, so if it&apos;s not going as quickly as you&apos;d like, then please let me know.
+okay :)
+We&apos;re sitting on a bed, alone. I lean in and start to kiss you gently, our lips brushing together. Soon the kisser press firmer and firmer into each other, and our lips part and our tongues meet. After we make out for a bit, I trail down and kiss you on the nape of your neck.
+foreplay shouldn&apos;t be too quick anyway
+(one more question, I know I started but ah well. Are you getting in the mood as in I type a lot first, or are you joining in right away?)
+I think I&apos;ll jump in soon if you get us started, but
+what&apos;s your name btw?
+Greg, and yours? (and technically I already did start)
+yeah, I noticed it quite well :) I&apos;m Jenny
+Nice to make your cyber aquaintence (spelling?) then.
+let&apos;s get on to some more &apos;aquainting&apos; then :P
+My mouth moves lower down so I&apos;m kissing the top of your chest. My hands run down your sides and feel the curves of your body, then go up your back and run through your hair. My hands come to rest on your thigh and start to massage your inner thigh. My mouth moves slightly lower so it&apos;s right above your cleavage.
+I&apos;m a bit ahead of you.
+My hands move up your stomach and stroke your skin right beneath your breasts. My mouth moves lower and lower until soon I&apos;m kissing between your breasts. I pull my head back and my hands roll over you breast, gently massaging them and sometimes pull slightly at your nipples.
+you&apos;re good at this :) keep going, I&apos;ll jump in (or on) soon
+As you wish ;). My hands move back down to your chest. my mouth moves slightly lower so I did start, go up your stomach and stroke your skin right beneath your breasts. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 21 messages. First message: 'My hands move up your stomach and stroke your head, bored?' Last message: 'y'"}"")
+conv_id=155098 | prompt="
+CONVERSATION:
+Hello
+hello
+Hey...
+well this is awkward
+Really?
+Why?
+haha, Sorry for that.
+Where are you from?
+lol
+im from the east coast of canada
+where are you from?
+Woah!...
+West coast of the US.
+ha..." | raw="
+CONVERSATION:
+Hello
+hello
+Hey...
+well this is awkward
+Really?
+Why?
+haha, Sorry for that.
+Where are you from?
+lol
+im from the east coast of canada
+where are you from?
+Woah!...
+West coast of the US.
+hah, totaly opposites
+kinda
+not really...
+Southern California?
+hmm
+weather wise it sure is
+so0cal
+that is like orange county and stuff?
+SoCal! haha, Yes it is.
+You know the place?
+lol, yay for pop culture!
+not persoanlly
+ive actually got a question for you
+Anything around LA. Please ask. haha
+are you in/graduated from high school?
+Yes, done with high school actually.
+perfect
+ive always wondered
+are the cliques as prominent as movies and stuff make them out to be?
+like theres the jocks and the nerds etc etc, and there is that social heirarchy that you get shit on for stepping out of or whatever
+Not as prominent. But they&apos;re noticeable.
+that is really interesting because wheere i grew up there was nothing like that at all
+sure there were groups of friends, but there wasnt any sort of structure or anything you know?
+Ohh, as you grow. The structure seems to break down.
+I live inland a bit. So I have a feeling it is less prominent. But nearer in the bigger cities, and I would say those more at the coast are worse.
+yeah, those beaches mess with your mind, man
+The beaches are just fine. It&apos;s the bigger city and worry for money that does damage.
+hah, well if you want to get all logical about it....
+Just saying, I also blame the heat. haha
+is it very warm there this time of year?
+Every time of year. haha
+lol
+we can give you some snow if you want it
+:)
+I would love that. haha I&apos;ve never seen snow.
+:O
+never seen snow....
+that is such a foreign concept
+I have seen it in photos and movies. But never close up in person.
+yeah
+I&apos;ve seen it on mountains.
+you should really experience it
+how old are you?
+18
+lots of time!
+do you like sports?
+I can get into them. :)
+What&apos;s your age?
+hah.  im 21
+west coast...... hmm is there a state between you and canada?
+i cant remember
+Have you ever seen a desert?
+And there are two.
+Oregon and Washington.
+no, i havent. but i would love to see one
+:) There&apos;s not much to it. haha
+ah... well you should go to British Columbia sometime in your lfe and go to Banff -- its one of the best places to ski in Canada
+loots of snow
+awesome :)
+although new england is better awesome too
+Too afraid to go skiing I believe. haha
+ooooh man you get over it quick
+I&apos;d like to go to Australia.
+its amazing
+so would i actually
+You&apos;ve been there?
+as long as i have a shotgun to deal witht he spiders
+Spiders?
+no, but my sister lived there for about a year
+she loved it
+the size of dinner plates
+How large? or small?
+well, they range in size obviously... but some species are the size of dinner plates
+others are smaller than a quarter
+Ohh, the plates though? haha
+the small ones are the ones you need to really worry about, but the big ones are frightening,..
+oh
+lol
+well
+the plates i have at my house are...... 9 inches in diameter maybe 8
+and ive been told some of them are that size
+haha, That&apos;s about the same I have though.
+bear in mind there is probably some exaggeration there
+but at any rate, they haave big fucking spiders and that is a bit of an issue for me lol, i dunno about you :p
+anyway, gonna take off.  nice chatting with you
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'hello, but my sister did that size' Last message: 'im from the labeled as non-predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 20 messages. First message: 'hello, but my sister did that did be told some of them' Last message: 'im from the labeled as non"")
