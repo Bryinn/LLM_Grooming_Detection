@@ -90,7 +90,15 @@ def main():
             print(f"{len(all_models)+1}. All models")
             model_choice = input(f"Which model(s) do you want to continue? (Enter number or comma-separated list, or {len(all_models)+1} for all): ").strip()
             if model_choice == str(len(all_models)+1):
-                to_eval = all_models
+                wildcard = input("Optional: Enter a wildcard filter for model names (e.g. Qwen*, *Rv2*, leave blank for all): ").strip()
+                import fnmatch
+                if wildcard:
+                    to_eval = [m for m in all_models if fnmatch.fnmatch(m, wildcard)]
+                    if not to_eval:
+                        print(f"No models match the filter '{wildcard}'. Exiting.")
+                        return
+                else:
+                    to_eval = all_models
             else:
                 try:
                     indices = [int(i.strip())-1 for i in model_choice.split(",")]
