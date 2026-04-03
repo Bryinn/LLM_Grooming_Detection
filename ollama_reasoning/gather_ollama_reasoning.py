@@ -11,7 +11,7 @@ from data_loader import load_pan12_training
 from Globals import PAN12_TRAIN_PATH
 
 # Configuration
-OLLAMA_MODEL = os.environ.get('OLLAMA_MODEL', 'qwen3.5:9b')
+OLLAMA_MODEL = os.environ.get('OLLAMA_MODEL', 'vaultbox/qwen3.5-uncensored:4b')
 
 # Input/output paths
 PAN12_JSON_PATH = PAN12_TRAIN_PATH
