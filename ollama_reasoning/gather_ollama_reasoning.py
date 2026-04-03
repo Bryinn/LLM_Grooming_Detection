@@ -37,6 +37,8 @@ def build_prompt(conversation: str, label: str) -> str:
     Build a prompt for the Ollama API based on the conversation and its label.
     """
     return f"""
+You are an expert forensic analyst specializing in identifying predatory behavior in online conversations. You have been given a conversation between two individuals, and your task is to give your reasoning for as to why the conversation is labeled as {label.upper()}.
+Give reasoning as if you were the one to label this conversation, and explain the key factors that led to this classification. Use evidence from the conversation to support your reasoning.
 Below is a chat conversation. The label for this conversation is: {label.upper()}.
 
 Conversation:
