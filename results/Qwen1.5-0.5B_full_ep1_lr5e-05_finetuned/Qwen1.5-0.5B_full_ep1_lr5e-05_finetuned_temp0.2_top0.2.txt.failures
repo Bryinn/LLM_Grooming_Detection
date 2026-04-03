@@ -1,0 +1,107 @@
+conv_id=23 | prompt="
+CONVERSATION:
+sorry, I'm back now.
+and for the record I want to be you when I grow up, Elika
+my goodness, you're a powerhouse, woman!
+so the actual normal flow changes within the block?
+yeah
+it chang..." | raw="
+CONVERSATION:
+sorry, I'm back now.
+and for the record I want to be you when I grow up, Elika
+my goodness, you're a powerhouse, woman!
+so the actual normal flow changes within the block?
+yeah
+it changes direction
+block-flow
+sure?
+I will bring that up tomorrow :)
+well, I think it's the most clear.
+cool
+so
+if the whole point is to change the flow of the block
+block-flow: tb | lr | rl
+?
+I think that makes sense
+ok
+what do you think?
+Makes sense to me :)
+hehe
+isn't it the middle of the night there?
+go to bed!
+yep
+hehehe
+updates a few more issues and then obeys ed6658e6f22583ed66fb5e5e735b9e63 :)
+I wish I could be there with
+I wish you could too
+we have no web-designers present this meeting ;(
+alas, not this trip, I just couldn't physically do it
+I'm sure you'd be bored out of your mind half the time
+Well, I'll stick around online as close to things as possible.
+but it's really helpful to be able to ask &quot;what makes sense here from your perspective?&quot;
+yay~
+absolutely, and it always makes me feel good to contribute *something* of value
+:)
+I am planning to be at TPAC so that'll be good
+awesome
+another question
+relates to font-weights
+if you have three nested spans
+okay, I was around for part of that discussion earlier g/a
+with the font weights 'bolder', 'bolder', and 'lighter'
+but you only have two weights, normal and bold
+is the innermost span bold or normal?
+what's the rule look like?
+(A related question: if given two nested spans 'bolder' and 'lighter', should the inner span always be the same weight as outside the spans?)
+the rule looks like
+&lt;span style=&quot;font-weight: bolder&quot;&gt; &lt;span style=&quot;font-weight: bolder&quot;&gt; &lt;span style=&quot;font-weight: lighter&quot;&gt; Am I normal or bold?&lt;/span&gt; &lt;/span&gt; &lt;/span&gt;
+well, I might argue that the only span of relevance is that directly spanning the content, and therefore, in this case, &quot;lighter&quot;
+all of the other spans are empty
+oh, well they could have text in them :)
+or they could be &lt;div&gt;s
+also, what's the parent? It seems that in part this would be inheritance no?
+the behavior would have to be the same
+no, there's no inheritance
+it's just &quot;bolder&quot; is a relative term
+if you have a font with three weights
+then the innermost span would be the same weight as the outermost span, bolder than the text outside the spans
+but lighter than the text inside the middle span
+normal weight &lt;span style=&quot;font-weight: bolder&quot;&gt; bold weight &lt;span style=&quot;font-weight: bolder&quot;&gt; extra-bold weight &lt;span style=&quot;font-weight: lighter&quot;&gt; bold weight&lt;/span&gt; &lt;/span&gt; &lt;/span&gt;
+so it's relative to the immediate parent span?
+like that
+yep
+urgh
+the question is, what happens if you only have two weights
+I say it goes to normal
+in some ways it feels like as the designer
+I'd need a &quot;clue&quot; to say, okay, there's a breakdown in the relation here
+if the author is intending to have a lighter color
+right, well
+that should be explicit (I hate hate hate relative values btw)
+for this very reason
+it's defined as lighter than the parent
+but the designer might be trying to get back to the middle value here
+if there were multiple weights (like 3 or 5) that's what happens
+I don't know
+it's confusing.
+I don't know either. Definitely a question to ask Jason
+we've got both kinds of implementations
+k
+that's of course what I figured :)
+I think I did ask him
+and he said it was a hard question :)
+any relative value questions are hard
+to me, anyway
+relational math? Designers don't think that way, they just don't for the vast majority anyway
+heh
+designers say &quot;I want it THIS dark&quot;
+and give it a specific value
+seriously.
+we have keywords for that
+seriously.
+:)
+hey alexmog
+is pretty tired
+seriously.
+I should go to bed now I think
+I know, i'm ."")
