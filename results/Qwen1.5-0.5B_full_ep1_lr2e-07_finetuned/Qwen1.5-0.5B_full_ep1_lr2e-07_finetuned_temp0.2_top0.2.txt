@@ -1,0 +1,10 @@
+{'conversation_id': 1, 'is_predatory': None, 'reasoning': 'Could not parse model output as JSON.'}
+{'conversation_id': 2, 'is_predatory': None, 'reasoning': 'Could not parse model output as JSON.'}
+{'conversation_id': 6, 'is_predatory': None, 'reasoning': 'Could not parse model output as JSON.'}
+{'is_predatory': True, 'reasoning': 'I just want to find a stimulating chat. I have bf. Sorry.', 'conversation_id': 22}
+{'conversation_id': 23, 'is_predatory': None, 'reasoning': 'Could not parse model output as JSON.'}
+{'conversation_id': 29, 'is_predatory': None, 'reasoning': 'Could not parse model output as JSON.'}
+{'conversation_id': 35, 'is_predatory': None, 'reasoning': 'Could not parse model output as JSON.'}
+{'conversation_id': 38, 'is_predatory': None, 'reasoning': 'Could not parse model output as JSON.'}
+{'conversation_id': 39, 'is_predatory': None, 'reasoning': 'Could not parse model output as JSON.'}
+{'conversation_id': 44, 'is_predatory': None, 'reasoning': 'Could not parse model output as JSON.'}

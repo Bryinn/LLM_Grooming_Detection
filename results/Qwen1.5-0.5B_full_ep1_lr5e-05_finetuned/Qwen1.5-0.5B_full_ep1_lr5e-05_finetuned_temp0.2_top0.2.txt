@@ -1,0 +1,12 @@
+{'is_predatory': False, 'reasoning': 'Reasoning: explicit: pic, explicit: hot, explicit: suck.', 'conversation_id': 1}
+{'is_predatory': False, 'reasoning': 'Reasoning: explicit: sex, age: i am .', 'conversation_id': 2}
+{'is_predatory': False, 'reasoning': 'Reasoning: explicit: horny, age: age.', 'conversation_id': 6}
+{'is_predatory': False, 'reasoning': 'Reasoning: age: age.', 'conversation_id': 22}
+{'conversation_id': 23, 'is_predatory': None, 'reasoning': 'Could not parse model output as JSON.'}
+{'is_predatory': False, 'reasoning': 'Reasoning: explicit: suck, age: i am .', 'conversation_id': 29}
+{'is_predatory': False, 'reasoning': 'Reasoning: explicit: sex, explicit: pic, explicit: horny, explicit: dick, age: age.', 'conversation_id': 35}
+{'is_predatory': False, 'reasoning': 'Reasoning: explicit: pic, explicit: hot, age: age.', 'conversation_id': 38}
+{'is_predatory': False, 'reasoning': 'No explicit predatory indicators found.', 'conversation_id': 39}
+{'is_predatory': False, 'reasoning': 'Reasoning: age: i am .', 'conversation_id': 44}
+{'is_predatory': False, 'reasoning': 'No explicit predatory indicators found.', 'conversation_id': 50}
+{'is_predatory': False, 'reasoning': 'No explicit predatory indicators found.', 'conversation_id': 55}
