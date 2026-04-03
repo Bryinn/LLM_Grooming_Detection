@@ -4,12 +4,6 @@ import ollama
 from tqdm import tqdm
 from typing import List, Dict, Any
 
-
-import os
-import json
-import requests
-from typing import List, Dict, Any
-
 # Use the data loader from the main repo
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -17,9 +11,7 @@ from data_loader import load_pan12_training
 from Globals import PAN12_TRAIN_PATH
 
 # Configuration
-
-# Use llama3.1:70b as the model
-OLLAMA_MODEL = os.environ.get('OLLAMA_MODEL', 'llama3.1:70b')
+OLLAMA_MODEL = os.environ.get('OLLAMA_MODEL', 'llama3.1:8b')
 
 # Input/output paths
 PAN12_JSON_PATH = PAN12_TRAIN_PATH
