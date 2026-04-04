@@ -186,13 +186,18 @@ def evaluate_companionv1(test_convs, initial_prompt=None, results_file=None):
             print(f"Error evaluating compAnIonv1 for conversation {conv_id}: {e}")
 
 # Summarizer process for evaluation results
-def run_evaluation_summarizer(results_dir, settings_filters=None):
+def run_evaluation_summarizer(results_dir, settings_filters=None, model_name_filters=None):
+    # No user dialogue here; all filter input should be handled by caller (e.g. LLM.py)
     import os
     import glob
     import pandas as pd
     # Find all result files in all model subfolders
     all_results = []
     for model_folder in os.listdir(results_dir):
+        # Model name filter
+        if model_name_filters:
+            if not all(f in model_folder for f in model_name_filters):
+                continue
         model_path = os.path.join(results_dir, model_folder)
         if not os.path.isdir(model_path):
             continue
@@ -267,7 +272,13 @@ def run_evaluation_summarizer(results_dir, settings_filters=None):
     # Compare models/settings
     if stats:
         df = pd.DataFrame(stats)
-        name = "model_stats" + (("_" + "_".join(settings_filters)) if settings_filters else "") + ".csv"
+        # Compose output file name with filters
+        name_parts = ["model_stats"]
+        if settings_filters:
+            name_parts.extend(settings_filters)
+        if model_name_filters:
+            name_parts.extend(["model_" + f for f in model_name_filters])
+        name = "_".join(name_parts) + ".csv"
         df.to_csv(os.path.join(results_dir, name), index=False)
         print(f"Model evaluation statistics written to {name}")
         # Print best by F1 score

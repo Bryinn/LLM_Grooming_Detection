@@ -68,9 +68,14 @@ def main():
         top_p = 1.0
         temperature = 1.0
         if mode_choice == 2:
+            print("\n[Evaluation Summarizer]")
             filter_input = input("Enter settings filters (comma-separated, e.g. bal-50-20,temp0.7), or leave blank for all: ").strip()
             settings_filters = [f.strip() for f in filter_input.split(",") if f.strip()] if filter_input else None
-            run_evaluation_summarizer("results", settings_filters=settings_filters)
+            model_filter_input = input("Enter model name filters (comma-separated substrings, e.g. Rv2,Qwen), or leave blank for all: ").strip()
+            model_name_filters = [f.strip() for f in model_filter_input.split(",") if f.strip()] if model_filter_input else None
+            print("Current settings_filters:", settings_filters if settings_filters else "None")
+            print("Current model_name_filters:", model_name_filters if model_name_filters else "None")
+            run_evaluation_summarizer("results", settings_filters=settings_filters, model_name_filters=model_name_filters)
             return
         elif mode_choice == 3:
             test_50 = input("Continue only the first 50 samples? (y/N): ").strip().lower() == 'y'
