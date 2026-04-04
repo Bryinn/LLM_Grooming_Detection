@@ -1,19 +1,16 @@
 {
     "models": [
-        "Qwen1.5-0.5B_full_ep10_lr0.0001_finetuned",
-        "TinyLlama-1.1B-Chat-v1.0_full_ep5_lr5e-05_finetuned",
-        "TinyLlama-1.1B-Chat-v1.0_full_ep10_lr0.0001_Rv2_finetuned",
-        "Qwen1.5-0.5B_full_ep10_lr5e-05_Rv2_finetuned",
-        "Qwen1.5-0.5B-Chat_full_ep1_lr0.0001_finetuned",
-        "Qwen1.5-0.5B_full_ep10_lr0.0001_Rv2_finetuned"
+        "TinyLlama-1.1B-Chat-v1.0_full_ep5_lr5e-05_Rv2_finetuned",
+        "Qwen1.5-0.5B_full_ep10_lr0.0001_Rv2_finetuned",
+        "Qwen1.5-0.5B-Chat_full_ep1_lr0.0001_Rv2_finetuned"
     ],
-    "temperature": 0.7,
-    "top_p": 0.9,
+    "temperature": 0.2,
+    "top_p": 0.2,
     "dataset": "pan12-test",
-    "max_samples": 0,
+    "max_samples": 1000,
     "balance": {
-        "predatory": 200,
-        "non_predatory": 200
+        "predatory": 500,
+        "non_predatory": 500
     },
     "random_seed": 42
 }
