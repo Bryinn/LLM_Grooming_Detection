@@ -1,0 +1,59 @@
+conv_id=5017 | prompt="
+CONVERSATION:
+primary school (;
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. Notable signs of normalcy: Child-appropriate topic: 'primary school (;' Child-appropriate topic: 'primary school (;' Child-appropriate topic: 'primary school (;' Child-appropriate topic: 'primary school (;' Child-appropriate topic: 'primary school (;' Child-appropriate topic: 'primary school (;' Child-appropriate topic: 'primary school (;' Child-appropriate topic: 'primary school (;' Child-appropriate topic: 'primary school (;' Child-appropriate topic: 'primary school ("")
+conv_id=25580 | prompt="
+CONVERSATION:
+and here's the hCard tester: https://foursquare.com/business/brands/offerings/savetofoursquare/tester
+
+Now, based only on the above conversation, respond strictly with a single valid JS..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'and here's the hCard tester: https://foursquare.com/business/brands/offerings/savetofoursqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"")
+conv_id=35933 | prompt="
+CONVERSATION:
+:">
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw string. Do not..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: ':)' Last message: ':">"}"")
+conv_id=62265 | prompt="
+CONVERSATION:
+(but I don't have any input stream preprocessing - I'm just pushing characters straight into the tokeniser)
+I suppose that doesn't matter since the input stream preprocessing bit says &..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: '(but I don't have any input stream preprocessing - I'm just pushing characters straight into the tokeniser)' Last message: '&I suppose that doesn't matter since the input stream preprocessing bit says &quot;there are never any CR characters in the input to the tokenisation stage&quot;">"}"")
+conv_id=87215 | prompt="
+CONVERSATION:
+thanks Rylee for ur love to me.....
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning"..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. Key indicators include: Age-related inquiry: 'Rylee for ur love to me'. The conversation consists of 6 messages. First message: 'thanks Rylee for ur love to meeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"")
+conv_id=88714 | prompt="
+CONVERSATION:
+FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAG..." | raw="
+CONVERSATION:
+FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOT FAGGOT FAGGOT FAGGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOT"")
+conv_id=114721 | prompt="
+CONVERSATION:
+http://ihateangels.com/index.php?c=viral&amp;m=index&amp;id=bfe4ae2e1dba180eee57c3f5289f88f9
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'http://ihateangels.com/index.php?c=viral&amp;m=index&amp;id=bfe4ae2e1dba180eee57c3f5289f88f9' Last message: 'http://ihateangels.com/index.php?c=viral&amp;m=index&amp;id=bfe4ae2e1dba180eee57c"")
+conv_id=121380 | prompt="
+CONVERSATION:
+?????????????????????????????
+?????????????????????????????
+?????????????????????????????
+?????????????????????????????
+?????????????????????????????
+?????????????????????????????
+?????..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 19 messages. First message: '?????????????????????????????????????' Last message: '????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????"")
+conv_id=133611 | prompt="
+CONVERSATION:
+im 5,11, blonde, hair to my shoulders, I use to have piercings, a industrial piercing in my ear and my lip pierced, no tattoos
+
+Now, based only on the above conversation, respond strict..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. Notable signs of normalcy: Resistance or discomfort: 'im 5,11, blonde, hair to my shoulders, I use to have piercings, a industrial piercing in my ear and my lip pierced, no tattoos'. The conversation consists of 6 messages. First message: 'im 5,11, blonde, hair to my shoulders, I use to have piercings, a industrial piercing in my ear and my lip pierced, no tattoos' Last message: 'im 5,11"")
+conv_id=145785 | prompt="
+CONVERSATION:
+i will \
+/:)
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw strin..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'i will \' Last message: ':/:'"}"")
+conv_id=150251 | prompt="
+CONVERSATION:
+-/staring\-
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw string..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: '/staring\-' Last message: '-staring\-'"}"")

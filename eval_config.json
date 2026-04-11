@@ -1,16 +1,16 @@
 {
     "models": [
-        "TinyLlama-1.1B-Chat-v1.0_full_ep5_lr5e-05_Rv2_finetuned",
         "Qwen1.5-0.5B_full_ep10_lr0.0001_Rv2_finetuned",
-        "Qwen1.5-0.5B-Chat_full_ep1_lr0.0001_Rv2_finetuned"
+        "Qwen1.5-0.5B-Chat_full_ep1_lr0.0001_Rv2_finetuned",
+        "TinyLlama-1.1B-Chat-v1.0_full_ep5_lr5e-05_Rv2_finetuned"
     ],
     "temperature": 0.2,
     "top_p": 0.2,
-    "dataset": "pan12-test",
+    "dataset": "pan12-training",
     "max_samples": 1000,
     "balance": {
-        "predatory": 500,
-        "non_predatory": 500
+        "predatory": 1002,
+        "non_predatory": 1002
     },
     "random_seed": 42
 }

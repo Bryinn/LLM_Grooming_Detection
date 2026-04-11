@@ -1,0 +1,61 @@
+conv_id=2468 | prompt="
+CONVERSATION:
+PUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDI
+PUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDDIPUDD..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'PUDDDDIPUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDDUDD"")
+conv_id=35933 | prompt="
+CONVERSATION:
+:">
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw string. Do not..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: ':)' Last message: ':">"}"")
+conv_id=40399 | prompt="
+CONVERSATION:
+posts &lt;http:/ a11aabeeceeae6b8cb5d12ea06b56554.com/installing-lxml-on-dreamhost&gt;
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in th..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'posts &lt;http:/ a11aabeeceeae6b8cb5d12ea06b56554.com/installing-lxml-on-dreamhost&gt;' Last message: 'posts &lt;http:/ a11aabeeceeae6b8cb5d12ea06b56554.com/installing-lxml-on-dreamhost"")
+conv_id=76301 | prompt="
+CONVERSATION:
+f-s-a takes a number between 0 and 1.  It multiplies that by the declared font-size of the element to get a desired x-height.  It then adjusts the *used* font-size for all the fonts so ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'f-s-a takes a number between 0 and 1.  It multiplies that by the declared font-size of the element to get a desired x-height.  It then adjusts the *used* font-size for all the fonts so that their x-height matches that number.' Last message: 'f-s-a takes a number between 0 and 1.  It multiplies that by the declared font-size of"")
+conv_id=83602 | prompt="
+CONVERSATION:
+bye dhen goshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+
+Now, based only on the above conversation, respond strictly with a single valid JSON objec..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'bye dhen goshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"")
+conv_id=88714 | prompt="
+CONVERSATION:
+FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAG..." | raw="
+CONVERSATION:
+FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOT FAGGOT FAGGOT FAGGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOT FAGGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOTFGOT"")
+conv_id=114721 | prompt="
+CONVERSATION:
+http://ihateangels.com/index.php?c=viral&amp;m=index&amp;id=bfe4ae2e1dba180eee57c3f5289f88f9
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'http://ihateangels.com/index.php?c=viral&amp;m=index&amp;id=bfe4ae2e1dba180eee57c3f5289f88f9' Last message: 'http://ihateangels.com/index.php?c=viral&amp;m=index&amp;id=bfe4ae2e1dba180eee57c"")
+conv_id=120496 | prompt="
+CONVERSATION:
+...............…………………………._¸„„„„_
+…………………….…………...„--~*&apos;¯…….&apos;\
+………….…………………… („-~~--„¸_….,/ì&apos;Ì
+…….…………………….¸„-^&quot;¯ : : : : :¸-¯&quot;¯/&apos;
+……………………¸„„-^&quot;¯ : :..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 21 messages. First message: '...............………………………._¸„„„„' Last message: '&quot;-„_::::_„-_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´_´"")
+conv_id=123127 | prompt="
+CONVERSATION:
+desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"")
+conv_id=133611 | prompt="
+CONVERSATION:
+im 5,11, blonde, hair to my shoulders, I use to have piercings, a industrial piercing in my ear and my lip pierced, no tattoos
+
+Now, based only on the above conversation, respond strict..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. Notable signs of normalcy: Resistance or discomfort: 'im 5,11, blonde, hair to my shoulders, I use to have piercings, a industrial piercing in my ear and my lip pierced, no tattoos'. The conversation consists of 6 messages. First message: 'im 5,11, blonde, hair to my shoulders, I use to have piercings, a industrial piercing in my ear and my lip pierced, no tattoos' Last message: 'im 5,11"")
+conv_id=136619 | prompt="
+CONVERSATION:
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 11 messages. First message: '00000000000000000000000000000000000000000000000000000000000000000000000000000000000"")
+conv_id=142761 | prompt="
+CONVERSATION:
+hi princess\
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw strin..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'hi princess\' Last message: 'hi princess\'"}"")
+conv_id=145785 | prompt="
+CONVERSATION:
+i will \
+/:)
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw strin..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'i will \' Last message: ':/:'"}"")

@@ -1,0 +1,344 @@
+conv_id=1461 | prompt="
+CONVERSATION:
+You go ahead and talk to yourself I&apos;ll listen
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/fal..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'You go ahead and talk to yourself I&apos;ll listen' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message:"")
+conv_id=8953 | prompt="
+CONVERSATION:
+but in and of itself no it's not bad
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. Notable signs of normalcy: Resistance or discomfort: 'but in and of itself no it's not bad'. The conversation consists of 6 messages. First message: 'but in and of itself no it's not bad' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: '"")
+conv_id=11381 | prompt="
+CONVERSATION:
+I&apos;m about 6ft I&apos;m a wrestler 220lb always at the gym um short brown hair and brown eyes
+
+Now, based only on the above conversation, respond strictly with a single valid JSON o..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'I&apos;m about 6ft I&apos;m a wrestler 220lb always at the gym um short brown hair and brown eyes' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message:"")
+conv_id=17563 | prompt="
+CONVERSATION:
+it jus all happen 2 fast 2 plan somethin cuz tehy wuld hafta get there parents 2 take tehm
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object i..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. Notable signs of normalcy: Child-appropriate topic: 'it jus all happen 2 fast 2 plan somethin cuz tehy wuld hafta get there parents 2 take tehm'. The conversation consists of 6 messages. First message: 'it jus all happen 2 fast 2 plan somethin cuz tehy wuld hafta get there parents 2 take tehm' Last message: 'it jus all happen 2 fast 2 plan somethin cuz tehy w"")
+conv_id=20077 | prompt="
+CONVERSATION:
+hey, there you are, I had computer problems earlier
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/fa..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'hey, there you are, I had computer problems earlier' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: '"")
+conv_id=21968 | prompt="
+CONVERSATION:
+v muslims follow the holy path of mohd...n v r orderd to do good things for the man kinf
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'v muslims follow the holy path of mohd...n v r orderd to do good things for the man kinf' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last"")
+conv_id=25897 | prompt="
+CONVERSATION:
+i looooov teh chocolet
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'i looooov teh chocolet' Last message: 'i looooolololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololololol"")
+conv_id=28565 | prompt="
+CONVERSATION:
+I saw ya on and then by the time I got mine all the way on u signed out :(
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. Key indicators include: Age-related inquiry: 'I saw ya on and then by the time I got mine all the way on u signed out :('I saw ya on and then by the time I got mine all the way on u signed out :('I saw ya on and then by the time I got mine all the way on u signed out :('I saw ya on and then by the time I got mine all the way on u signed out :('I saw ya on and then by the time I got mine all the way on"")
+conv_id=30508 | prompt="
+CONVERSATION:
+becuae hvnt found any one as mature at ur age as ur hwo will tlka to me abt sex and being naked and wants to be naked wiht me
+
+Now, based only on the above conversation, respond strictl..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'becuae hvnt found any one as mature at ur age as ur hwo will tlka to me abt sex and being naked and wants to be naked wiht me' Last message: 'the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the the"")
+conv_id=31796 | prompt="
+CONVERSATION:
+dad made me move my stuff
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} a..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'dad made me move my stuff' Last message: 'dad meant to be non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'dad meant to be non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'dad meant to be non-predatory. No clear"")
+conv_id=32817 | prompt="
+CONVERSATION:
+nah. earlier. but im good now...mostly.
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reason..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'nah. earlier. but im good now...mostly.' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last"")
+conv_id=39055 | prompt="
+CONVERSATION:
+no lo tengo
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw string..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. Notable signs of normalcy: Resistance or discomfort: 'no lo tomar'; Resistance or discomfort: 'no lo tomar'; Resistance or discomfort: 'no lo tomar'; Resistance or discomfort: 'no lo tomar'; Resistance or discomfort: 'no lo tomar'; Resistance or discomfort: 'no lo tomar'; Resistance or discomfort: 'no lo tomar'; Resistance or discomfort: 'no lo tomar'; Resistance or discomfort: 'no lo tomar'; Resistance or discomfort: 'no lo tomar'; Resistance or discomfort: 'no lo tomar';"")
+conv_id=40399 | prompt="
+CONVERSATION:
+posts &lt;http:/ a11aabeeceeae6b8cb5d12ea06b56554.com/installing-lxml-on-dreamhost&gt;
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in th..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'posts &lt;http:/ a11aabeeceeae6b8cb5d12ea06b56554.com/installing-lxml-on-dreamhost&gt;' Last message: 'post &lt;http:/ a11aabeeceeae6b8cb5d12ea06b56554.com/installing-lxml-on-dreamhost"")
+conv_id=43475 | prompt="
+CONVERSATION:
+http://i247.photobucket.com/albums/gg126/xxcorrinaxx/013.jpg
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory"..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'http://i247.photobucket.com/albums/gg126/xxcorrinaxx/013.jpg' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
+conv_id=48982 | prompt="
+CONVERSATION:
+i went to see if he was in chat lol
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning"..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. Key indicators include: Age-related inquiry: 'i went to see if he was in chat lol'. The conversation consists of 6 messages. First message: 'i went to see if he was in chat lol' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message"")
+conv_id=51185 | prompt="
+CONVERSATION:
+really, i don&apos;t believe you.. :P
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasonin..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'really, i don&apos;t believe you.. :P' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: '"")
+conv_id=51836 | prompt="
+CONVERSATION:
+ur so cool so sexy and so beatful
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": ..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. Key indicators include: Explicit/sexual language: 'ur so cool so sexy and so beatfull'. The conversation consists of 6 messages. First message: 'ur so cool so sexy and so beatfull' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message:"")
+conv_id=53024 | prompt="
+CONVERSATION:
+OOH DO TELL THOUGH,
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a ra..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'OOH DO TELLtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt"")
+conv_id=53240 | prompt="
+CONVERSATION:
+f 16 uas sorry gotta ago i love your dick mmuahhh
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/fals..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'f 16 uas sorry gotta ago i love your dick mmuahhh' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message"")
+conv_id=53835 | prompt="
+CONVERSATION:
+i wanna have a friends with i can talking ;)
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "r..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'i wanna have a friends with i can talking ;)' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last"")
+conv_id=54884 | prompt="
+CONVERSATION:
+i am goin to go put on some fitted clothing. byeeee ill see yah there =)
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"i..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 6 messages. First message: 'i am goin to go put on some fitted clothing. byeeee ill see yah there =)' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
+conv_id=55829 | prompt="
+CONVERSATION:
+e.g. &lt;a class=&quot;url fn org&quot; href=&quot;...&quot;&gt;Justice League&lt;/a&gt;
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'e6. &lt;m class=&quot;url fn org&quot; href=&quot;...&quot;&gt;Justice League&lt;/a&gt;' Last message: 'reasoning": 'This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'e6. &lt;m class=&quot;url fn"")
+conv_id=56302 | prompt="
+CONVERSATION:
+I can see it now (looking in the air beside him) butt buddys
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory"..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'I can see it now (looking in the air beside him) butt buddys' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message:"")
+conv_id=56728 | prompt="
+CONVERSATION:
+sometimes when i have summer vacation. i usually go to bali
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory":..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'sometimes when i have summer vacation. i usually go to bali' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
+conv_id=63388 | prompt="
+CONVERSATION:
+but when your outside fucking your own brother a hot latina 18 year old maid comes in and i ravage that pussy all night long
+
+Now, based only on the above conversation, respond strictly..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'but when your outside fucking your own brother a hot latina 18 year old maid comes in and i ravage that pussy all night long' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message:"")
+conv_id=69824 | prompt="
+CONVERSATION:
+hmm, I'm not sure if the nf2 will do 1GB ram sticks
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/fa..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'hmm, I'm not sure if the nf2 will do 1GB ram sticks' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last"")
+conv_id=70908 | prompt="
+CONVERSATION:
+html-spec: Fixing http://www.w3.org/Bugs/Public/show_bug.cgi?id=12119
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_p..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'html-spec: Fixing http://www.w3.org/Bugs/Public show_bug.cgi?id=12119' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message:"")
+conv_id=74700 | prompt="
+CONVERSATION:
+ya i went to disny world n met all kinds of ppl
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false,..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 6 messages. First message: 'ya i went to disny world n met all kinds of ppl' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last"")
+conv_id=76636 | prompt="
+CONVERSATION:
+I could keep u hot between your periwinkle sheets baby
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'I could keep u hot between your periwinkle sheets baby' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message:"")
+conv_id=79006 | prompt="
+CONVERSATION:
+... haakon's opacity example ...
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: '... haakon's opacity example 'haakon's opacity example 'haakon's opacity example 'haakon's opacity example 'haakon's opacity example 'haakon's opacity example 'haakon's opacity example 'haakon's opacity example 'haakon's opacity example 'haakon's opacity example 'haakon's opacity example 'haakon's opacity example"")
+conv_id=79123 | prompt="
+CONVERSATION:
+yeh i cant sleep if i dont take a shower
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reaso..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'yeh i cant sleep if i dont take a shower' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: '"")
+conv_id=80563 | prompt="
+CONVERSATION:
+u want t otalk dirty so i can jackoff
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasonin..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 6 messages. First message: 'u want t otalk dirty so i can jackoff' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message:"")
+conv_id=82447 | prompt="
+CONVERSATION:
+Ohhh yehhh girrllll my penis is get exicted
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "re..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'Ohhh yehhh girrllll my penis is get exicted' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: '"")
+conv_id=83602 | prompt="
+CONVERSATION:
+bye dhen goshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+
+Now, based only on the above conversation, respond strictly with a single valid JSON objec..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 25 messages. First message: 'bye dhen goshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"")
+conv_id=84244 | prompt="
+CONVERSATION:
+im glad maybe not as much fun as we could hv had but it would hv been a much differnt experice fro u
+
+Now, based only on the above conversation, respond strictly with a single valid JSO..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'im glad maybe not as much fun as we could hv had but it would hv been a much differnt experice fro u' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
+conv_id=84385 | prompt="
+CONVERSATION:
+wow :D Cool name.. nce to meet you too :) Do you know more finnish people??
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'wow :D Cool name.. nce to meet you too :) Do you know more finnish people??' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
+conv_id=84391 | prompt="
+CONVERSATION:
+i thought u was mad at me
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} a..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. Key indicators include: Grooming/affectionate language: 'i thought u was mad at me'. The conversation consists of 6 messages. First message: 'i thought u was mad at me' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message:"")
+conv_id=87997 | prompt="
+CONVERSATION:
+there goin with soem other ppl this time so there not leavin until like 4 this time
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'there goin with soem other ppl this time so there not leavin until like 4 this time' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
+conv_id=88714 | prompt="
+CONVERSATION:
+FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAG..." | raw="
+CONVERSATION:
+FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGGOT FAGGOt FAGGOT FAGGOT FAGGOT FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott FAGgott"")
+conv_id=91683 | prompt="
+CONVERSATION:
+hey i m gonna go work on something in the garage
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 6 messages. First message: 'hey i m gonna go work on something in the garage' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message:"")
+conv_id=93244 | prompt="
+CONVERSATION:
+Hi! are you a girl who loves getting raped by SLIMY tentacle monster!
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_p..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'Hi! are you a girl who loves getting raped by SLIMY tentacle monster!' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message"")
+conv_id=93254 | prompt="
+CONVERSATION:
+But if I Sid give u my number or sumthing what would happen next?
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_preda..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 6 messages. First message: 'But if I Sid give u my number or sumthing what would happen next?' Last message: 'And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And And"")
+conv_id=96296 | prompt="
+CONVERSATION:
+hmm, did Alan Kay blog somewhere recently?
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "rea..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'hmm, did Alan Kay blog somewhere recently?' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
+conv_id=99598 | prompt="
+CONVERSATION:
+yeah, I see - I think the first line falls back everywhere
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'yeah, I see - I think the first line falls back everywhere' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
+conv_id=101952 | prompt="
+CONVERSATION:
+while I beat off?
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. Notable signs of normalcy: Resistance or discomfort: 'while I beat off?'; Resistance or discomfort: 'stop using the explicit predatory indicators. The conversation consists of 6 messages. First message: 'while I beat off?' Last message: 'stop using the explicit predatory indicators. The conversation consists of 6 messages. First message: 'while I beat off?' Last message: 'stop using the explicit predatory indicators. The conversation consists of 6 messages. First message: 'while I beat off?' Last message:"")
+conv_id=104390 | prompt="
+CONVERSATION:
+this has protein powder, and egg, banana, blue berries, ginger and ice. )
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'this has protein powder, and egg, banana, banana, ginger and ice. )' Last message: 'this is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is what is"")
+conv_id=110552 | prompt="
+CONVERSATION:
+i was at the girls one n he was at the guys one
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false,..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. Notable signs of normalcy: Resistance or discomfort: 'i was at the girls one n he was at the guys one'. The conversation consists of 6 messages. First message: 'i was at the girls one n he was at the guys one' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
+conv_id=111142 | prompt="
+CONVERSATION:
+PRE is not a style element because it alters the parsing mode.
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predator..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'Pre is not a style element because it alters the parsing mode.' Last message: 'this conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'Pre is not a style element because it alters the parsing mode.' Last message: 'this conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were"")
+conv_id=112223 | prompt="
+CONVERSATION:
+oh no, i really didn&apos;t mean this
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasonin..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. Notable signs of normalcy: Resistance or discomfort: 'oh no, i really didn&apos;t mean this'. The conversation consists of 6 messages. First message: 'oh no, i really didn&apos;t mean this' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: '"")
+conv_id=112582 | prompt="
+CONVERSATION:
+oh cool, i am sorry but ever time i thnk of ontario i think of justin bieber
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format:..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'oh cool, i am sorry but ever time i thnk of ontario i think of justin bieber' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last"")
+conv_id=114721 | prompt="
+CONVERSATION:
+http://ihateangels.com/index.php?c=viral&amp;m=index&amp;id=bfe4ae2e1dba180eee57c3f5289f88f9
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'http://ihateangels.com/index.php?c=viral&amp;m=index&amp;idbebate2ae2e1dba180eee57c3f5289f88f9' Last message: 'http://ihateangels.com/index.php?c=viral&amp;idbebate2ae2e1dba180eee57c3"")
+conv_id=115585 | prompt="
+CONVERSATION:
+then this one crashed right after so i had to reformat it
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": t..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'then this one crashed right after so i had to reformat it' Last message: 'this conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'then this one crashed right after so i had to reformat it' Last message: 'this conversation is labeled as non-predatory. No clear predatory indicators or concerning"")
+conv_id=120263 | prompt="
+CONVERSATION:
+ya i gotta think of sumthin 2 tell my teacher so i can leeve early
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_pred..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 6 messages. First message: 'ya i gotta think of sumthin 2 tell my teacher so i can leeve early' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: '"")
+conv_id=120496 | prompt="
+CONVERSATION:
+...............…………………………._¸„„„„_
+…………………….…………...„--~*&apos;¯…….&apos;\
+………….…………………… („-~~--„¸_….,/ì&apos;Ì
+…….…………………….¸„-^&quot;¯ : : : : :¸-¯&quot;¯/&apos;
+……………………¸„„-^&quot;¯ : :..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 24 messages. First message: '...............' Last message: '>: 49 messages. 24 messages. 24 messages. 24 messages. 24 messages. 24 messages. 24 messages. 24 messages. 24 messages. 24 messages. 24 messages. 24 messages. 24 messages. 24 messages. 24 messages."")
+conv_id=121489 | prompt="
+CONVERSATION:
+talk 2 me cdc113531c0bb92df5ef1708dfe6ef6a
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "rea..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'talk 2 me cdc113531c0bb92df5ef1708dfe6ef1708dfe6ef1708dfe6ef1708dfe6ef1708dfe6ef1708dfe6ef1708dfe6ef1708dfe6ef"")
+conv_id=122676 | prompt="
+CONVERSATION:
+i am really crazy bout you, just wish iw as closer
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/fal..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'i am really crazy bout you, just wish iw as close' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message:"")
+conv_id=123127 | prompt="
+CONVERSATION:
+desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 20 messages. First message: 'desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu desu des"")
+conv_id=123958 | prompt="
+CONVERSATION:
+y your so beautiful i dunno y you would be
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "rea..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'y your so beautiful i dunno y you would be' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: '"")
+conv_id=127506 | prompt="
+CONVERSATION:
+I´m a little bit sceptic =| i cant find you on facebook Sophie Mavle
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_pr..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'I´m a little bit sceptic =| i cant find you on facebook Sophie Mavle' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message:"")
+conv_id=132337 | prompt="
+CONVERSATION:
+i was thinkin maybe mickey mouse or somethin
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "r..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'i was thinkin maybe mickey mouse or somethin' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message:"")
+conv_id=136619 | prompt="
+CONVERSATION:
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 9 messages. First message: '000000000000000000000000000000000000000000000000000000000000000000000000000000000000"")
+conv_id=137444 | prompt="
+CONVERSATION:
+cool i can do more if i told you id make you hoter
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/fal..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'cool i can do more if i told you id make you hoter' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last"")
+conv_id=138107 | prompt="
+CONVERSATION:
+I was asking if you had ever had an orgasm?
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "re..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'I was asking if you had ever had an orgasm?' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last"")
+conv_id=142673 | prompt="
+CONVERSATION:
+i once found someone on here who i had the best conversation of my life with, i&apos;ll never find him again...but i believe there are others out there
+
+Now, based only on the above con..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'i once found someone on here who i&apos;ll never find him again...but i believe there are others out there' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message:"")
+conv_id=142761 | prompt="
+CONVERSATION:
+hi princess\
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw strin..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 7 messages. First message: 'hi princess\' Last message: 'hi princess\'"}"")
+conv_id=145646 | prompt="
+CONVERSATION:
+she didnt say nething cuz theirs awaya guys talking shit like that on yahoo
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: ..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'she didnt say nething cuz yours was on yahoo' Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last message: 'Last"")
+conv_id=145785 | prompt="
+CONVERSATION:
+i will \
+/:)
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..."} as a raw strin..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'i will \' Last message: ':)'"}"")
+conv_id=145919 | prompt="
+CONVERSATION:
+a think popped up for a new yahoo so if i get dc ill b right back
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_preda..." | raw="{"is_predatory": false, "reasoning": "This conversation is labeled as non-predatory. No clear predatory indicators or concerning behavior were found. The conversation consists of 6 messages. First message: 'a think popped up for a new yahoo so if i get dc ill b right back' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
+conv_id=151282 | prompt="
+CONVERSATION:
+u still comin on friday at noon?
+
+Now, based only on the above conversation, respond strictly with a single valid JSON object in this format: {"is_predatory": true/false, "reasoning": "..." | raw="{"is_predatory": true, "reasoning": "This conversation is labeled as predatory. No explicit predatory phrases detected, but the overall context or behavior suggests grooming or inappropriate intent. The conversation consists of 6 messages. First message: 'u still comin on Friday at noon?' Last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message: 'last message"")
