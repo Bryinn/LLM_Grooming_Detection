@@ -103,6 +103,7 @@ def load_test_convs(test_path, test_50=False):
     try:
         test_df = load_pan12_test(test_path)
         print("Loaded test rows:", len(test_df))
+        print("Loaded test conversations:", test_df['conversation_id'].nunique())
         if test_50:
             first_50_ids = test_df['conversation_id'].drop_duplicates().iloc[:50]
             test_df = test_df[test_df['conversation_id'].isin(first_50_ids)]
