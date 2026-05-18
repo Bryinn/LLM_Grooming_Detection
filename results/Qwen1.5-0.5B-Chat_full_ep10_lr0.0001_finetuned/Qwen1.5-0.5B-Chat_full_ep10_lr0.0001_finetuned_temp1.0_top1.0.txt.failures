@@ -1,0 +1,593 @@
+conv_id=23 | prompt="
+CONVERSATION:
+sorry, I'm back now.
+and for the record I want to be you when I grow up, Elika
+my goodness, you're a powerhouse, woman!
+so the actual normal flow changes within the block?
+yeah
+it chang..." | raw="
+CONVERSATION:
+sorry, I'm back now.
+and for the record I want to be you when I grow up, Elika
+my goodness, you're a powerhouse, woman!
+so the actual normal flow changes within the block?
+yeah
+it changes direction
+block-flow
+sure?
+I will bring that up tomorrow :)
+well, I think it's the most clear.
+cool
+so
+if the whole point is to change the flow of the block
+block-flow: tb | lr | rl
+?
+I think that makes sense
+ok
+what do you think?
+Makes sense to me :)
+hehe
+isn't it the middle of the night there?
+go to bed!
+yep
+hehehe
+updates a few more issues and then obeys ed6658e6f22583ed66fb5e5e735b9e63 :)
+I wish I could be there with
+I wish you could too
+we have no web-designers present this meeting ;(
+alas, not this trip, I just couldn't physically do it
+I'm sure you'd be bored out of your mind half the time
+Well, I'll stick around online as close to things as possible.
+but it's really helpful to be able to ask &quot;what makes sense here from your perspective?&quot;
+yay~
+absolutely, and it always makes me feel good to contribute *something* of value
+:)
+I am planning to be at TPAC so that'll be good
+awesome
+another question
+relates to font-weights
+if you have three nested spans
+okay, I was around for part of that discussion earlier g/a
+with the font weights 'bolder', 'bolder', and 'lighter'
+but you only have two weights, normal and bold
+is the innermost span bold or normal?
+what's the rule look like?
+(A related question: if given two nested spans 'bolder' and 'lighter', should the inner span always be the same weight as outside the spans?)
+the rule looks like
+&lt;span style=&quot;font-weight: bolder&quot;&gt; &lt;span style=&quot;font-weight: bolder&quot;&gt; &lt;span style=&quot;font-weight: lighter&quot;&gt; Am I normal or bold?&lt;/span&gt; &lt;/span&gt; &lt;/span&gt;
+well, I might argue that the only span of relevance is that directly spanning the content, and therefore, in this case, &quot;lighter&quot;
+all of the other spans are empty
+oh, well they could have text in them :)
+or they could be &lt;div&gt;s
+also, what's the parent? It seems that in part this would be inheritance no?
+the behavior would have to be the same
+no, there's no inheritance
+it's just &quot;bolder&quot; is a relative term
+if you have a font with three weights
+then the innermost span would be the same weight as the outermost span, bolder than the text outside the spans
+but lighter than the text inside the middle span
+normal weight &lt;span style=&quot;font-weight: bolder&quot;&gt; bold weight &lt;span style=&quot;font-weight: bolder&quot;&gt; extra-bold weight &lt;span style=&quot;font-weight: lighter&quot;&gt; bold weight&lt;/span&gt; &lt;/span&gt; &lt;/span&gt;
+so it's relative to the immediate parent span?
+like that
+yep
+urgh
+the question is, what happens if you only have two weights
+I say it goes to normal
+in some ways it feels like as the designer
+I'd need a &quot;clue&quot; to say, okay, there's a breakdown in the relation here
+if the author is intending to have a lighter color
+right, well
+that should be explicit (I hate hate hate relative values btw)
+for this very reason
+it's defined as lighter than the parent
+but the designer might be trying to get back to the middle value here
+if there were multiple weights (like 3 or 5) that's what happens
+I don't know
+it's confusing.
+I don't know either. Definitely a question to ask Jason
+we've got both kinds of implementations
+k
+that's of course what I figured :)
+I think I did ask him
+and he said it was a hard question :)
+any relative value questions are hard
+to me, anyway
+relational math? Designers don't think that way, they just don't for the vast majority anyway
+heh
+designers say &quot;I want it THIS dark&quot;
+and give it a specific value
+seriously.
+we have keywords for that
+seriously.
+:)
+hey alexmog
+is pretty tired
+seriously.
+I should go to bed now I think
+I know, i'm ."}"")
+conv_id=58 | prompt="
+CONVERSATION:
+hi!!!!!!!!!!!!!!!!!!!!!!!
+hi random stranger!
+r u a horny guy?
+...... well, just a guy really
+not so horny at the moment
+looking just to talk
+good :)
+but interesting question to start
+a..." | raw="
+CONVERSATION:
+hi!!!!!!!!!!!!!!!!!!!!!!!
+hi random stranger!
+r u a horny guy?
+...... well, just a guy really
+not so horny at the moment
+looking just to talk
+good :)
+but interesting question to start
+awesomeness
+thx :)
+so how about you? are you a horny guy?
+haha
+nice response
+nooooooooooo haha
+so what are you up to this morning/afternoon/evening?
+aside from the obvious
+lol
+evening and tv
+anything good on?
+plus chatting with others too
+cheating on me with others? :(
+umm ghost whisperer sorry if thats weird
+im sorry...
+... ok. why are you watching ghost whisperer and what is your gender?
+u?
+and f
+ok well that&apos;s fine then
+and cuz theres nothing on
+you aren&apos;t watching just to see jennifer love hewitt&apos;s cleavage
+that&apos;s the only reason me and my dad tolerate the show when my mom watches it
+sorry bt im not les :p
+so anyway
+wow
+haha, that&apos;s fine
+i am just watching tv as well
+what show?
+nothing right now. trying to find something good on. at the moment just seeing a lot of commercials
+so what are your plans for tomorrow?
+have no clue u?
+well, i hope i can get by the doctor. i&apos;ve got this weird nerve pain in my left leg since i started a new workout routine 2 weeks ago and i kind of want it to go away
+cool
+other than that just being lazy until i have to go back to work monday
+i hope it works out for u
+lol
+me too. haha
+how ols r u/
+old?*
+i&apos;m 22. yourself?
+16 u can leave if im jailbait
+:p
+haha
+i don&apos;t mind talking. i mean, i&apos;ll never talk to you or hear from you again anyway
+it always happens :(
+plus, as you so eloquently put, i&apos;m not a horny boy
+true so true
+which is apparently what you keep finding
+hahaha
+yepz and anonymous pedobear minions...
+hahaha
+oh, the minions of \b\
+so do you have your driver&apos;s license yet?
+yep.... and yeah bt i have freaking restrictions
+u? lol jk
+haha, i have an over 21 license so i&apos;m special. and don&apos;t worry about restrictions. my state had those when i was 16
+i honestly think my parents cared more about them then the cops did
+hahaha
+i know u look professional enough and mostly follow the rules and they&apos;re all like watever
+pretty much
+so have you put any thought towards which college you want to go to yet?
+idk maybe ucla
+and ur at/
+?*
+i just graduated from UNC last may
+but one of the guys that i work with is thinking about doing grad school at UCLA. awesome school
+oh cool ive seen that college
+yes it is bt they have a feud with usc
+24/7
+haha
+and are you or your parents trojan fans?
+no bt my neighbors r obssesed even their liscense plates have like yeausc on them
+hahaha
+i can respect a good rivalry
+personally, i hate dook (that&apos;s the way it should be spelled) with an infernal passion undying
+hahaha
+the ugly, evil students there should all burn in the fires of hell
+i will say this for unc-dook though, there is a respect to the rivalry
+i mean, we talk a lot of shit but no one hurts anyone else
+omg rofl and yeah
+no like something like the michigan - ohio state football rivalry where people get shot
+*not
+i k its like this is sports!!!!!!!!!!!!!!!!!!!! ur not in the runing 4 world domination ppl!!!!!!!!!!
+oh no. it may as well be world domination. i certainly understand the mindset. it is just something you have to keep in perspective
+which is hard for many people
+true true
+for some sports is their one and only world
+football martians :)
+forget football. it&apos;s all about march madness
+but anyway
+so do you have any idea about what you might want to do at college?
+HINT: chemistry degrees are awesome
+lol
+just saying
+idk something that helps the world in some way
+that&apos;s very thoughtful and a good idea about where you want to take yourself
+that said, i need to tell you this
+there is not much money to be made in helping people that need it
+but there is a lot of money to be made in making rich people richer
+business and law will net you a ton of cash
+sooooooo i dnt care about the money
+i can live in a humble ab-platform: explicit: horny, age: i am ."}"")
+conv_id=247 | prompt="
+CONVERSATION:
+f4dfad803df83144a5be86d9bca87678: what?
+no, not mendatory
+Arve, where you at?
+c5e3539121c4944f2bbe097b425ee774: is there a JS API to get/set preferences to along with it?
+yes
+widget.pre..." | raw="
+CONVERSATION:
+f4dfad803df83144a5be86d9bca87678: what?
+no, not mendatory
+Arve, where you at?
+c5e3539121c4944f2bbe097b425ee774: is there a JS API to get/set preferences to along with it?
+yes
+widget.preferences implements Storage
+c5e3539121c4944f2bbe097b425ee774: ok, wanted to follow up to Rainer on BONDI list RE: appconfig
+saying that widget.preferences would be mandatory for a widget runtime
+hence appconfig has no use
+no, it's not.
+though why can't preference be more general
+how do you mean?
+more general?
+so it can read any config entry?
+oh, we have other APIs for that
+which are kinda dumb... I agree. I would prefer a general config.get(&quot;author&quot;) or something
+argh, htf am i going to resolve the appconfig stuff
+but we went with widget.authorInfo, widget.description, widget.blabla
+ok, i am still going to ask bondi accept preference element as a requirement in place of appconfig
+what is the appconfig?
+f4dfad803df83144a5be86d9bca87678:
+c5e3539121c4944f2bbe097b425ee774: that bondi thing to read and set config.xml values
+has not see
+n
+c5e3539121c4944f2bbe097b425ee774: you commented on it last week?
+hehe,
+appconfig widl review
+I have a bot that spits venom from the side lines, I don't actually pay attention to what they are talking about
+how can preferences by optional?
+couldn't some widget rely on that?
+confused
+if a widget has a bad config.xml, the index.html should not be executed right?
+right
+what is a bad config?
+i dunno, id=&quot;foo&quot;
+no, that's ok
+bad config would be a malformed config
+id should be anyURI
+yes, but if it's not, it won't crash
+it just says, meh, and keeps going
+so, it'll carry on executing the index.html?
+sure
+so i had some tests
+here we go...
+that tested for bad values in the config.xml
+assuming that if it ran index.html, it would call a fail ajax script
+yes, that is fine. The engine will still respond correctly. Which is to ignore bogus values
+like in HTMLs, you don't crash if an &lt;img height=&quot;banana&quot;&gt;
+ok
+You just say &quot;meh&quot; and move on
+ok
+gosh, i hate testing
+does Nelson point and laugh at f4dfad803df83144a5be86d9bca87678
+i don't see the point of negative testing config.xml values
+You have to for interop
+will help you out once he finishes the P&amp;C spec
+There is no point in doing anything ATM because of the i18n model changes
+a test like i described, with id=foo and test.js-&gt; fail() is pointless
+c5e3539121c4944f2bbe097b425ee774: ok ok don't worry
+there is more of exercise in understanding how everything should work
+Yeah, some things are going to be hard to test
+using JS at least
+because the JS does not interact with aspects of processing in the config doc, etc
+But we will get it sorted
+f4dfad803df83144a5be86d9bca87678: tell me more about this appconfig thing
+what are the methods?
+http://bondi.omtp.org/apis-current/namespaceorg_1_1omtp_1_1bondi_1_1appconfig.html
+get set
+it should be just get
+how would it work? what do they return?
+oohh, I think I see
+yeah, you don't need that
+use widget.preferences
+that API is dumbass
+how do you delete something?
+yes, there are tons of open questions, Paddy elaborated on the thread
+if I could argue a widget runtime would have to have widget.preferences anyway, that would make it easier
+BONDI should leave the config stuff to age: age, age: i am ."}"")
+conv_id=277 | prompt="
+CONVERSATION:
+hello
+having fun?
+18 f us - looking for a relatively normal conversation
+not really
+I can do normal conversation
+I was starting to give up hope
+by normal i just mean not pervy
+not neces..." | raw="
+CONVERSATION:
+hello
+having fun?
+18 f us - looking for a relatively normal conversation
+not really
+I can do normal conversation
+I was starting to give up hope
+by normal i just mean not pervy
+not necessarily normal
+yeah, exactly
+hard to find anymore
+I&apos;m sick of pressing the &quot;disconnect&quot; button when someone says &quot;asl&quot;
+I agree
+i dont mind giving asl
+yeah, but I know that &quot;asl&quot; means &quot;I&apos;m going to disconnect if you say you&apos;re male&quot;
+lol, everyone disconnects on me for being a chick
+really?
+Does anyone actually talk on this site?
+stranger: asl?
+me: 18 f us
+stranger: already gone
+ive had a lot of good conversations, actually
+but six times as many shitty ones
+yeah
+It&apos;s hard to tell - sometimes you have a good opener, and it works - but other times your opener fails, and you get a disconnect
+hah, i open up with my asl cos ive had several good conversations that ended abruptly when its found im a chick.
+Really?
+That&apos;s a shame
+yupp
+and i dont mind chatting with other chicks
+I don&apos;t normally give it out, perhaps I should. I don&apos;t really care who I chat too, as long as they don&apos;t &quot;wanna cyber&quot;
+samesies
+what is your asl? *eyebrow wiggles*
+male, 16, UK
+im joking
+you dont even have to tell me
+oh hi
+oh well
+I don&apos;t really mind giving it out, it&apos;s just I don&apos;t end up doing it
+ah, fair.
+So, apart from getting disconnected, what are your hobbies?
+lol
+uuuhhm
+i like listening to music
+does that count?
+I suppose so
+what genres?
+most any
+ok
+i like rock/punk/screamy best
+I&apos;m slightly more picky than that. I&apos;m annoyed by most of the music on the radio, as it&apos;s just awful
+but ill listen to anything
+same!
+i hate the radio
+Metal&apos;s good - I&apos;m not that much of a music listener, though - don&apos;t experement with new stuff very often
+because if theres a song on the radio that i DO actually like, i wont like it much longer because it&apos;ll get more popular than it is good and very over-played.
+ahh, well whats your favorite music?
+Probably System of a Down or older Slayer
+oh word
+u?
+brb
+sorry
+ok, np
+back i had to roll up my car windows
+always a good idea
+yeah especially since its supposed to storm tonight
+so, favorite bands, or just what&apos;s playing?
+That wouldn&apos;t be good
+my favorite is mayday parade
+I can&apos;t say i&apos;ve heard of them
+theyre getting kind of popular and its making me sad
+because i can already tell i wont like their next album
+it&apos;ll be radio-ready pop
+yeah
+depression
+recommend a song by them for me to queue?
+hang on
+im gonna look at a list of songs and decide on a few to give you :P
+ok
+jersey, one man drinking games, take this to heart, champagnes for celebrating (ill have a martini), when i get home youre so dead, you be the anchor that keeps my feet on the ground ill be the wings that keeps your heart in the clouds
+queuing now
+sweeeet
+they do like long titles
+ok, they&apos;re playing
+thanks for the recommendation
+of course :D
+i tried to give you a little bit of variety from them
+it&apos;s slightly more pop than I normally listen to, but I like it
+so, no other interests but music?
+i like to write
+but i havent in a long time
+stories, poems?
+stories
+awesome
+sometimes poems but those are really bad
+i havent written a story in ages though
+ive written poetry more recently
+Not had the time to write, or  not the insparation?
+kinda both. like when ive had the time, ive been uninspired or vice versa.
+Sucks
+it happens
+my stuffs never good anyway
+Having not seen it, I can&apos;t confirm or deny it.
+i just mean, its not like anyones missing out.
+but, I do find that people to tend to say that their stuff&apos;s bad, because they pick details out of it that other&apos;s don&apos;t notice
+others*
+my point exactly
+well i never liked it enough to show people
+I can understand that
+I&apos;ve never written much, but I havn&apos;t shown anyone
+the stuff I&apos;ve pic, explicit: suck, age: age."}"")
+conv_id=427 | prompt="
+CONVERSATION:
+http://www.myyearbook.com/?mysession=cmVnaXN0cmF0aW9uX3ZpZXdpbWFnZWNvbW1lbnRzJnBpY2lkPTk1NTQyNTI4JnVzZXJpZD0yNzA2Nzg0Ng==
+Hi
+hi
+Got Any nudes.?
+f or m?
+M
+age?
+18
+im jailbait dude
+Then w..." | raw="{"is_predatory": false, "reasoning": explicit: nude, explicit: pic, age: age, age: how old."}"")
+conv_id=462 | prompt="
+CONVERSATION:
+hi
+hey i tried callin u
+when did u try?
+2day it said u not in service
+yeah, I changed it yesterday
+oic
+here is the new one
+763-300-7906
+y did u change ur number?
+because my roommate's e..." | raw="
+CONVERSATION:
+hi
+hey i tried callin u
+when did u try?
+2day it said u not in service
+yeah, I changed it yesterday
+oic
+here is the new one
+763-300-7906
+y did u change ur number?
+because my roommate's ex gf kept calling me and he doesn't want to talk to her or give her his #
+oh LOL
+is ur dad working?
+na hes makin dinner
+does he know u chat online?
+yup
+what are ur plans for the weekend?
+i dint know if u was comin out or not
+I could, do u know where we could chill?
+it dont matter
+isnt it real far tho
+it is, when I come I want to hang out for about 4 hours
+ok
+I could come saturday during the day and have u home before 7
+ok wat time
+I pick u up at 1:30
+wow lol im nervus
+do u think u could leave for that long, what will u tell ur dad?
+i dunno u got any ideas lol
+could u go to a friends house then I could get u from there, but ur friends parents couldn't know that ur supposed to be over there
+do u still wanna hotel room cos if u do theres only 1 here
+we'll find one, first thing to figure out is what ur going to have to say
+yea
+what do u ussually say when ur going to be gone for a while with a friend?
+i say were going to the mall n movie sn hang out
+what does he say to that?
+he dont care
+does he want u to call or ask who ur going with?
+im allowed to go out lol
+I know, when u say ur going out, does he tell u what time u have to be home?
+yea and if im not im in trouble
+to u walk to ur friends houses?
+do*
+yea but i dont wanna gt pick up there
+get
+yeah, I would like to pick u up at a fast food place if there is one close
+wat is u r fave kind
+I perfer subway the best
+urs?
+taco bell
+but thers not really any close
+is there a fast food place u could walk to?
+ok, how about a gas station or a mall
+if ustay at radison thats close
+raddison
+the mall is far
+what else is by the raddison?
+i 4got there is a subway
+jimmy johns 2
+wich one u like better
+which
+what is jimmy johns?
+its a sub shop like subway
+ok, subway will work
+k
+how often do u shave ur legs?
+every day
+howe often u shave urs
+once a month
+
+u have hair down there?
+nah not reallie
+u ever have enough to shave it?
+id b scared 2 shave it there
+how long is ur hair?
+mah shoulders
+ur hair is short
+I have to kept it like that or it starts to get wavy if I let it grow out
+oh yea thats cool
+hey wat kinda car u got
+its a blue olds cutlass
+ok
+I think 12:30 would be a better time
+wow ur leavin early in am
+yeah, I want to have u home before dark
+why
+becaue it will look better then bring u home after dark
+i can walk home from there
+I know, Ill drop u off there
+ok whatever
+wat kinda coat u be wearin
+g
+proboly a green one
+long or short
+to my waist
+ok i gotta blue puffy 1
+u know how much time u have left on ur card?
+i dunno
+can u call me tomorrow night and saturday morning?
+i can try if hes gone
+its ok 2 call whenever
+?
+yes
+if i cant then ill just meet u at subway at 1230?
+I'll be there for sure
+its on college ave
+i got the addy for the raddison but not 4 sub\way
+u want that?
+If its on that street that should be the only one and I can find it
+itsa big street. *
+ok
+u been 2 appleton b4
+nope
+ok
+i still cant believe ur comin here
+I know, Im excited to see u
+i am 2 i was startin 2 wonder cos u wasn't online
+is dinner almost done?
+i think so
+chili
+hopefully ur dad will have to work when I come
+he always work sat
+open houses n stuf
+that would be nice, u ever kiss a boy?
+sure
+duh
+u ever been naked with a boy?
+no
+u ever touch a guys penis?
+nope
+dont know how
+u got booted, i am ."")
