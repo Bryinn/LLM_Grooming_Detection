@@ -32,11 +32,7 @@ MODEL_IDS_PATH = os.path.join(os.path.dirname(__file__), 'model_ids.py')
 with open(MODEL_IDS_PATH, 'r', encoding='utf-8') as f:
     MODEL_ID_LIST = ast.literal_eval(f.read())
 
-# Unified LLM Training Script
-# compAnIonv1
-
 # Paths
-
 os.makedirs(MODELS_DIR, exist_ok=True)
 
 
